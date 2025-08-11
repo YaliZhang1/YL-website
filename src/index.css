@@ -3,11 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@reference "../../node_modules/tailwindcss";
 
-.my-class {
-  @apply bg-gray-50;
-}
 
 
 /* :root {
