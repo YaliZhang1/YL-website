@@ -6,7 +6,7 @@ import ThemeToggle from "../components/ThemeToggle";
 
 export default function Index() {
   return (
-   <div className="min-h-screen bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+   <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white">
       <Layout>
         <main className="p-6">
           {/* 添加主题切换按钮 */}

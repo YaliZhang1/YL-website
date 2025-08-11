@@ -18,7 +18,7 @@ export default function App() {
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
           {/* 全局 Toaster: 放在路由外，确保在任意页面都能弹出 */}
-          <SonnerToaster position="top-right" />
+          <ThemedToaster />
 
           <BrowserRouter>
             <Routes>

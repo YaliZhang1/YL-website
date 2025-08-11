@@ -25,6 +25,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   });
 
   useEffect(() => {
+     console.log("theme changed:", theme);
     // 更新 HTML 元素的类
     const root = document.documentElement;
     if (theme === 'dark') {
