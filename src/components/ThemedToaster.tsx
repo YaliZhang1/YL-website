@@ -8,7 +8,7 @@ const ThemedToaster: React.FC = () => {
   return (
     <SonnerToaster
       position="top-right"
-      theme={theme} // 根据当前主题自动切换
+      theme={theme} // Automatically switch based on the current theme
       toastOptions={{
         style: {
           background: theme === "dark" ? "#374151" : "#ffffff",

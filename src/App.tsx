@@ -1,14 +1,11 @@
-import React from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Toaster as SonnerToaster } from "sonner";
 import TooltipProvider from "./components/ui/TooltipProvider";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import { ThemeProvider } from "./contexts/ThemeContext";
-
-import ThemedToaster from "./components/ThemedToaster"; // 导入新组件
+import ThemedToaster from "./components/ThemedToaster";
 
 const queryClient = new QueryClient();
 
@@ -17,7 +14,7 @@ export default function App() {
     <ThemeProvider>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
-          {/* 全局 Toaster: 放在路由外，确保在任意页面都能弹出 */}
+          {/* Global Toaster: Place it outside the router to ensure it can pop up on any page */}
           <ThemedToaster />
 
           <BrowserRouter>

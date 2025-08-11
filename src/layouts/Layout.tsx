@@ -1,5 +1,4 @@
-
-import React, { ReactNode } from "react";
+import React from "react";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -8,7 +7,6 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen transition-colors duration-200">
-     
       {children}
     </div>
   );
