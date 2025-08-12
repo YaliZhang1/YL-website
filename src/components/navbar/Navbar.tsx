@@ -71,6 +71,8 @@
 //     </nav>
 //   );
 // }
+
+
 import React, { useState } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 
@@ -113,143 +115,286 @@ const Navbar = () => {
   ];
 
   return (
-    <section className="py-4 border-b">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav className="flex items-center justify-between">
-          {/* Logo */}
-          <a
-            href="https://www.shadcnblocks.com"
-            className="flex items-center gap-2 hover:opacity-80 transition-opacity"
-          >
-            <img
-              src="https://shadcnblocks.com/images/block/logos/shadcnblockscom-icon.svg"
-              className="h-8 w-8"
-              alt="Shadcn UI Navbar"
-            />
-            <span className="text-lg font-semibold tracking-tight text-gray-900">
-              Shadcnblocks.com
-            </span>
-          </a>
+    <>
+      {/* 内联样式确保基本布局 */}
+      <style jsx>{`
+        .navbar-container {
+          padding: 16px 0;
+          border-bottom: 1px solid #e5e7eb;
+          width: 100%;
+        }
+        .navbar-content {
+          max-width: 1280px;
+          margin: 0 auto;
+          padding: 0 16px;
+        }
+        .navbar-flex {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          min-height: 60px;
+        }
+        .logo-section {
+          display: flex;
+          align-items: center;
+          flex-shrink: 0;
+        }
+        .nav-links {
+          display: none;
+          align-items: center;
+          gap: 24px;
+        }
+        .action-buttons {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          flex-shrink: 0;
+        }
+        .desktop-buttons {
+          display: none;
+          align-items: center;
+          gap: 16px;
+        }
+        .mobile-menu-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 8px;
+          border: 1px solid #d1d5db;
+          border-radius: 6px;
+          background: white;
+          cursor: pointer;
+        }
+        
+        /* 响应式 */
+        @media (min-width: 768px) {
+          .nav-links {
+            display: flex;
+          }
+          .desktop-buttons {
+            display: flex;
+          }
+          .mobile-menu-btn {
+            display: none;
+          }
+        }
+        
+        .btn-primary {
+          padding: 8px 16px;
+          background: black;
+          color: white;
+          border: none;
+          border-radius: 6px;
+          cursor: pointer;
+          font-size: 14px;
+          font-weight: 500;
+        }
+        .btn-outline {
+          padding: 8px 16px;
+          background: white;
+          color: #374151;
+          border: 1px solid #d1d5db;
+          border-radius: 6px;
+          cursor: pointer;
+          font-size: 14px;
+          font-weight: 500;
+        }
+        .nav-link {
+          padding: 8px 12px;
+          color: #374151;
+          text-decoration: none;
+          font-size: 14px;
+          font-weight: 500;
+        }
+        .nav-link:hover {
+          color: #111827;
+        }
+      `}</style>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex lg:items-center lg:space-x-8">
-            {/* Features Dropdown */}
-            <div className="relative">
-              <button
-                onClick={() => setIsFeaturesOpen(!isFeaturesOpen)}
-                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+      <section className="navbar-container">
+        <div className="navbar-content">
+          <nav className="navbar-flex">
+            {/* Logo */}
+            <div className="logo-section">
+              <a
+                href="https://www.shadcnblocks.com"
+                style={{ display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}
               >
-                Features
-                <ChevronDown className={`h-4 w-4 transition-transform ${isFeaturesOpen ? 'rotate-180' : ''}`} />
-              </button>
-              
-              {isFeaturesOpen && (
-                <div className="absolute top-full left-0 mt-2 w-96 bg-white rounded-lg shadow-lg border border-gray-200 p-3 z-50">
-                  <div className="grid grid-cols-2 gap-2">
-                    {features.map((feature, index) => (
-                      <a
-                        key={index}
-                        href={feature.href}
-                        className="block p-3 rounded-md hover:bg-gray-50 transition-colors"
-                      >
-                        <p className="font-semibold text-gray-900 mb-1">
-                          {feature.title}
-                        </p>
-                        <p className="text-sm text-gray-600">
-                          {feature.description}
-                        </p>
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              )}
+                <img
+                  src="https://shadcnblocks.com/images/block/logos/shadcnblockscom-icon.svg"
+                  style={{ height: '32px', width: '32px' }}
+                  alt="Shadcn UI Navbar"
+                />
+                <span style={{ fontSize: '18px', fontWeight: '600', color: '#111827' }}>
+                  Shadcnblocks.com
+                </span>
+              </a>
             </div>
 
-            <a href="#" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">
-              Products
-            </a>
-            <a href="#" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">
-              Resources
-            </a>
-            <a href="#" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">
-              Contact
-            </a>
-          </div>
+            {/* 中间导航 */}
+            <div className="nav-links">
+              {/* Features Dropdown */}
+              <div style={{ position: 'relative' }}>
+                <button
+                  onClick={() => setIsFeaturesOpen(!isFeaturesOpen)}
+                  className="nav-link"
+                  style={{ display: 'flex', alignItems: 'center', gap: '4px', border: 'none', background: 'none', cursor: 'pointer' }}
+                >
+                  Features
+                  <ChevronDown size={16} style={{ transform: isFeaturesOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }} />
+                </button>
+                
+                {isFeaturesOpen && (
+                  <div style={{
+                    position: 'absolute',
+                    top: '100%',
+                    left: '0',
+                    marginTop: '8px',
+                    width: '384px',
+                    background: 'white',
+                    borderRadius: '8px',
+                    boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+                    border: '1px solid #e5e7eb',
+                    padding: '12px',
+                    zIndex: 50
+                  }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
+                      {features.map((feature, index) => (
+                        <a
+                          key={index}
+                          href={feature.href}
+                          style={{
+                            display: 'block',
+                            padding: '12px',
+                            borderRadius: '6px',
+                            textDecoration: 'none',
+                            transition: 'background-color 0.2s'
+                          }}
+                          onMouseEnter={(e) => e.target.style.backgroundColor = '#f9fafb'}
+                          onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}
+                        >
+                          <p style={{ fontWeight: '600', color: '#111827', margin: '0 0 4px 0', fontSize: '14px' }}>
+                            {feature.title}
+                          </p>
+                          <p style={{ fontSize: '12px', color: '#6b7280', margin: '0' }}>
+                            {feature.description}
+                          </p>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
 
-          {/* Desktop Action Buttons */}
-          <div className="hidden lg:flex lg:items-center lg:gap-4">
-            <button className="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors">
-              Sign in
-            </button>
-            <button className="px-4 py-2 text-sm font-medium text-white bg-black rounded-md hover:bg-gray-800 transition-colors">
-              Start for free
-            </button>
-          </div>
+              <a href="#" className="nav-link">Products</a>
+              <a href="#" className="nav-link">Resources</a>
+              <a href="#" className="nav-link">Contact</a>
+            </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
-          >
-            {isMenuOpen ? (
-              <X className="h-4 w-4" />
-            ) : (
-              <Menu className="h-4 w-4" />
-            )}
-          </button>
-        </nav>
+            {/* 右侧按钮 */}
+            <div className="action-buttons">
+              {/* 桌面端按钮 */}
+              <div className="desktop-buttons">
+                <button className="btn-outline">Sign in</button>
+                <button className="btn-primary">Start for free</button>
+              </div>
 
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="lg:hidden fixed inset-0 z-50 bg-white">
-            <div className="p-4">
-              {/* Mobile Header */}
-              <div className="flex items-center justify-between mb-8">
+              {/* 移动端菜单按钮 */}
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="mobile-menu-btn"
+              >
+                {isMenuOpen ? <X size={16} /> : <Menu size={16} />}
+              </button>
+            </div>
+          </nav>
+
+          {/* 移动端菜单 */}
+          {isMenuOpen && (
+            <div style={{
+              position: 'fixed',
+              top: '0',
+              left: '0',
+              right: '0',
+              bottom: '0',
+              background: 'white',
+              zIndex: 50,
+              padding: '16px'
+            }}>
+              {/* 移动端头部 */}
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '32px' }}>
                 <a
                   href="https://www.shadcnblocks.com"
-                  className="flex items-center gap-2"
+                  style={{ display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}
                 >
                   <img
                     src="https://shadcnblocks.com/images/block/logos/shadcnblockscom-icon.svg"
-                    className="h-8 w-8"
+                    style={{ height: '32px', width: '32px' }}
                     alt="Shadcnblocks"
                   />
-                  <span className="text-lg font-semibold tracking-tight text-gray-900">
+                  <span style={{ fontSize: '18px', fontWeight: '600', color: '#111827' }}>
                     Shadcnblocks.com
                   </span>
                 </a>
                 <button
                   onClick={() => setIsMenuOpen(false)}
-                  className="p-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
+                  style={{
+                    padding: '8px',
+                    border: '1px solid #d1d5db',
+                    borderRadius: '6px',
+                    background: 'white',
+                    cursor: 'pointer'
+                  }}
                 >
-                  <X className="h-4 w-4" />
+                  <X size={16} />
                 </button>
               </div>
 
-              {/* Mobile Navigation */}
-              <div className="space-y-4">
-                {/* Features Accordion */}
-                <div className="border-b border-gray-200 pb-4">
+              {/* 移动端导航 */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                {/* Features 手风琴 */}
+                <div style={{ borderBottom: '1px solid #e5e7eb', paddingBottom: '16px' }}>
                   <button
                     onClick={() => setIsMobileFeaturesOpen(!isMobileFeaturesOpen)}
-                    className="flex items-center justify-between w-full text-left text-base font-medium text-gray-900 hover:text-gray-700 transition-colors"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      width: '100%',
+                      textAlign: 'left',
+                      fontSize: '16px',
+                      fontWeight: '500',
+                      color: '#111827',
+                      background: 'none',
+                      border: 'none',
+                      cursor: 'pointer'
+                    }}
                   >
                     Features
-                    <ChevronDown className={`h-4 w-4 transition-transform ${isMobileFeaturesOpen ? 'rotate-180' : ''}`} />
+                    <ChevronDown size={16} style={{ transform: isMobileFeaturesOpen ? 'rotate(180deg)' : 'rotate(0deg)' }} />
                   </button>
                   
                   {isMobileFeaturesOpen && (
-                    <div className="mt-4 grid gap-2 md:grid-cols-2">
+                    <div style={{ marginTop: '16px', display: 'grid', gap: '8px', gridTemplateColumns: '1fr 1fr' }}>
                       {features.map((feature, index) => (
                         <a
                           key={index}
                           href={feature.href}
-                          className="block p-3 rounded-md hover:bg-gray-50 transition-colors"
+                          style={{
+                            display: 'block',
+                            padding: '12px',
+                            borderRadius: '6px',
+                            textDecoration: 'none',
+                            transition: 'background-color 0.2s'
+                          }}
+                          onMouseEnter={(e) => e.target.style.backgroundColor = '#f9fafb'}
+                          onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}
                         >
-                          <p className="font-semibold text-gray-900 mb-1">
+                          <p style={{ fontWeight: '600', color: '#111827', margin: '0 0 4px 0', fontSize: '14px' }}>
                             {feature.title}
                           </p>
-                          <p className="text-sm text-gray-600">
+                          <p style={{ fontSize: '12px', color: '#6b7280', margin: '0' }}>
                             {feature.description}
                           </p>
                         </a>
@@ -258,44 +403,71 @@ const Navbar = () => {
                   )}
                 </div>
 
-                <div className="space-y-4">
-                  <a href="#" className="block text-base font-medium text-gray-900 hover:text-gray-700 transition-colors">
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  <a href="#" style={{ fontSize: '16px', fontWeight: '500', color: '#111827', textDecoration: 'none' }}>
                     Products
                   </a>
-                  <a href="#" className="block text-base font-medium text-gray-900 hover:text-gray-700 transition-colors">
+                  <a href="#" style={{ fontSize: '16px', fontWeight: '500', color: '#111827', textDecoration: 'none' }}>
                     Resources
                   </a>
-                  <a href="#" className="block text-base font-medium text-gray-900 hover:text-gray-700 transition-colors">
+                  <a href="#" style={{ fontSize: '16px', fontWeight: '500', color: '#111827', textDecoration: 'none' }}>
                     Contact
                   </a>
                 </div>
 
-                {/* Mobile Action Buttons */}
-                <div className="mt-8 space-y-4">
-                  <button className="w-full px-4 py-3 text-base font-medium text-gray-700 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors">
+                {/* 移动端按钮 */}
+                <div style={{ marginTop: '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  <button style={{
+                    width: '100%',
+                    padding: '12px 16px',
+                    fontSize: '16px',
+                    fontWeight: '500',
+                    color: '#374151',
+                    background: 'white',
+                    border: '1px solid #d1d5db',
+                    borderRadius: '6px',
+                    cursor: 'pointer'
+                  }}>
                     Sign in
                   </button>
-                  <button className="w-full px-4 py-3 text-base font-medium text-white bg-black rounded-md hover:bg-gray-800 transition-colors">
+                  <button style={{
+                    width: '100%',
+                    padding: '12px 16px',
+                    fontSize: '16px',
+                    fontWeight: '500',
+                    color: 'white',
+                    background: 'black',
+                    border: 'none',
+                    borderRadius: '6px',
+                    cursor: 'pointer'
+                  }}>
                     Start for free
                   </button>
                 </div>
               </div>
             </div>
-          </div>
-        )}
-      </div>
+          )}
+        </div>
 
-      {/* Overlay to close dropdowns when clicking outside */}
-      {(isFeaturesOpen || isMenuOpen) && (
-        <div 
-          className="fixed inset-0 z-40" 
-          onClick={() => {
-            setIsFeaturesOpen(false);
-            setIsMenuOpen(false);
-          }}
-        />
-      )}
-    </section>
+        {/* 点击外部关闭下拉菜单 */}
+        {(isFeaturesOpen || isMenuOpen) && (
+          <div 
+            style={{
+              position: 'fixed',
+              top: '0',
+              left: '0',
+              right: '0',
+              bottom: '0',
+              zIndex: 40
+            }}
+            onClick={() => {
+              setIsFeaturesOpen(false);
+              setIsMenuOpen(false);
+            }}
+          />
+        )}
+      </section>
+    </>
   );
 };
 
