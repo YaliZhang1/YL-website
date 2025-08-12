@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "@/components/navbar/Navbar";
 
+
 import Tooltip from "@/components/ui/Tooltip";
 import { toast } from "sonner";
 import Layout from "@/layouts/Layout";
@@ -11,7 +12,7 @@ export default function Index() {
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white">
       <Layout>
         <Navbar />
-
+      
         <main className="p-6">
           {/* 添加主题切换按钮 */}
           <div className="flex justify-between items-center mb-6">
