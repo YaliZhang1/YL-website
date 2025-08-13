@@ -70,6 +70,10 @@ export default tseslint.config([
 
 ---
 
+## 安装依赖
+npm install react-router-dom
+npm install --save-dev @types/react-router-dom
+
 ## 额外说明
 
 - 我把最小可运行的功能放在模板里：React Query、Sonner（toast）、简单 Tooltip Provider。

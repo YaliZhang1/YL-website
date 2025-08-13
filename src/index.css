@@ -2,3 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .btn-light-small {
+    @apply flex justify-center w-24 font-medium text-gray-700 border border-gray-300 rounded-md hover:bg-gray-200 transition-colors;
+    padding: 8px 14px;
+    font-size: 16px;
+  }
+
+  .btn-dark-small {
+    @apply flex justify-center w-24 font-medium text-white bg-black rounded-md hover:bg-gray-700 transition-colors;
+    padding: 8px 14px;
+    font-size: 16px;
+  }
+
+  .btn-light-big {
+    @apply px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-md hover:bg-gray-200 transition-colors;
+  }
+
+  .btn-dark-big {
+    @apply px-4 py-2 text-sm font-medium text-white bg-black rounded-md hover:bg-gray-700 transition-colors;
+  }
+}

@@ -1,26 +1,35 @@
+
+
+// export default Navbar;
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 
-// 备用样式常量 - 可以折叠隐藏
-// const FALLBACK_STYLES = `*, ::before, ::after { box-sizing: border-box; border-width: 0; border-style: solid; } .flex { display: flex !important; } .items-center { align-items: center !important; } .justify-between { justify-content: space-between !important; } .hidden { display: none !important; } .block { display: block !important; } .w-full { width: 100% !important; } .h-8 { height: 2rem !important; } .w-8 { width: 2rem !important; } .gap-2 { gap: 0.5rem !important; } .gap-4 { gap: 1rem !important; } .gap-6 { gap: 1.5rem !important; } .px-4 { padding-left: 1rem !important; padding-right: 1rem !important; } .py-4 { padding-top: 1rem !important; padding-bottom: 1rem !important; } .px-3 { padding-left: 0.75rem !important; padding-right: 0.75rem !important; } .py-2 { padding-top: 0.5rem !important; padding-bottom: 0.5rem !important; } .text-lg { font-size: 1.125rem !important; } .text-sm { font-size: 0.875rem !important; } .font-semibold { font-weight: 600 !important; } .font-medium { font-weight: 500 !important; } .text-gray-900 { color: rgb(17 24 39) !important; } .text-gray-700 { color: rgb(55 65 81) !important; } .text-gray-600 { color: rgb(75 85 99) !important; } .text-white { color: rgb(255 255 255) !important; } .bg-white { background-color: rgb(255 255 255) !important; } .bg-black { background-color: rgb(0 0 0) !important; } .bg-gray-50 { background-color: rgb(249 250 251) !important; } .border { border-width: 1px !important; } .border-b { border-bottom-width: 1px !important; } .border-gray-200 { border-color: rgb(229 231 235) !important; } .border-gray-300 { border-color: rgb(209 213 219) !important; } .rounded-md { border-radius: 0.375rem !important; } .rounded-lg { border-radius: 0.5rem !important; } .shadow-lg { box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1) !important; } .max-w-7xl { max-width: 80rem !important; } .mx-auto { margin-left: auto !important; margin-right: auto !important; } .relative { position: relative !important; } .absolute { position: absolute !important; } .fixed { position: fixed !important; } .inset-0 { top: 0 !important; right: 0 !important; bottom: 0 !important; left: 0 !important; } .top-full { top: 100% !important; } .left-0 { left: 0 !important; } .mt-2 { margin-top: 0.5rem !important; } .mb-1 { margin-bottom: 0.25rem !important; } .mb-8 { margin-bottom: 2rem !important; } .mt-4 { margin-top: 1rem !important; } .mt-8 { margin-top: 2rem !important; } .grid { display: grid !important; } .grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } .space-y-4 > * + * { margin-top: 1rem !important; } .flex-col { flex-direction: column !important; } .flex-shrink-0 { flex-shrink: 0 !important; } .z-40 { z-index: 40 !important; } .z-50 { z-index: 50 !important; } .transition-colors { transition-property: color, background-color, border-color, text-decoration-color, fill, stroke !important; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important; transition-duration: 150ms !important; } .transition-transform { transition-property: transform !important; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important; transition-duration: 150ms !important; } .rotate-180 { transform: rotate(180deg) !important; } .cursor-pointer { cursor: pointer !important; } .hover\\:opacity-80:hover { opacity: 0.8 !important; } .hover\\:text-gray-900:hover { color: rgb(17 24 39) !important; } .hover\\:bg-gray-50:hover { background-color: rgb(249 250 251) !important; } .hover\\:bg-gray-800:hover { background-color: rgb(31 41 55) !important; } .hover\\:text-gray-700:hover { color: rgb(55 65 81) !important; } @media (min-width: 768px) { .md\\:hidden { display: none !important; } .md\\:flex { display: flex !important; } .md\\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } }`;
+// 定义 DropDownMenu 类型
+interface DropDownMenu {
+  title: string;
+  description: string;
+  href: string;
+}
 
-const NavbarClean = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isFeaturesOpen, setIsFeaturesOpen] = useState(false);
-  const [isMobileFeaturesOpen, setIsMobileFeaturesOpen] = useState(false);
+// 注意：如果使用本地资源，建议将 logo 放入 /public 或通过 import 引入
+// 示例：import logo from './assets/shadcnblockscom-icon.svg';
 
-  const features = [
+const Navbar: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [isDropDownMenuOpen, setIsDropDownMenuOpen] = useState<boolean>(false);
+  const [isMobileDropDownMenuOpen, setIsMobileDropDownMenuOpen] = useState<boolean>(false);
+
+  const dropDownMenu: DropDownMenu[] = [
     {
-      title: "Intelligent Robot System",
-      description:
-        "Self-service ordering, personalized recommendations, fast payment.",
-      href: "#",
+      title: "智能机器人系统",
+      description: "自助点餐、个性化推荐、快速支付。",
+      href: "/intelligent-robot-system", // 如果需要，更新为有效路由
     },
-
     {
-      title: "Smart elderly care system",
-      description: "Health monitoring, safety, social engagement.",
-      href: "#",
+      title: "智能养老系统",
+      description: "健康监测、安全保障、社交互动。",
+      href: "/smart-elderly-care", // 如果需要，更新为有效路由
     },
   ];
 
@@ -34,8 +43,8 @@ const NavbarClean = () => {
           <nav className="flex items-center justify-between w-full">
             {/* Logo */}
             <div className="flex items-center flex-shrink-0">
-              <a
-                href="https://www.shadcnblocks.com"
+              <Link
+                to="/"
                 className="flex items-center gap-2 hover:opacity-80 transition-colors"
               >
                 <img
@@ -43,41 +52,41 @@ const NavbarClean = () => {
                   className="h-8 w-8"
                   alt="Shadcn UI Navbar"
                 />
-              </a>
+              </Link>
             </div>
 
             {/* 导航菜单 */}
             <div className="hidden md:flex items-center gap-6">
-               <a
-                href="#"
+              <Link
+                to="/"
                 className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
               >
-                Home
-              </a>
+                首页
+              </Link>
               <div className="relative">
                 <button
-                  onClick={() => setIsFeaturesOpen(!isFeaturesOpen)}
+                  onClick={() => setIsDropDownMenuOpen(!isDropDownMenuOpen)}
                   className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
                 >
-                  Software Products
+                  软件产品
                   <ChevronDown
                     size={16}
                     className={`transition-transform ${
-                      isFeaturesOpen ? "rotate-180" : ""
+                      isDropDownMenuOpen ? "rotate-180" : ""
                     }`}
                   />
                 </button>
 
-                {isFeaturesOpen && (
+                {isDropDownMenuOpen && (
                   <div
                     className="absolute top-full left-0 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 z-50"
                     style={{ width: "384px", padding: "12px" }}
                   >
                     <div className="grid grid-cols-2" style={{ gap: "8px" }}>
-                      {features.map((feature, index) => (
-                        <a
+                      {dropDownMenu.map((feature, index) => (
+                        <Link
                           key={index}
-                          href={feature.href}
+                          to={feature.href}
                           className="block rounded-md hover:bg-gray-50 transition-colors"
                           style={{ padding: "12px" }}
                         >
@@ -87,41 +96,40 @@ const NavbarClean = () => {
                           <p className="text-sm text-gray-600">
                             {feature.description}
                           </p>
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   </div>
                 )}
               </div>
-             
-              <a
-                href="#"
+              <Link
+                to="/ourServices"
                 className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
               >
-                Our Services
-              </a>
-              <a
-                href="#"
+                我们的服务
+              </Link>
+              <Link
+                to="/about"
                 className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
               >
-                About Us
-              </a>
-              <a
-                href="#"
+                关于我们
+              </Link>
+              <Link
+                to="/contact"
                 className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
               >
-                Contact
-              </a>
+                联系我们
+              </Link>
             </div>
 
             {/* 右侧按钮 */}
             <div className="flex items-center gap-4 flex-shrink-0">
               <div className="hidden md:flex items-center gap-4">
                 <button className="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors">
-                  Sign in
+                  登录
                 </button>
                 <button className="px-4 py-2 text-sm font-medium text-white bg-black rounded-md hover:bg-gray-800 transition-colors">
-                  Start for free
+                  免费开始
                 </button>
               </div>
 
@@ -142,8 +150,8 @@ const NavbarClean = () => {
               style={{ padding: "16px" }}
             >
               <div className="flex items-center justify-between mb-8">
-                <a
-                  href="https://www.shadcnblocks.com"
+                <Link
+                  to="/"
                   className="flex items-center gap-2"
                 >
                   <img
@@ -154,7 +162,7 @@ const NavbarClean = () => {
                   <span className="text-lg font-semibold text-gray-900">
                     Shadcnblocks.com
                   </span>
-                </a>
+                </Link>
                 <button
                   onClick={() => setIsMenuOpen(false)}
                   className="border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
@@ -171,29 +179,29 @@ const NavbarClean = () => {
                 >
                   <button
                     onClick={() =>
-                      setIsMobileFeaturesOpen(!isMobileFeaturesOpen)
+                      setIsMobileDropDownMenuOpen(!isMobileDropDownMenuOpen)
                     }
                     className="flex items-center justify-between w-full font-medium text-gray-900 hover:text-gray-700 transition-colors"
                     style={{ textAlign: "left", fontSize: "16px" }}
                   >
-                    Software Products
+                    软件产品
                     <ChevronDown
                       size={16}
                       className={`transition-transform ${
-                        isMobileFeaturesOpen ? "rotate-180" : ""
+                        isMobileDropDownMenuOpen ? "rotate-180" : ""
                       }`}
                     />
                   </button>
 
-                  {isMobileFeaturesOpen && (
+                  {isMobileDropDownMenuOpen && (
                     <div
                       className="mt-4 grid md:grid-cols-2"
                       style={{ gap: "8px" }}
                     >
-                      {features.map((feature, index) => (
-                        <a
+                      {dropDownMenu.map((feature, index) => (
+                        <Link
                           key={index}
-                          href={feature.href}
+                          to={feature.href}
                           className="block rounded-md hover:bg-gray-50 transition-colors"
                           style={{ padding: "12px" }}
                         >
@@ -203,35 +211,34 @@ const NavbarClean = () => {
                           <p className="text-sm text-gray-600">
                             {feature.description}
                           </p>
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   )}
                 </div>
 
                 <div className="space-y-4">
-               
-                  <a
-                    href="#"
+                  <Link
+                    to="/ourServices"
                     className="block font-medium text-gray-900 hover:text-gray-700 transition-colors"
                     style={{ fontSize: "16px" }}
                   >
-                    Our Services
-                  </a>
-                  <a
-                    href="#"
+                    我们的服务
+                  </Link>
+                  <Link
+                    to="/about"
                     className="block font-medium text-gray-900 hover:text-gray-700 transition-colors"
                     style={{ fontSize: "16px" }}
                   >
-                    About Us
-                  </a>
-                  <a
-                    href="#"
+                    关于我们
+                  </Link>
+                  <Link
+                    to="/contact"
                     className="block font-medium text-gray-900 hover:text-gray-700 transition-colors"
                     style={{ fontSize: "16px" }}
                   >
-                    Contact
-                  </a>
+                    联系我们
+                  </Link>
                 </div>
 
                 <div className="mt-8 space-y-4">
@@ -239,13 +246,13 @@ const NavbarClean = () => {
                     className="w-full font-medium text-gray-700 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
                     style={{ padding: "12px 16px", fontSize: "16px" }}
                   >
-                    Sign in
+                    登录
                   </button>
                   <button
                     className="w-full font-medium text-white bg-black rounded-md hover:bg-gray-800 transition-colors"
                     style={{ padding: "12px 16px", fontSize: "16px" }}
                   >
-                    Start for free
+                    免费开始
                   </button>
                 </div>
               </div>
@@ -254,11 +261,11 @@ const NavbarClean = () => {
         </div>
 
         {/* 遮罩层 */}
-        {(isFeaturesOpen || isMenuOpen) && (
+        {(isDropDownMenuOpen || isMenuOpen) && (
           <div
             className="fixed inset-0 z-40"
             onClick={() => {
-              setIsFeaturesOpen(false);
+              setIsDropDownMenuOpen(false);
               setIsMenuOpen(false);
             }}
           />
@@ -268,4 +275,4 @@ const NavbarClean = () => {
   );
 };
 
-export default NavbarClean;
+export default Navbar;
