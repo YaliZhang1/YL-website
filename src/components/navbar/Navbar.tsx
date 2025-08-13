@@ -1,6 +1,3 @@
-
-
-// export default Navbar;
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -18,17 +15,19 @@ interface DropDownMenu {
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isDropDownMenuOpen, setIsDropDownMenuOpen] = useState<boolean>(false);
-  const [isMobileDropDownMenuOpen, setIsMobileDropDownMenuOpen] = useState<boolean>(false);
+  const [isMobileDropDownMenuOpen, setIsMobileDropDownMenuOpen] =
+    useState<boolean>(false);
 
   const dropDownMenu: DropDownMenu[] = [
     {
-      title: "智能机器人系统",
-      description: "自助点餐、个性化推荐、快速支付。",
+      title: "Intelligent Robot System",
+      description:
+        "Self-service ordering, personalized recommendations, fast payment.",
       href: "/intelligent-robot-system", // 如果需要，更新为有效路由
     },
     {
-      title: "智能养老系统",
-      description: "健康监测、安全保障、社交互动。",
+      title: "Smart elderly care system",
+      description: "Health monitoring, safety, social engagement.",
       href: "/smart-elderly-care", // 如果需要，更新为有效路由
     },
   ];
@@ -55,20 +54,20 @@ const Navbar: React.FC = () => {
               </Link>
             </div>
 
-            {/* 导航菜单 */}
+            {/* Navigation Menu */}
             <div className="hidden md:flex items-center gap-6">
               <Link
                 to="/"
                 className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
               >
-                首页
+                Home
               </Link>
               <div className="relative">
                 <button
                   onClick={() => setIsDropDownMenuOpen(!isDropDownMenuOpen)}
                   className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
                 >
-                  软件产品
+                  Software Products
                   <ChevronDown
                     size={16}
                     className={`transition-transform ${
@@ -106,31 +105,25 @@ const Navbar: React.FC = () => {
                 to="/ourServices"
                 className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
               >
-                我们的服务
+                Our Services
               </Link>
               <Link
                 to="/about"
                 className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
               >
-                关于我们
-              </Link>
-              <Link
-                to="/contact"
-                className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
-              >
-                联系我们
+                About Us
               </Link>
             </div>
 
-            {/* 右侧按钮 */}
+            {/* Right Buttons */}
             <div className="flex items-center gap-4 flex-shrink-0">
               <div className="hidden md:flex items-center gap-4">
-                <button className="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors">
-                  登录
-                </button>
-                <button className="px-4 py-2 text-sm font-medium text-white bg-black rounded-md hover:bg-gray-800 transition-colors">
-                  免费开始
-                </button>
+                <Link to="/signin" className="btn-light-big">
+                  Login
+                </Link>
+                <Link to="/contact" className="btn-dark-big">
+                  Contact
+                </Link>
               </div>
 
               <button
@@ -143,26 +136,29 @@ const Navbar: React.FC = () => {
             </div>
           </nav>
 
-          {/* 移动端菜单 */}
+          {/* Mobile Menu */}
           {isMenuOpen && (
             <div
               className="md:hidden fixed inset-0 bg-white z-50"
               style={{ padding: "16px" }}
             >
               <div className="flex items-center justify-between mb-8">
-                <Link
-                  to="/"
-                  className="flex items-center gap-2"
-                >
-                  <img
-                    src="https://shadcnblocks.com/images/block/logos/shadcnblockscom-icon.svg"
-                    className="h-8 w-8"
-                    alt="Shadcnblocks"
-                  />
-                  <span className="text-lg font-semibold text-gray-900">
-                    Shadcnblocks.com
-                  </span>
-                </Link>
+                <div className="flex flex-col gap-4">
+                  <Link to="/" className="flex items-center gap-2">
+                    <img
+                      src="https://shadcnblocks.com/images/block/logos/shadcnblockscom-icon.svg"
+                      className="h-8 w-8"
+                      alt="Shadcnblocks"
+                    />
+                  </Link>
+                  <Link
+                    to="/"
+                    className="block font-medium text-gray-900 hover:text-gray-700 transition-colors
+              "
+                  >
+                    Home
+                  </Link>
+                </div>
                 <button
                   onClick={() => setIsMenuOpen(false)}
                   className="border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
@@ -184,7 +180,7 @@ const Navbar: React.FC = () => {
                     className="flex items-center justify-between w-full font-medium text-gray-900 hover:text-gray-700 transition-colors"
                     style={{ textAlign: "left", fontSize: "16px" }}
                   >
-                    软件产品
+                    Software Products
                     <ChevronDown
                       size={16}
                       className={`transition-transform ${
@@ -223,44 +219,31 @@ const Navbar: React.FC = () => {
                     className="block font-medium text-gray-900 hover:text-gray-700 transition-colors"
                     style={{ fontSize: "16px" }}
                   >
-                    我们的服务
+                    Our Services
                   </Link>
                   <Link
                     to="/about"
                     className="block font-medium text-gray-900 hover:text-gray-700 transition-colors"
                     style={{ fontSize: "16px" }}
                   >
-                    关于我们
-                  </Link>
-                  <Link
-                    to="/contact"
-                    className="block font-medium text-gray-900 hover:text-gray-700 transition-colors"
-                    style={{ fontSize: "16px" }}
-                  >
-                    联系我们
+                    About Us
                   </Link>
                 </div>
 
-                <div className="mt-8 space-y-4">
-                  <button
-                    className="w-full font-medium text-gray-700 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
-                    style={{ padding: "12px 16px", fontSize: "16px" }}
-                  >
-                    登录
-                  </button>
-                  <button
-                    className="w-full font-medium text-white bg-black rounded-md hover:bg-gray-800 transition-colors"
-                    style={{ padding: "12px 16px", fontSize: "16px" }}
-                  >
-                    免费开始
-                  </button>
+                <div className=" space-y-4 flex flex-col ">
+                  <Link to="/signin" className="btn-light-small">
+                    Login
+                  </Link>
+                  <Link to="/contact" className="btn-dark-small">
+                    Contact
+                  </Link>
                 </div>
               </div>
             </div>
           )}
         </div>
 
-        {/* 遮罩层 */}
+        {/* Overlay */}
         {(isDropDownMenuOpen || isMenuOpen) && (
           <div
             className="fixed inset-0 z-40"
