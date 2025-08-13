@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import TooltipProvider from "./components/ui/TooltipProvider";
 import Index from "./pages/Index";
 import About from "./pages/About";
+import OurServices from "./pages/OurServices";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import ThemedToaster from "./components/ThemedToaster";
@@ -21,6 +23,8 @@ export default function App() {
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<About />} />
+              <Route path="/ourServices" element={<OurServices />} />
+              <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
