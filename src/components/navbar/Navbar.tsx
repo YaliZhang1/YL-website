@@ -23,12 +23,12 @@ const Navbar: React.FC = () => {
       title: "Intelligent Robot System",
       description:
         "Self-service ordering, personalized recommendations, fast payment.",
-      href: "/intelligent-robot-system", // 如果需要，更新为有效路由
+      href: "/intelligent-robot-system", 
     },
     {
       title: "Smart elderly care system",
       description: "Health monitoring, safety, social engagement.",
-      href: "/smart-elderly-care", // 如果需要，更新为有效路由
+      href: "/smart-elderly-care", 
     },
   ];
 
@@ -58,18 +58,18 @@ const Navbar: React.FC = () => {
             <div className="hidden md:flex items-center gap-6">
               <Link
                 to="/"
-                className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+                className="navbar-item"
               >
                 Home
               </Link>
               <div className="relative">
                 <button
                   onClick={() => setIsDropDownMenuOpen(!isDropDownMenuOpen)}
-                  className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+                  className="flex items-center gap-1 navbar-item"
                 >
                   Software Products
                   <ChevronDown
-                    size={16}
+                    size={18}
                     className={`transition-transform ${
                       isDropDownMenuOpen ? "rotate-180" : ""
                     }`}
@@ -103,13 +103,13 @@ const Navbar: React.FC = () => {
               </div>
               <Link
                 to="/ourServices"
-                className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+                className="navbar-item"
               >
                 Our Services
               </Link>
               <Link
                 to="/about"
-                className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+                className="navbar-item"
               >
                 About Us
               </Link>

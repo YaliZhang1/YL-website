@@ -1,6 +1,4 @@
-
-
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   darkMode: "class",
@@ -14,14 +12,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'background-light': '#ffffff',
-        'background-dark': '#1a1a1a',
-        'text-light': '#333333',
-        'text-dark': '#ffffff',
-        'light-primary': '#3b82f6',
-        'dark-primary': '#60a5fa',
-        'light-secondaryText': '#666666',
-        'dark-secondaryText': '#cccccc',
+        brand: {
+          text: "var(--color-text)",
+          hover: "var(--color-hover)",
+          secondary: "var(--color-secondary)",
+          bg: "var(--color-bg)",
+          primary: "var(--color-primary)",
+          primaryHover: "var(--color-primary-hover)",
+        },
+      },
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+        heading: ["Poppins", "sans-serif"],
       },
       keyframes: {
         "accordion-down": {
@@ -40,6 +42,6 @@ const config: Config = {
     },
   },
   plugins: [],
-}
+};
 
-export default config
+export default config;

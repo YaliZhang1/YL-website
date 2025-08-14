@@ -13,8 +13,8 @@ export default function Index() {
 
         <main className="p-6">
           {/* 添加主题切换按钮 */}
-          <div className="flex justify-between items-center mb-6">
-            <h1 className="text-3xl font-bold text-light-primary dark:text-dark-primary">
+          <div className="  text-brand-text">
+            <h1 className=" font-heading hover  hover:text-brand-hover  ">
               IT 科技公司
             </h1>{" "}
             <div className="bg-red-800  p-4 rounded-lg">

@@ -3,23 +3,24 @@
 @tailwind utilities;
 
 @layer components {
+  .navbar-item {
+    @apply px-3 py-2 text-lg font-medium text-gray-600 dark:text-white hover:text-gray-950 dark:hover:text-gray-400   transition-colors;
+  }
   .btn-light-small {
-    @apply flex justify-center w-24 font-medium text-gray-700 border border-gray-300 rounded-md hover:bg-gray-200 transition-colors;
+    @apply flex justify-center text-lg w-24 font-medium text-gray-700 dark:text-gray-950   border border-gray-300 rounded-md hover:bg-gray-200 dark:hover:text-black transition-colors;
     padding: 8px 14px;
     font-size: 16px;
+  }
+  .btn-light-big {
+    @apply text-lg px-4 py-2  font-medium text-gray-700 dark:text-white  border border-gray-300 rounded-md hover:bg-gray-200 dark:hover:text-black transition-colors;
   }
 
   .btn-dark-small {
-    @apply flex justify-center w-24 font-medium text-white bg-black rounded-md hover:bg-gray-700 transition-colors;
+    @apply text-lg flex justify-center w-24 font-medium text-white bg-black rounded-md hover:bg-gray-700 transition-colors;
     padding: 8px 14px;
     font-size: 16px;
   }
-
-  .btn-light-big {
-    @apply px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-md hover:bg-gray-200 transition-colors;
-  }
-
   .btn-dark-big {
-    @apply px-4 py-2 text-sm font-medium text-white bg-black rounded-md hover:bg-gray-700 transition-colors;
+    @apply text-lg px-4 py-2  font-medium text-white bg-black dark:bg-white dark:text-black rounded-md hover:bg-gray-700 dark:hover:bg-gray-950 dark:hover:text-white transition-colors;
   }
 }
