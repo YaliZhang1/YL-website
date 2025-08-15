@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-text: #030712;
+  --color-hover: #718096;
+  --color-secondary: #64748b;
+  --color-bg: #f8fafc;
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+}
+
+.dark {
+  --color-text: #f1f5f9;
+  --color-hover: #cbd5e1;
+  --color-secondary: #94a3b8;
+  --color-bg: #0f172a;
+  --color-primary: #3b82f6;
+  --color-primary-hover: #60a5fa;
+}
 @layer components {
   .navbar-item {
     @apply px-3 py-2 text-lg font-medium text-gray-600 dark:text-white hover:text-gray-950 dark:hover:text-gray-400   transition-colors;
