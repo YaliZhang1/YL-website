@@ -14,11 +14,12 @@ const config: Config = {
       colors: {
         brand: {
           text: "var(--color-text)",
-          hover: "var(--color-hover)",
+          textHover: "var(--color-text-hover)",
           secondary: "var(--color-secondary)",
           bg: "var(--color-bg)",
-          primary: "var(--color-primary)",
-          primaryHover: "var(--color-primary-hover)",
+          bgSecondary: "var(--color-bg-secondary)",
+          card: "var(--color-card)",
+          cardHover: "var(--color-card-hover)",
         },
       },
       fontFamily: {

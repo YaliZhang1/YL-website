@@ -7,14 +7,14 @@ import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Index() {
   return (
-    <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white">
+    <div className="min-h-screen bg-brand-bg text-brand-text">
       <Layout>
         <Navbar />
 
         <main className="p-6">
           {/* 添加主题切换按钮 */}
           <div className="  text-brand-text">
-            <h1 className="font-heading hover:text-brand-hover">标题</h1>
+            <h1 className="font-heading hover:text-brand-textHover">标题</h1>
             <p className="text-brand-secondary mt-2">这是一个段落</p>
             <button className="bg-brand-primary hover:bg-brand-primaryHover text-white px-4 py-2 rounded-lg mt-4">
               按钮

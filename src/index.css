@@ -4,20 +4,22 @@
 
 :root {
   --color-text: #030712;
-  --color-hover: #718096;
+  --color-text-hover: #718096;
   --color-secondary: #64748b;
-  --color-bg: #f8fafc;
-  --color-primary: #2563eb;
-  --color-primary-hover: #1d4ed8;
+  --color-bg: #FFFFFF;
+  --color-bg-secondary: #F5F5F5;
+  --color-card: #F4F4F5;
+  --color-card-hover: #FFFFFF;
 }
 
 .dark {
   --color-text: #f1f5f9;
-  --color-hover: #cbd5e1;
+  --color-text-hover: #cbd5e1;
   --color-secondary: #94a3b8;
-  --color-bg: #0f172a;
-  --color-primary: #3b82f6;
-  --color-primary-hover: #60a5fa;
+  --color-bg: #000;
+  --color-bg-secondary: #17171C;
+  --color-card: #18181B;
+  --color-card-hover: #22222A;
 }
 @layer components {
   .navbar-item {

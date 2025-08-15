@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
+import ThemeToggle from "@/components/ThemeToggle";
 
 // 定义 DropDownMenu 类型
 interface DropDownMenu {
@@ -23,12 +24,12 @@ const Navbar: React.FC = () => {
       title: "Intelligent Robot System",
       description:
         "Self-service ordering, personalized recommendations, fast payment.",
-      href: "/intelligent-robot-system", 
+      href: "/intelligent-robot-system",
     },
     {
       title: "Smart elderly care system",
       description: "Health monitoring, safety, social engagement.",
-      href: "/smart-elderly-care", 
+      href: "/smart-elderly-care",
     },
   ];
 
@@ -56,10 +57,7 @@ const Navbar: React.FC = () => {
 
             {/* Navigation Menu */}
             <div className="hidden md:flex items-center gap-6">
-              <Link
-                to="/"
-                className="navbar-item"
-              >
+              <Link to="/" className="navbar-item">
                 Home
               </Link>
               <div className="relative">
@@ -101,23 +99,18 @@ const Navbar: React.FC = () => {
                   </div>
                 )}
               </div>
-              <Link
-                to="/ourServices"
-                className="navbar-item"
-              >
+              <Link to="/ourServices" className="navbar-item">
                 Our Services
               </Link>
-              <Link
-                to="/about"
-                className="navbar-item"
-              >
+              <Link to="/about" className="navbar-item">
                 About Us
               </Link>
             </div>
-
+           
             {/* Right Buttons */}
             <div className="flex items-center gap-4 flex-shrink-0">
               <div className="hidden md:flex items-center gap-4">
+                 <ThemeToggle />
                 <Link to="/signin" className="btn-light-big">
                   Login
                 </Link>
@@ -231,6 +224,7 @@ const Navbar: React.FC = () => {
                 </div>
 
                 <div className=" space-y-4 flex flex-col ">
+                  <ThemeToggle />
                   <Link to="/signin" className="btn-light-small">
                     Login
                   </Link>
