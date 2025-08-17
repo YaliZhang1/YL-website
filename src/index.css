@@ -1,50 +1,3 @@
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --color-text: #030712;
-  --color-text-hover: #718096;
-  --color-secondary: #64748b;
-  --color-bg: #FFFFFF;
-  --color-bg-secondary: #F5F5F5;
-  --color-card: #F4F4F5;
-  --color-card-hover: #FFFFFF;
-}
-
-.dark {
-  --color-text: #f1f5f9;
-  --color-text-hover: #cbd5e1;
-  --color-secondary: #94a3b8;
-  --color-bg: #000;
-  --color-bg-secondary: #17171C;
-  --color-card: #18181B;
-  --color-card-hover: #22222A;
-}
-@layer components {
-  .navbar-item {
-    @apply px-3 py-2 text-lg font-medium text-gray-600 dark:text-white hover:text-gray-950 dark:hover:text-gray-400   transition-colors;
-  }
-  .btn-light-small {
-    @apply flex justify-center text-lg w-24 font-medium text-gray-700 dark:text-gray-950   border border-gray-300 rounded-md hover:bg-gray-200 dark:hover:text-black transition-colors;
-    padding: 8px 14px;
-    font-size: 16px;
-  }
-  .btn-light-big {
-    @apply text-lg px-4 py-2  font-medium text-gray-700 dark:text-white  border border-gray-300 rounded-md hover:bg-gray-200 dark:hover:text-black transition-colors;
-  }
-
-  .btn-dark-small {
-    @apply text-lg flex justify-center w-24 font-medium text-white bg-black rounded-md hover:bg-gray-700 transition-colors;
-    padding: 8px 14px;
-    font-size: 16px;
-  }
-  .btn-dark-big {
-    @apply text-lg px-4 py-2  font-medium text-white bg-black dark:bg-white dark:text-black rounded-md hover:bg-gray-700 dark:hover:bg-gray-950 dark:hover:text-white transition-colors;
-  }
-} */
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -59,14 +12,19 @@
   --color-card: #F4F4F5;
   --color-card-hover: #FFFFFF;
   
-  /* 扩展brand配色方案 */
-  --color-brand-light: #E1E2E0;
-  --color-brand-blue1: #6D99DB;
-  --color-brand-blue2: #1427EB;
-  --color-brand-blue3: #020E86;
-  --color-brand-dark: #151328;
-}
+  
 
+  /* Nordic Colors - 浅色模式 */
+  --nordic-primary: #6D99DB;
+  --nordic-secondary: #1427EB;
+  --nordic-dark: #020E86;
+  --nordic-darker: #151328;
+  --nordic-light: #E1E2E0;
+  --nordic-bg: #fafafa;
+  --nordic-text: #1a1a1a;
+  --nordic-card-bg: #ffffff;
+  --nordic-muted: #666666;
+}
 
 .dark {
   /* 原有深色模式变量 */
@@ -78,12 +36,18 @@
   --color-card: #18181B;
   --color-card-hover: #22222A;
   
-  /* 深色模式下的品牌色保持不变 */
-  --color-brand-light: #E1E2E0;
-  --color-brand-blue1: #6D99DB;
-  --color-brand-blue2: #1427EB;
-  --color-brand-blue3: #020E86;
-  --color-brand-dark: #151328;
+ 
+
+  /* Nordic Colors - 深色模式 */
+  --nordic-primary: #6D99DB;
+  --nordic-secondary: #1427EB;
+  --nordic-dark: #020E86;
+  --nordic-darker: #151328;
+  --nordic-light: #E1E2E0;
+  --nordic-bg: #0f0f0f;
+  --nordic-text: #ffffff;
+  --nordic-card-bg: #1a1a1a;
+  --nordic-muted: #888888;
 }
 
 @layer components {
@@ -110,6 +74,52 @@
 
   .btn-dark-big {
     @apply text-lg px-4 py-2 font-medium text-white bg-black dark:bg-white dark:text-black rounded-md hover:bg-gray-700 dark:hover:bg-gray-950 dark:hover:text-white transition-colors;
+  }
+
+  /* Nordic色彩相关的工具类 */
+  .nordic-bg {
+    background-color: var(--nordic-bg);
+  }
+
+  .nordic-text {
+    color: var(--nordic-text);
+  }
+
+  .nordic-text-primary {
+    color: var(--nordic-primary);
+  }
+
+  .nordic-text-secondary {
+    color: var(--nordic-secondary);
+  }
+
+  .nordic-text-muted {
+    color: var(--nordic-muted);
+  }
+
+  .nordic-card {
+    background-color: var(--nordic-card-bg);
+  }
+
+  .nordic-border-primary {
+    border-color: var(--nordic-primary);
+  }
+
+  .nordic-border-secondary {
+    border-color: var(--nordic-secondary);
+  }
+
+  /* Nordic渐变背景 */
+  .nordic-gradient-1 {
+    background: linear-gradient(135deg, var(--nordic-primary), var(--nordic-secondary));
+  }
+
+  .nordic-gradient-2 {
+    background: linear-gradient(135deg, var(--nordic-secondary), var(--nordic-dark));
+  }
+
+  .nordic-gradient-3 {
+    background: linear-gradient(135deg, var(--nordic-dark), var(--nordic-darker));
   }
 
   /* 新增品牌色相关的组件样式 */
