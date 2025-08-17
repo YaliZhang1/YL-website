@@ -1,4 +1,4 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -41,5 +41,288 @@
   }
   .btn-dark-big {
     @apply text-lg px-4 py-2  font-medium text-white bg-black dark:bg-white dark:text-black rounded-md hover:bg-gray-700 dark:hover:bg-gray-950 dark:hover:text-white transition-colors;
+  }
+} */
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* 原有颜色变量 */
+  --color-text: #030712;
+  --color-text-hover: #718096;
+  --color-secondary: #64748b;
+  --color-bg: #FFFFFF;
+  --color-bg-secondary: #F5F5F5;
+  --color-card: #F4F4F5;
+  --color-card-hover: #FFFFFF;
+  
+  /* 扩展brand配色方案 */
+  --color-brand-light: #E1E2E0;
+  --color-brand-blue1: #6D99DB;
+  --color-brand-blue2: #1427EB;
+  --color-brand-blue3: #020E86;
+  --color-brand-dark: #151328;
+}
+
+
+.dark {
+  /* 原有深色模式变量 */
+  --color-text: #f1f5f9;
+  --color-text-hover: #cbd5e1;
+  --color-secondary: #94a3b8;
+  --color-bg: #000;
+  --color-bg-secondary: #17171C;
+  --color-card: #18181B;
+  --color-card-hover: #22222A;
+  
+  /* 深色模式下的品牌色保持不变 */
+  --color-brand-light: #E1E2E0;
+  --color-brand-blue1: #6D99DB;
+  --color-brand-blue2: #1427EB;
+  --color-brand-blue3: #020E86;
+  --color-brand-dark: #151328;
+}
+
+@layer components {
+  /* 原有组件样式 */
+  .navbar-item {
+    @apply px-3 py-2 text-lg font-medium text-gray-600 dark:text-white hover:text-gray-950 dark:hover:text-gray-400 transition-colors;
+  }
+
+  .btn-light-small {
+    @apply flex justify-center text-lg w-24 font-medium text-gray-700 dark:text-gray-950 border border-gray-300 rounded-md hover:bg-gray-200 dark:hover:text-black transition-colors;
+    padding: 8px 14px;
+    font-size: 16px;
+  }
+
+  .btn-light-big {
+    @apply text-lg px-4 py-2 font-medium text-gray-700 dark:text-white border border-gray-300 rounded-md hover:bg-gray-200 dark:hover:text-black transition-colors;
+  }
+
+  .btn-dark-small {
+    @apply text-lg flex justify-center w-24 font-medium text-white bg-black rounded-md hover:bg-gray-700 transition-colors;
+    padding: 8px 14px;
+    font-size: 16px;
+  }
+
+  .btn-dark-big {
+    @apply text-lg px-4 py-2 font-medium text-white bg-black dark:bg-white dark:text-black rounded-md hover:bg-gray-700 dark:hover:bg-gray-950 dark:hover:text-white transition-colors;
+  }
+
+  /* 新增品牌色相关的组件样式 */
+  .brand-text-gradient {
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .brand-bg-gradient {
+    background: var(--gradient-main);
+  }
+
+  .brand-border {
+    border-color: var(--color-brand-blue-1);
+  }
+
+  .brand-text-primary {
+    color: var(--color-brand-blue-1);
+  }
+
+  .brand-text-secondary {
+    color: var(--color-brand-blue-2);
+  }
+
+  .brand-text-accent {
+    color: var(--color-brand-blue-3);
+  }
+
+  /* 服务卡片样式 */
+  .service-card {
+    background-color: var(--color-card);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  .service-card:hover {
+    background-color: var(--color-card-hover);
+    box-shadow: 0 10px 40px rgba(109, 153, 219, 0.2);
+    transform: scale(1.02);
+  }
+
+  .service-card-1 {
+    border-color: rgba(109, 153, 219, 0.3);
+  }
+
+  .service-card-1:hover {
+    border-color: rgba(109, 153, 219, 0.6);
+  }
+
+  .service-card-2 {
+    border-color: rgba(20, 39, 235, 0.3);
+  }
+
+  .service-card-2:hover {
+    border-color: rgba(20, 39, 235, 0.6);
+  }
+
+  .service-card-3 {
+    border-color: rgba(2, 14, 134, 0.3);
+  }
+
+  .service-card-3:hover {
+    border-color: rgba(2, 14, 134, 0.6);
+  }
+
+  .service-card-4 {
+    border-color: rgba(21, 19, 40, 0.3);
+  }
+
+  .service-card-4:hover {
+    border-color: rgba(21, 19, 40, 0.6);
+  }
+
+  /* 统计卡片样式 */
+  .stat-card {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease;
+    border: 2px solid;
+  }
+
+  .stat-card:hover {
+    transform: scale(1.05);
+  }
+
+  .stat-card-1 {
+    background-color: rgba(109, 153, 219, 0.15);
+    border-color: rgba(109, 153, 219, 0.3);
+  }
+
+  .stat-card-2 {
+    background-color: rgba(20, 39, 235, 0.15);
+    border-color: rgba(20, 39, 235, 0.3);
+  }
+
+  .stat-card-3 {
+    background-color: rgba(2, 14, 134, 0.15);
+    border-color: rgba(2, 14, 134, 0.3);
+  }
+
+  .stat-card-4 {
+    background-color: rgba(21, 19, 40, 0.15);
+    border-color: rgba(21, 19, 40, 0.3);
+  }
+
+  /* 价值观图标样式 */
+  .value-icon {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+
+  .value-icon:hover {
+    transform: scale(1.1);
+  }
+
+  .value-icon-1 {
+    background: var(--gradient-1);
+  }
+
+  .value-icon-2 {
+    background: var(--gradient-2);
+  }
+
+  .value-icon-3 {
+    background: var(--gradient-3);
+  }
+
+  /* 装饰性背景元素 */
+  .hero-decoration {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.1;
+    pointer-events: none;
+  }
+
+  .hero-decoration-1 {
+    top: 25%;
+    left: 25%;
+    width: 16rem;
+    height: 16rem;
+    background: var(--gradient-1);
+  }
+
+  .hero-decoration-2 {
+    bottom: 25%;
+    right: 25%;
+    width: 24rem;
+    height: 24rem;
+    background: var(--gradient-2);
+  }
+
+  .hero-decoration-3 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8rem;
+    height: 8rem;
+    background: var(--gradient-3);
+    opacity: 0.15;
+  }
+
+  /* CTA区域装饰 */
+  .cta-decoration {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.1;
+  }
+
+  .cta-decoration-1 {
+    top: 0;
+    right: 0;
+    width: 24rem;
+    height: 24rem;
+    background: radial-gradient(circle, rgba(255,255,255,0.3), transparent);
+  }
+
+  .cta-decoration-2 {
+    bottom: 0;
+    left: 0;
+    width: 16rem;
+    height: 16rem;
+    background: radial-gradient(circle, rgba(255,255,255,0.2), transparent);
+  }
+
+  /* 渐变顶部装饰条 */
+  .gradient-top-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+  }
+
+  .gradient-top-bar-1 {
+    background: var(--gradient-1);
+  }
+
+  .gradient-top-bar-2 {
+    background: var(--gradient-2);
+  }
+
+  .gradient-top-bar-3 {
+    background: var(--gradient-3);
+  }
+
+  .gradient-top-bar-4 {
+    background: var(--gradient-4);
   }
 }
