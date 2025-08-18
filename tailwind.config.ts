@@ -13,7 +13,6 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          // 原有的品牌色
           text: "var(--color-text)",
           textHover: "var(--color-text-hover)",
           secondary: "var(--color-secondary)",
@@ -22,7 +21,7 @@ const config: Config = {
           card: "var(--color-card)",
           cardHover: "var(--color-card-hover)",
         },
-        // 新增Nordic颜色系统
+
         nordic: {
           primary: "var(--nordic-primary)",
           secondary: "var(--nordic-secondary)",

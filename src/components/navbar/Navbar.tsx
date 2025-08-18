@@ -114,7 +114,7 @@ const Navbar: React.FC = () => {
                 </Link>
                 <Link 
                   to="/contact" 
-                  className="text-lg px-4 py-2 font-medium text-white bg-gradient-to-r from-nordic-primary to-nordic-secondary rounded-md hover:from-nordic-secondary hover:to-nordic-dark transition-all transform hover:scale-105"
+                  className="btn-blue-big"
                 >
                   Contact
                 </Link>
@@ -237,7 +237,7 @@ const Navbar: React.FC = () => {
                   </Link>
                   <Link 
                     to="/contact" 
-                    className="text-lg flex justify-center w-24 font-medium text-white bg-gradient-to-r from-nordic-primary to-nordic-secondary rounded-md hover:from-nordic-secondary hover:to-nordic-dark transition-all px-4 py-2"
+                    className="btn-blue-small"
                   >
                     Contact
                   </Link>

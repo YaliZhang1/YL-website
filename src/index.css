@@ -7,19 +7,17 @@
   --color-text: #030712;
   --color-text-hover: #718096;
   --color-secondary: #64748b;
-  --color-bg: #FFFFFF;
-  --color-bg-secondary: #F5F5F5;
-  --color-card: #F4F4F5;
-  --color-card-hover: #FFFFFF;
-  
-  
+  --color-bg: #ffffff;
+  --color-bg-secondary: #f5f5f5;
+  --color-card: #f4f4f5;
+  --color-card-hover: #ffffff;
 
   /* Nordic Colors - 浅色模式 */
-  --nordic-primary: #6D99DB;
-  --nordic-secondary: #1427EB;
-  --nordic-dark: #020E86;
+  --nordic-primary: #6d99db;
+  --nordic-secondary: #1427eb;
+  --nordic-dark: #020e86;
   --nordic-darker: #151328;
-  --nordic-light: #E1E2E0;
+  --nordic-light: #e1e2e0;
   --nordic-bg: #fafafa;
   --nordic-text: #1a1a1a;
   --nordic-card-bg: #ffffff;
@@ -32,18 +30,16 @@
   --color-text-hover: #cbd5e1;
   --color-secondary: #94a3b8;
   --color-bg: #000;
-  --color-bg-secondary: #17171C;
-  --color-card: #18181B;
-  --color-card-hover: #22222A;
-  
- 
+  --color-bg-secondary: #17171c;
+  --color-card: #18181b;
+  --color-card-hover: #22222a;
 
   /* Nordic Colors - 深色模式 */
-  --nordic-primary: #6D99DB;
-  --nordic-secondary: #1427EB;
-  --nordic-dark: #020E86;
+  --nordic-primary: #6d99db;
+  --nordic-secondary: #1427eb;
+  --nordic-dark: #020e86;
   --nordic-darker: #151328;
-  --nordic-light: #E1E2E0;
+  --nordic-light: #e1e2e0;
   --nordic-bg: #0f0f0f;
   --nordic-text: #ffffff;
   --nordic-card-bg: #1a1a1a;
@@ -55,7 +51,13 @@
   .navbar-item {
     @apply px-3 py-2 text-lg font-medium text-gray-600 dark:text-white hover:text-gray-950 dark:hover:text-gray-400 transition-colors;
   }
-
+  .btn-blue-small {
+    @apply text-lg flex justify-center w-24 font-medium text-white bg-gradient-to-r from-nordic-primary to-nordic-secondary rounded-md hover:from-nordic-secondary hover:to-nordic-dark transition-all px-4 py-2
+  }
+  .btn-blue-big {
+    @apply text-lg px-4 py-2 font-medium text-white bg-gradient-to-r from-nordic-primary to-nordic-secondary rounded-md hover:from-nordic-secondary hover:to-nordic-dark transition-all transform hover:scale-105
+  }
+  
   .btn-light-small {
     @apply flex justify-center text-lg w-24 font-medium text-gray-700 dark:text-gray-950 border border-gray-300 rounded-md hover:bg-gray-200 dark:hover:text-black transition-colors;
     padding: 8px 14px;
@@ -111,43 +113,27 @@
 
   /* Nordic渐变背景 */
   .nordic-gradient-1 {
-    background: linear-gradient(135deg, var(--nordic-primary), var(--nordic-secondary));
+    background: linear-gradient(
+      135deg,
+      var(--nordic-primary),
+      var(--nordic-secondary)
+    );
   }
 
   .nordic-gradient-2 {
-    background: linear-gradient(135deg, var(--nordic-secondary), var(--nordic-dark));
+    background: linear-gradient(
+      135deg,
+      var(--nordic-secondary),
+      var(--nordic-dark)
+    );
   }
 
   .nordic-gradient-3 {
-    background: linear-gradient(135deg, var(--nordic-dark), var(--nordic-darker));
-  }
-
-  /* 新增品牌色相关的组件样式 */
-  .brand-text-gradient {
-    background: var(--gradient-1);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .brand-bg-gradient {
-    background: var(--gradient-main);
-  }
-
-  .brand-border {
-    border-color: var(--color-brand-blue-1);
-  }
-
-  .brand-text-primary {
-    color: var(--color-brand-blue-1);
-  }
-
-  .brand-text-secondary {
-    color: var(--color-brand-blue-2);
-  }
-
-  .brand-text-accent {
-    color: var(--color-brand-blue-3);
+    background: linear-gradient(
+      135deg,
+      var(--nordic-dark),
+      var(--nordic-darker)
+    );
   }
 
   /* 服务卡片样式 */
@@ -300,7 +286,7 @@
     right: 0;
     width: 24rem;
     height: 24rem;
-    background: radial-gradient(circle, rgba(255,255,255,0.3), transparent);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
   }
 
   .cta-decoration-2 {
@@ -308,7 +294,7 @@
     left: 0;
     width: 16rem;
     height: 16rem;
-    background: radial-gradient(circle, rgba(255,255,255,0.2), transparent);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
   }
 
   /* 渐变顶部装饰条 */

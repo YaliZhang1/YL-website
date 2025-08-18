@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "@/components/navbar/Navbar";
 import { HeroSection } from "@/components/landing/HeroSection";
+import { ServiceSection } from "@/components/landing/ServiceSection";
 import Layout from "@/layouts/Layout";
 import Tooltip from "@/components/ui/Tooltip";
 import { toast } from "sonner";
@@ -14,6 +15,7 @@ export default function Index() {
       <Layout>
         <Navbar />
         <HeroSection/>
+        <ServiceSection/>
 
         <main className="p-6">
           {/* 添加主题切换按钮 */}
