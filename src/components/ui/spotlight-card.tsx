@@ -1,5 +1,6 @@
 // 本组件可以复用
 import React, { useEffect, useRef, ReactNode } from "react";
+import { motion } from "framer-motion";
 
 interface GlowCardProps {
   children: ReactNode;
@@ -288,12 +289,13 @@ const GlowCard: React.FC<GlowCardProps> = ({
 
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: getBeforeAfterStyles() }} />
-      <div
-        ref={cardRef}
-        data-glow
-        style={getInlineStyles()}
-        className={`
+     
+        <style dangerouslySetInnerHTML={{ __html: getBeforeAfterStyles() }} />
+        <div
+          ref={cardRef}
+          data-glow
+          style={getInlineStyles()}
+          className={`
           ${getSizeClasses()}
           ${!customSize ? "aspect-[3/4]" : ""}
           rounded-2xl 
@@ -302,14 +304,15 @@ const GlowCard: React.FC<GlowCardProps> = ({
           grid-rows-[1fr_auto] 
           shadow-[0_1rem_2rem_-1rem_black] 
           p-4 
-          gap-4 
+          gap-2 
           backdrop-blur-[5px]
           ${className}
         `}
-      >
-        <div ref={innerRef} data-glow></div>
-        {children}
-      </div>
+        >
+          <div ref={innerRef} data-glow></div>
+          {children}
+        </div>
+      
     </>
   );
 };

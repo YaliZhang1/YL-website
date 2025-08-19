@@ -1,8 +1,9 @@
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
+import { motion, AnimatePresence } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 // 定义 DropDownMenu 类型
 interface DropDownMenu {
@@ -33,106 +34,131 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <section className="py-4 border-b border-nordic-primary/20 bg-nordic-bg">
-        <div className="max-w-7xl mx-auto px-4">
-          <nav className="flex items-center justify-between w-full">
-            {/* Logo */}
-            <div className="flex items-center flex-shrink-0">
-              <Link
-                to="/"
-                className="flex items-center gap-2 hover:opacity-80 transition-colors"
-              >
-                <img
-                  src="https://shadcnblocks.com/images/block/logos/shadcnblockscom-icon.svg"
-                  className="h-8 w-8"
-                  alt="Shadcn UI Navbar"
-                />
-              </Link>
-            </div>
+      <nav className="h-20 fixed top-0 left-0 w-full z-[9999] shadow-sm text-lg py-4 border-b border-nordic-primary/20 bg-nordic-bg">
+        <div className="container w-full  mx-auto max-w-8xl px-8 sm:px-8 h-full">
+          <div className="flex items-center justify-between w-full">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              className="w-32"
+            >
+              {/* Logo */}
+              <div className="flex items-center flex-shrink-0">
+                <Link
+                  to="/"
+                  className="flex items-center gap-2 hover:opacity-80 transition-colors"
+                >
+                  <img
+                    src="https://shadcnblocks.com/images/block/logos/shadcnblockscom-icon.svg"
+                    className="h-8 w-8"
+                    alt="Shadcn UI Navbar"
+                  />
+                </Link>
+              </div>
+            </motion.div>
 
             {/* Navigation Menu */}
-            <div className="hidden md:flex items-center gap-6">
-              <Link to="/" className="px-3 py-2 text-lg font-medium text-nordic-muted hover:text-nordic-text transition-colors">
-                Home
-              </Link>
-              <div className="relative">
-                <button
-                  onClick={() => setIsDropDownMenuOpen(!isDropDownMenuOpen)}
-                  className="flex items-center gap-1 px-3 py-2 text-lg font-medium text-nordic-muted hover:text-nordic-text transition-colors"
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="hidden md:flex items-center gap-6">
+                <Link
+                  to="/"
+                  className="px-3 py-2 text-lg font-medium text-nordic-muted hover:text-nordic-text transition-colors"
                 >
-                  Software Products
-                  <ChevronDown
-                    size={18}
-                    className={`transition-transform text-nordic-primary ${
-                      isDropDownMenuOpen ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-
-                {isDropDownMenuOpen && (
-                  <div
-                    className="absolute top-full left-0 mt-2 bg-nordic-cardBg rounded-lg shadow-lg border border-nordic-primary/20 z-50"
-                    style={{ width: "384px", padding: "12px" }}
+                  Home
+                </Link>
+                <div className="relative">
+                  <button
+                    onClick={() => setIsDropDownMenuOpen(!isDropDownMenuOpen)}
+                    className="flex items-center gap-1 px-3 py-2 text-lg font-medium text-nordic-muted hover:text-nordic-text transition-colors"
                   >
-                    <div className="grid grid-cols-2" style={{ gap: "8px" }}>
-                      {dropDownMenu.map((feature, index) => (
-                        <Link
-                          key={index}
-                          to={feature.href}
-                          className="block rounded-md hover:bg-nordic-primary/10 transition-colors"
-                          style={{ padding: "12px" }}
-                        >
-                          <p className="font-semibold text-nordic-text mb-1 text-sm">
-                            {feature.title}
-                          </p>
-                          <p className="text-sm text-nordic-muted">
-                            {feature.description}
-                          </p>
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-              <Link to="/ourServices" className="px-3 py-2 text-lg font-medium text-nordic-muted hover:text-nordic-text transition-colors">
-                Our Services
-              </Link>
-              <Link to="/about" className="px-3 py-2 text-lg font-medium text-nordic-muted hover:text-nordic-text transition-colors">
-                About Us
-              </Link>
-            </div>
-           
-            {/* Right Buttons */}
-            <div className="flex items-center gap-4 flex-shrink-0">
-              <div className="hidden md:flex items-center gap-4">
-                <ThemeToggle />
-                <Link 
-                  to="/signin" 
-                  className="text-lg px-4 py-2 font-medium text-nordic-muted border border-nordic-primary/30 rounded-md hover:bg-nordic-primary/10 hover:text-nordic-text transition-colors"
-                >
-                  Login
-                </Link>
-                <Link 
-                  to="/contact" 
-                  className="btn-blue-big"
-                >
-                  Contact
-                </Link>
-              </div>
+                    Software Products
+                    <ChevronDown
+                      size={18}
+                      className={`transition-transform text-nordic-primary ${
+                        isDropDownMenuOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
 
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="md:hidden border border-nordic-primary/30 rounded-md hover:bg-nordic-primary/10 transition-colors"
-                style={{ padding: "8px" }}
-              >
-                {isMenuOpen ? (
-                  <X size={16} className="text-nordic-text" />
-                ) : (
-                  <Menu size={16} className="text-nordic-text" />
-                )}
-              </button>
-            </div>
-          </nav>
+                  {isDropDownMenuOpen && (
+                    <div
+                      className="absolute top-full left-0 mt-2 bg-nordic-cardBg rounded-lg shadow-lg border border-nordic-primary/20 z-50"
+                      style={{ width: "384px", padding: "12px" }}
+                    >
+                      <div className="grid grid-cols-2" style={{ gap: "8px" }}>
+                        {dropDownMenu.map((feature, index) => (
+                          <Link
+                            key={index}
+                            to={feature.href}
+                            className="block rounded-md hover:bg-nordic-primary/10 transition-colors"
+                            style={{ padding: "12px" }}
+                          >
+                            <p className="font-semibold text-nordic-text mb-1 text-sm">
+                              {feature.title}
+                            </p>
+                            <p className="text-sm text-nordic-muted">
+                              {feature.description}
+                            </p>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+                <Link
+                  to="/ourServices"
+                  className="px-3 py-2 text-lg font-medium text-nordic-muted hover:text-nordic-text transition-colors"
+                >
+                  Our Services
+                </Link>
+                <Link
+                  to="/about"
+                  className="px-3 py-2 text-lg font-medium text-nordic-muted hover:text-nordic-text transition-colors"
+                >
+                  About Us
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Right Buttons */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="flex items-center gap-4 flex-shrink-0">
+                <div className="hidden md:flex items-center gap-4">
+                  <ThemeToggle />
+                  <Link
+                    to="/signin"
+                    className="text-lg px-4 py-2 font-medium text-nordic-muted border border-nordic-primary/30 rounded-md hover:bg-nordic-primary/10 hover:text-nordic-text transition-colors"
+                  >
+                    Login
+                  </Link>
+                  <Link to="/contact" className="btn-blue-big">
+                    Contact
+                  </Link>
+                </div>
+
+                <button
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  className="md:hidden border border-nordic-primary/30 rounded-md hover:bg-nordic-primary/10 transition-colors"
+                  style={{ padding: "8px" }}
+                >
+                  {isMenuOpen ? (
+                    <X size={16} className="text-nordic-text" />
+                  ) : (
+                    <Menu size={16} className="text-nordic-text" />
+                  )}
+                </button>
+              </div>
+            </motion.div>
+          </div>
 
           {/* Mobile Menu */}
           {isMenuOpen && (
@@ -229,16 +255,13 @@ const Navbar: React.FC = () => {
 
                 <div className="space-y-4 flex flex-col">
                   <ThemeToggle />
-                  <Link 
-                    to="/signin" 
+                  <Link
+                    to="/signin"
                     className="text-lg flex justify-center w-24 font-medium text-nordic-muted border border-nordic-primary/30 rounded-md hover:bg-nordic-primary/10 hover:text-nordic-text transition-colors px-4 py-2"
                   >
                     Login
                   </Link>
-                  <Link 
-                    to="/contact" 
-                    className="btn-blue-small"
-                  >
+                  <Link to="/contact" className="btn-blue-small">
                     Contact
                   </Link>
                 </div>
@@ -257,7 +280,7 @@ const Navbar: React.FC = () => {
             }}
           />
         )}
-      </section>
+      </nav>
     </>
   );
 };

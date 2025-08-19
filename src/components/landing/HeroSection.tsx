@@ -128,7 +128,10 @@ export const HeroSection: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-1 items-center py-20">
               {/* 左侧内容 */}
               <div className="z-50">
-                <div className="flex flex-wrap gap-3 mb-6">
+                <div
+                  className="flex flex-wrap gap-3 mb-6"
+                  style={{ animation: "fadeInUp 1s ease-out 0.3s forwards" }}
+                >
                   {[
                     "Swedish IT Excellence",
                     "Nordic Precision",
@@ -157,7 +160,7 @@ export const HeroSection: React.FC = () => {
                 <p
                   className="text-xl md:text-2xl font-light leading-relaxed mb-12 max-w-2xl text-nordic-muted"
                   style={{
-                    animation: "fadeInUp 1s ease-out 0.6s forwards",
+                    animation: "fadeInUp 1s ease-out 0.3s forwards",
                   }}
                 >
                   Swedish IT excellence through custom software development,
@@ -169,7 +172,10 @@ export const HeroSection: React.FC = () => {
                 </p>
 
                 {/* CTA */}
-                <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <div
+                  className="flex flex-col sm:flex-row gap-4 mb-8"
+                  style={{ animation: "fadeInUp 1s ease-out 0.3s forwards" }}
+                >
                   <AnimatedButton onClick={() => openModal("form")}>
                     Request Early Access
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -179,7 +185,7 @@ export const HeroSection: React.FC = () => {
                   </AnimatedButton>
                 </div>
 
-                <div className="flex flex-wrap items-center gap-6 text-nordic-muted">
+                <div className="flex flex-wrap items-center gap-6 text-nordic-muted" style={{ animation: "fadeInUp 1s ease-out 0.3s forwards" }}>
                   {[
                     "Free consultation",
                     "Proven results",

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ArrowRight, Code, Users, Search, Settings } from "lucide-react";
 import { GlowCard } from "@/components/ui/spotlight-card";
+import { motion } from "framer-motion";
 
 // 服务图标映射
 const serviceIcons = {
@@ -67,17 +68,27 @@ export const ServiceSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-10 bg-nordic-bg text-nordic-text relative">
+    <section className="py-10  text-nordic-text relative">
       <div className="container mx-auto px-8 md:px-16 lg:px-24 max-w-[130rem]">
         <h2 className="text-3xl md:text-4xl font-light mb-12 text-center">
           <span className="text-nordic-primary">Our</span>{" "}
           <span className="font-medium text-nordic-secondary">Services</span>
         </h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service, index) => (
-            <ServiceCard key={service} service={service} index={index} />
-          ))}
-        </div>
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.5 }}
+        >
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-16">
+            {services.map((service, index) => (
+              <motion.div className="h-full">
+                <div className="p-6 flex flex-col justify-between h-full">
+                  <ServiceCard index={index} service={service} key={service} />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
