@@ -136,7 +136,7 @@ export const HeroSection: React.FC = () => {
                   ].map((t, i) => (
                     <span
                       key={`tag-${i}`}
-                      className="px-4 py-2 rounded-full text-sm font-light border border-nordic-primary/25 bg-nordic-primary/10 text-nordic-secondary"
+                      className="px-4 py-2 rounded-full text-base font-normal border border-nordic-primary bg-nordic-primary/30 text-nordic-secondary"
                     >
                       {t}
                     </span>
@@ -187,7 +187,7 @@ export const HeroSection: React.FC = () => {
                   ].map((t) => (
                     <div key={t} className="flex items-center gap-2">
                       <Check className="w-5 h-5 text-nordic-primary" />
-                      <span className="text-sm">{t}</span>
+                      <span className="text-base">{t}</span>
                     </div>
                   ))}
                 </div>
