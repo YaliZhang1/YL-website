@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
             >
               {/* Logo */}
               <div className="flex items-center flex-shrink-0">
-                <Link
+                {/* <Link
                   to="/"
                   className="flex items-center gap-2 hover:opacity-80 transition-colors"
                 >
@@ -54,7 +54,7 @@ const Navbar: React.FC = () => {
                     className="h-8 w-8"
                     alt="Shadcn UI Navbar"
                   />
-                </Link>
+                </Link> */}
               </div>
             </motion.div>
 
@@ -168,13 +168,13 @@ const Navbar: React.FC = () => {
             >
               <div className="flex items-center justify-between mb-8">
                 <div className="flex flex-col gap-4">
-                  <Link to="/" className="flex items-center gap-2">
+                  {/* <Link to="/" className="flex items-center gap-2">
                     <img
                       src="https://shadcnblocks.com/images/block/logos/shadcnblockscom-icon.svg"
                       className="h-8 w-8"
                       alt="Shadcnblocks"
                     />
-                  </Link>
+                  </Link> */}
                   <Link
                     to="/"
                     className="block font-medium text-nordic-text hover:text-nordic-primary transition-colors"

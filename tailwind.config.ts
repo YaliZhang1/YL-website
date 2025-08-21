@@ -12,15 +12,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        brand: {
-          text: "var(--color-text)",
-          textHover: "var(--color-text-hover)",
-          secondary: "var(--color-secondary)",
-          bg: "var(--color-bg)",
-          bgSecondary: "var(--color-bg-secondary)",
-          card: "var(--color-card)",
-          cardHover: "var(--color-card-hover)",
-        },
+        // 主要颜色映射到Nordic系统
+        primary: "var(--nordic-primary)",
+        secondary: "var(--nordic-secondary)",
 
         nordic: {
           primary: "var(--nordic-primary)",
