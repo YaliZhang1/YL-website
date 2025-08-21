@@ -105,8 +105,8 @@ export const HeroSection: React.FC = () => {
 
   return (
     <>
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-nordic-bg text-nordic-text">
-        {/* 背景装饰 - 更抽象的几何形状 */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-nordic-bg text-nordic-text pt-16 md:pt-16 lg:pt-32">
+        {/* 背景装饰 - 抽象的几何形状 */}
         <div className="absolute inset-0 opacity-5 pointer-events-none">
           <div
             className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-gradient-to-br from-nordic-primary to-nordic-secondary"
@@ -185,7 +185,10 @@ export const HeroSection: React.FC = () => {
                   </AnimatedButton>
                 </div>
 
-                <div className="flex flex-wrap items-center gap-6 text-nordic-muted" style={{ animation: "fadeInUp 1s ease-out 0.3s forwards" }}>
+                <div
+                  className="flex flex-wrap items-center gap-6 text-nordic-muted"
+                  style={{ animation: "fadeInUp 1s ease-out 0.3s forwards" }}
+                >
                   {[
                     "Free consultation",
                     "Proven results",
@@ -366,7 +369,7 @@ export const HeroSection: React.FC = () => {
                     animation: "fadeInUp 0.8s ease-out 1.5s forwards",
                   }}
                 >
-                  <div className="grid grid-cols-4 gap-4 text-center">
+                  <div className="grid grid-cols-4 gap-4 text-center ">
                     {[
                       { value: "500+", label: "Projects" },
                       { value: "99%", label: "Uptime" },
@@ -374,10 +377,10 @@ export const HeroSection: React.FC = () => {
                       { value: "150+", label: "Clients" },
                     ].map((stat, index) => (
                       <div key={stat.label} className="group">
-                        <div className="text-5xl font-light text-nordic-primary mb-1 group-hover:text-nordic-secondary transition-colors duration-300">
+                        <div className="text-xl md:text-3xl lg:text-5xl font-light text-nordic-primary mb-1 group-hover:text-nordic-secondary transition-colors duration-300">
                           {stat.value}
                         </div>
-                        <div className="text-2xl text-nordic-muted font-light">
+                        <div className="text-xs md:text-lg lg:text-2xl text-nordic-muted font-light">
                           {stat.label}
                         </div>
                       </div>

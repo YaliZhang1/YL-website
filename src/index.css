@@ -48,8 +48,11 @@
 
 @layer components {
   /* 原有组件样式 */
-  .navbar-item {
+  .navbar-item-1 {
     @apply px-3 py-2 text-lg font-medium text-gray-600 dark:text-white hover:text-gray-950 dark:hover:text-gray-400 transition-colors;
+  }
+   .navbar-item {
+    @apply px-3 py-2 text-lg md:text-sm lg:text-lg font-medium text-nordic-muted hover:text-nordic-primary transition-colors;
   }
   .btn-blue-small {
     @apply text-lg flex justify-center w-24 font-medium text-white bg-gradient-to-r from-nordic-primary to-nordic-secondary rounded-md hover:from-nordic-secondary hover:to-nordic-dark transition-all px-4 py-2

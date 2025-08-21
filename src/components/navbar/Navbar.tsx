@@ -34,7 +34,7 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <nav className="h-20 fixed top-0 left-0 w-full z-[9999] shadow-sm text-lg py-4 border-b border-nordic-primary/20 bg-nordic-bg">
+      <nav className="h-20 fixed top-0 left-0 w-full z-[9999] shadow-sm text-lg  py-4 border-b border-nordic-primary/20 bg-nordic-bg">
         <div className="container w-full  mx-auto max-w-8xl px-8 sm:px-8 h-full">
           <div className="flex items-center justify-between w-full">
             <motion.div
@@ -67,14 +67,14 @@ const Navbar: React.FC = () => {
               <div className="hidden md:flex items-center gap-6">
                 <Link
                   to="/"
-                  className="px-3 py-2 text-lg font-medium text-nordic-muted hover:text-nordic-text transition-colors"
+                  className="navbar-item"
                 >
                   Home
                 </Link>
                 <div className="relative">
                   <button
                     onClick={() => setIsDropDownMenuOpen(!isDropDownMenuOpen)}
-                    className="flex items-center gap-1 px-3 py-2 text-lg font-medium text-nordic-muted hover:text-nordic-text transition-colors"
+                    className="flex items-center gap-1 navbar-item"
                   >
                     Software Products
                     <ChevronDown
@@ -112,13 +112,13 @@ const Navbar: React.FC = () => {
                 </div>
                 <Link
                   to="/ourServices"
-                  className="px-3 py-2 text-lg font-medium text-nordic-muted hover:text-nordic-text transition-colors"
+                  className="navbar-item"
                 >
                   Our Services
                 </Link>
                 <Link
                   to="/about"
-                  className="px-3 py-2 text-lg font-medium text-nordic-muted hover:text-nordic-text transition-colors"
+                  className="navbar-item"
                 >
                   About Us
                 </Link>

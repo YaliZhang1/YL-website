@@ -150,7 +150,7 @@ export default function CardFlip({
             "dark:from-zinc-900 dark:via-zinc-900/95 dark:to-zinc-800",
             "border border-slate-200 dark:border-zinc-800",
             "shadow-lg dark:shadow-xl",
-            "flex flex-col",
+            "flex flex-col items-center justify-center",
             "transition-all duration-700",
             "group-hover:shadow-xl dark:group-hover:shadow-2xl",
             "group-hover:border-primary/20 dark:group-hover:border-primary/30",
@@ -160,17 +160,17 @@ export default function CardFlip({
           {/* Background gradient */}
           <div className="from-primary/5 dark:from-primary/10 absolute inset-0 rounded-2xl bg-gradient-to-br via-transparent to-blue-500/5 dark:to-blue-500/10" />
 
-          <div className="relative z-10 flex-1 space-y-5">
+          <div className="relative z-10 flex-1 space-y-5 p-10">
             <div className="space-y-2">
-              <div className="mb-2 flex items-center gap-2">
+              <div className="mb-2 flex items-center gap-5">
                 <div className="from-primary via-primary/90 to-primary/80 flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br">
                   <Code2 className="h-4 w-4 text-white" />
                 </div>
-                <h3 className="text-lg leading-snug font-semibold tracking-tight text-zinc-900 transition-all duration-500 ease-out group-hover:translate-y-[-2px] dark:text-white">
+                <h3 className="text-2xl leading-snug font-semibold tracking-tight text-zinc-900 transition-all duration-500 ease-out group-hover:translate-y-[-2px] dark:text-white">
                   {title}
                 </h3>
               </div>
-              <p className="line-clamp-2 text-sm tracking-tight text-zinc-600 transition-all duration-500 ease-out group-hover:translate-y-[-2px] dark:text-zinc-400">
+              <p className="line-clamp-2 text-base tracking-tight text-zinc-600 transition-all duration-500 ease-out group-hover:translate-y-[-2px] dark:text-zinc-400">
                 {description}
               </p>
             </div>
@@ -193,9 +193,9 @@ export default function CardFlip({
                     }}
                   >
                     <div className="bg-primary/10 dark:bg-primary/20 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-md">
-                      <IconComponent className="text-primary h-3 w-3" />
+                      <IconComponent className="text-primary h-5 w-5" />
                     </div>
-                    <span className="font-medium">{feature}</span>
+                    <span className="font-medium text-lg">{feature}</span>
                   </div>
                 );
               })}
