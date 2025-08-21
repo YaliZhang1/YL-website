@@ -10,6 +10,7 @@ export interface CardFlipProps {
   description?: string;
   features?: string[];
   color?: string;
+  img?: string;
 }
 
 export default function CardFlip({
@@ -22,7 +23,9 @@ export default function CardFlip({
     "MVP Optimized",
     "Zero Setup Required",
   ],
+
   color = "#ff2e88",
+  img="img/fast-dev.jpg"
 }: CardFlipProps) {
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -48,7 +51,7 @@ export default function CardFlip({
         {/* Front of card */}
         <div
           className={cn(
-            "absolute inset-0 h-full min-h-[480px] w-full",
+            "absolute inset-0 h-full min-h-[580px] w-full",
             "[transform:rotateY(0deg)] [backface-visibility:hidden]",
             "overflow-hidden rounded-2xl",
             "bg-gradient-to-br from-white via-slate-50 to-slate-100",
@@ -59,7 +62,7 @@ export default function CardFlip({
             "group-hover:shadow-xl dark:group-hover:shadow-2xl",
             "group-hover:border-primary/20 dark:group-hover:border-primary/30",
             isFlipped ? "opacity-0" : "opacity-100",
-            "flex flex-col"
+            "flex flex-col gap-10"
           )}
         >
           {/* Background gradient effect */}
@@ -67,7 +70,7 @@ export default function CardFlip({
 
           {/* Animated code blocks */}
           <div className=" flex-[8] min-h-0 inset-0 flex items-center justify-center ">
-            <div className="relative flex h-[90%] w-[90%] flex-col items-center justify-center gap-2">
+            <div className="relative flex h-[100%] w-[100%] flex-col items-center justify-center gap-2">
               {/* Code blocks animation */}
               {[...Array(6)].map((_, i) => (
                 // 以下是使用的thailwindcss样式但是没有生效，所以我后面改用直接写死的颜色样式
@@ -103,14 +106,16 @@ export default function CardFlip({
               <div className="absolute inset-0 flex items-center justify-center">
                 <div
                   className={cn(
-                    "h-[100%] w-[100%] rounded-xl",
+                    "h-[100%] w-[100%] ",
                     "from-primary via-primary/90 to-primary/80 bg-gradient-to-br",
                     "flex items-center justify-center",
                     "shadow-primary/25 shadow-lg",
                     "transition-all duration-500 group-hover:scale-110 group-hover:rotate-12"
                   )}
                 >
-                  <Rocket className="h-[100%] w-[100%] text-primary" />
+                  {img && (
+                    <img src={img} className="h-[100%] w-[100%] object-cover " />
+                  )}
                 </div>
               </div>
             </div>
@@ -144,7 +149,7 @@ export default function CardFlip({
         {/* Back of card */}
         <div
           className={cn(
-            "absolute inset-0 h-full min-h-[480px] w-full",
+            "absolute inset-0 h-full min-h-[580px] w-full",
             "[transform:rotateY(180deg)] [backface-visibility:hidden]",
             "rounded-2xl p-5",
             "bg-gradient-to-br from-white via-slate-50 to-slate-100",
