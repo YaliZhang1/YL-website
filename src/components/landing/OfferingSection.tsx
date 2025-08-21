@@ -1,5 +1,5 @@
 import CardFlip from "@/components/ui/flip-card";
-
+import { motion, AnimatePresence } from "framer-motion";
 export const OfferingSection: React.FC = () => {
   const cards = [
     {
@@ -58,14 +58,45 @@ export const OfferingSection: React.FC = () => {
       img: "img/secure.jpg",
     },
   ];
-
+  const cardsContainer = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+  const cardItem = {
+    hidden: { opacity: 0, y: 20 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
   return (
-    <section className="py-20 px-20 text-nordic-text relative">
-      <div className="grid grid-cols-1 gap-20 sm:grid-cols-2 lg:grid-cols-4 place-items-center ">
-        {cards.map((card, index) => (
-          <CardFlip key={index} {...card} />
-        ))}
-      </div>
+    <section className="pt-20  text-nordic-text relative pb-80">
+      <motion.div
+        variants={cardsContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <div className="container  max-w-[2000px] mx-auto px-4 grid grid-cols-1 gap-2 md:gap-1 lg:gap-0 md:grid-cols-2 lg:grid-cols-4 place-items-stretch ">
+          {cards.map((card, index) => (
+            <motion.div
+              key={index}
+              variants={cardItem}
+              className="w-full sm:w-[90%] lg:[100%] xl:max-w-[660px] min-h-[600px] mx-auto flex"
+            >
+              <CardFlip key={index} {...card} />
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
     </section>
   );
 };

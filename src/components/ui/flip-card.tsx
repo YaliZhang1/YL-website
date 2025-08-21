@@ -25,7 +25,7 @@ export default function CardFlip({
   ],
 
   color = "#ff2e88",
-  img="img/fast-dev.jpg"
+  img = "img/fast-dev.jpg",
 }: CardFlipProps) {
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -62,7 +62,7 @@ export default function CardFlip({
             "group-hover:shadow-xl dark:group-hover:shadow-2xl",
             "group-hover:border-primary/20 dark:group-hover:border-primary/30",
             isFlipped ? "opacity-0" : "opacity-100",
-            "flex flex-col gap-10"
+            "flex flex-col gap-20"
           )}
         >
           {/* Background gradient effect */}
@@ -106,7 +106,7 @@ export default function CardFlip({
               <div className="absolute inset-0 flex items-center justify-center">
                 <div
                   className={cn(
-                    "h-[100%] w-[100%] ",
+                    "h-[100%] min-h-[500px] w-[100%] ",
                     "from-primary via-primary/90 to-primary/80 bg-gradient-to-br",
                     "flex items-center justify-center",
                     "shadow-primary/25 shadow-lg",
@@ -114,7 +114,10 @@ export default function CardFlip({
                   )}
                 >
                   {img && (
-                    <img src={img} className="h-[100%] w-[100%] object-cover " />
+                    <img
+                      src={img}
+                      className="h-[100%] w-[100%] object-cover "
+                    />
                   )}
                 </div>
               </div>
@@ -122,26 +125,17 @@ export default function CardFlip({
           </div>
 
           {/* Bottom content */}
-          <div className=" flex- min-h-0  p-5">
-            <div className="flex items-center justify-between gap-3">
+          <div className=" flex- min-h-[140px]  p-9  text-center">
+            <div className="flex items-center justify-center gap-3">
               <div className="space-y-1.5">
-                <h3 className="text-lg leading-snug font-semibold tracking-tight text-zinc-900 transition-all duration-500 ease-out group-hover:translate-y-[-4px] dark:text-white">
+                <h3 className="text-2xl leading-snug font-semibold tracking-tight text-zinc-900 transition-all duration-500 ease-out group-hover:translate-y-[-4px] dark:text-white">
                   {title}
                 </h3>
-                <p className="line-clamp-2 text-sm tracking-tight text-zinc-600 transition-all delay-[50ms] duration-500 ease-out group-hover:translate-y-[-4px] dark:text-zinc-300">
+                <p className="line-clamp-2 text-base tracking-tight text-zinc-600 transition-all delay-[50ms] duration-500 ease-out group-hover:translate-y-[-4px] dark:text-zinc-300">
                   {subtitle}
                 </p>
               </div>
-              <div className="group/icon relative">
-                <div
-                  className={cn(
-                    "absolute inset-[-8px] rounded-lg transition-opacity duration-300",
-                    "from-primary/20 via-primary/10 bg-gradient-to-br to-transparent",
-                    "opacity-0 group-hover/icon:opacity-100"
-                  )}
-                />
-                <Zap className="text-primary relative z-10 h-5 w-5 transition-all duration-300 group-hover/icon:scale-110 group-hover/icon:rotate-12" />
-              </div>
+              <div />
             </div>
           </div>
         </div>
