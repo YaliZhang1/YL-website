@@ -15,7 +15,9 @@ const config: Config = {
         // 主要颜色映射到Nordic系统
         primary: "var(--nordic-primary)",
         secondary: "var(--nordic-secondary)",
+        border: "hsl(var(--border))",
 
+        foreground: "hsl(var(--foreground))",
         nordic: {
           primary: "var(--nordic-primary)",
           secondary: "var(--nordic-secondary)",

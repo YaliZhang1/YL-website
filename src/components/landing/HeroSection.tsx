@@ -105,7 +105,7 @@ export const HeroSection: React.FC = () => {
 
   return (
     <>
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-nordic-bg text-nordic-text pt-16 md:pt-16 lg:pt-32">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-nordic-bg text-nordic-text pt-16 md:pt-16 lg:pt-0">
         {/* 背景装饰 - 抽象的几何形状 */}
         <div className="absolute inset-0 opacity-5 pointer-events-none">
           <div

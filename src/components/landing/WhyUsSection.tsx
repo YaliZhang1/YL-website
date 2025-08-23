@@ -68,11 +68,12 @@ export const WhyUsSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-10  text-nordic-text relative">
+    <section className="py-16 bg-nordic-bg text-nordic-text relative">
       <div className="container mx-auto px-8 md:px-16 lg:px-24 max-w-[130rem]">
-        <h2 className="text-3xl md:text-4xl font-light mb-12 text-center">
-          <span className="text-nordic-primary">Why</span>{" "}
-          <span className="font-medium text-nordic-secondary">Us</span>
+        <h2 className="section-title text-nordic-text mb-16 overflow-visible">
+          <p className="mx-auto text-center leading-snug max-w-[90%] sm:max-w-[80%] md:max-w-[37.5rem] lg:max-w-[60rem] tracking-tight">
+            Why Us
+          </p>
         </h2>
         <motion.div
           initial="hidden"

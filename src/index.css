@@ -45,22 +45,34 @@
   --nordic-card-bg: #1a1a1a;
   --nordic-muted: #888888;
 }
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply text-foreground;
+  }
+}
+.center-overlay {
+  @apply absolute inset-0 flex items-center justify-center text-center;
+}
 
 @layer components {
   /* 原有组件样式 */
   .navbar-item-1 {
     @apply px-3 py-2 text-lg font-medium text-gray-600 dark:text-white hover:text-gray-950 dark:hover:text-gray-400 transition-colors;
   }
-   .navbar-item {
+  .navbar-item {
     @apply px-3 py-2 text-lg md:text-sm lg:text-lg font-medium text-nordic-muted hover:text-nordic-primary transition-colors;
   }
   .btn-blue-small {
-    @apply text-lg flex justify-center w-24 font-medium text-white bg-gradient-to-r from-nordic-primary to-nordic-secondary rounded-md hover:from-nordic-secondary hover:to-nordic-dark transition-all px-4 py-2
+    @apply text-lg flex justify-center w-24 font-medium text-white bg-gradient-to-r from-nordic-primary to-nordic-secondary rounded-md hover:from-nordic-secondary hover:to-nordic-dark transition-all px-4 py-2;
   }
   .btn-blue-big {
-    @apply text-lg px-4 py-2 font-medium text-white bg-gradient-to-r from-nordic-primary to-nordic-secondary rounded-md hover:from-nordic-secondary hover:to-nordic-dark transition-all transform hover:scale-105
+    @apply text-lg px-4 py-2 font-medium text-white bg-gradient-to-r from-nordic-primary to-nordic-secondary rounded-md hover:from-nordic-secondary hover:to-nordic-dark transition-all transform hover:scale-105;
   }
-  
+
   .btn-light-small {
     @apply flex justify-center text-lg w-24 font-medium text-gray-700 dark:text-gray-950 border border-gray-300 rounded-md hover:bg-gray-200 dark:hover:text-black transition-colors;
     padding: 8px 14px;
@@ -80,7 +92,25 @@
   .btn-dark-big {
     @apply text-lg px-4 py-2 font-medium text-white bg-black dark:bg-white dark:text-black rounded-md hover:bg-gray-700 dark:hover:bg-gray-950 dark:hover:text-white transition-colors;
   }
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6;
+  }
 
+  .animate-fadeInUp {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .animate-delay-1 {
+    animation-delay: 0.2s;
+  }
+
+  .animate-delay-2 {
+    animation-delay: 0.4s;
+  }
+
+  .animate-delay-3 {
+    animation-delay: 0.6s;
+  }
   /* Nordic色彩相关的工具类 */
   .nordic-bg {
     background-color: var(--nordic-bg);
