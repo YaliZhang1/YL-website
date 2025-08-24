@@ -111,7 +111,7 @@ export default function Contact() {
     { day: "Sunday", hours: "Closed" },
   ];
   return (
-    <div className="min-h-screen pt-24 pb-16 bg-nordic-bg text-nordic-text relative overflow-hidden">
+    <div className="min-h-screen pt-24  bg-nordic-bg text-nordic-text relative overflow-hidden">
       <Layout>
         <Navbar />
         <div className="absolute top-0 left-0 w-96 h-96 bg-blue-100/20 rounded-full blur-3xl -translate-x-48 -translate-y-48" />
