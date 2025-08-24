@@ -59,11 +59,11 @@
 }
 
 @layer components {
-  .card-title{
-    @apply text-2xl leading-snug font-semibold tracking-tight text-zinc-900 transition-all duration-500 ease-out group-hover:translate-y-[-4px] dark:text-white
+  .card-title {
+    @apply text-2xl leading-snug font-semibold tracking-tight text-zinc-900 transition-all duration-500 ease-out group-hover:translate-y-[-4px] dark:text-white;
   }
-  .card-subtitle{
-    @apply line-clamp-2 text-lg tracking-tight text-zinc-600 transition-all delay-[50ms] duration-500 ease-out group-hover:translate-y-[-4px] dark:text-zinc-300
+  .card-subtitle {
+    @apply line-clamp-2 text-lg tracking-tight text-zinc-600 transition-all delay-[50ms] duration-500 ease-out group-hover:translate-y-[-4px] dark:text-zinc-300;
   }
   .navbar-item-1 {
     @apply px-3 py-2 text-lg font-medium text-gray-600 dark:text-white hover:text-gray-950 dark:hover:text-gray-400 transition-colors;
@@ -75,7 +75,7 @@
     @apply text-lg flex justify-center w-24 font-medium text-white bg-gradient-to-r from-nordic-primary to-nordic-secondary rounded-md hover:from-nordic-secondary hover:to-nordic-dark transition-all px-4 py-2;
   }
   .btn-blue-big {
-    @apply text-lg px-4 py-2 font-medium text-white bg-gradient-to-r from-nordic-primary to-nordic-secondary rounded-md hover:from-nordic-secondary hover:to-nordic-dark transition-all transform hover:scale-105;
+    @apply text-lg px-6 py-3 font-medium text-white bg-gradient-to-r from-nordic-primary to-nordic-secondary rounded-md  transition-all transform hover:scale-105 inline-flex items-center  hover:from-nordic-secondary hover:to-nordic-dark  duration-300  group-hover:shadow-lg;
   }
 
   .btn-light-small {

@@ -18,7 +18,7 @@ export const CTA = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="group px-8 py-4 bg-white text-blue-600 rounded-xl font-medium hover:bg-gray-50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex items-center justify-center">
-              <span>Start a Project</span>
+              <span>Start your Project</span>
               <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
             </button>
             <button className="px-8 py-4 border-2 border-white/30 text-white rounded-xl font-medium hover:bg-white/10 transition-all duration-300 flex items-center justify-center">
