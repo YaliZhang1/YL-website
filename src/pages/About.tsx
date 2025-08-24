@@ -7,7 +7,7 @@ export default function About() {
       <Layout>
         {" "}
         <Navbar />
-        <main className="p-6">
+        <main className="p-16">
           <h2 className="text-xl font-semibold">About</h2>
           <p className="mt-2">这是 About 页面示例。</p>
         </main>

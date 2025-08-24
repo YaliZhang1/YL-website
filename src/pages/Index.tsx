@@ -7,9 +7,6 @@ import { WhyUsSection } from "@/components/landing/WhyUsSection";
 import { FooterSection } from "@/components/landing/FooterSection";
 
 import Layout from "@/layouts/Layout";
-import Tooltip from "@/components/ui/Tooltip";
-import { toast } from "sonner";
-import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Index() {
   return (
@@ -20,8 +17,6 @@ export default function Index() {
         <OfferingSection />
         <WhyUsSection />
         <FooterSection />
-        
-
       </Layout>
     </div>
   );
