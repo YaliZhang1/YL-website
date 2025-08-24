@@ -16,7 +16,12 @@ const config: Config = {
         primary: "var(--nordic-primary)",
         secondary: "var(--nordic-secondary)",
         border: "hsl(var(--border))",
-
+        text: "var( --color-text)",
+        textHover: "var(--color-text-hover)",
+        card: "var(--color-card)",
+        cardHover: "var(--color-card-hover)",
+        bg: "var(--color-bg)",
+        bgSecondary: "var(--color-bg-secondary)",
         foreground: "hsl(var(--foreground))",
         nordic: {
           primary: "var(--nordic-primary)",
