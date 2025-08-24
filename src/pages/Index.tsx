@@ -4,6 +4,7 @@ import { HeroSection } from "@/components/landing/HeroSection";
 import { OfferingSection } from "@/components/landing/OfferingSection";
 
 import { WhyUsSection } from "@/components/landing/WhyUsSection";
+import { FooterSection } from "@/components/landing/FooterSection";
 
 import Layout from "@/layouts/Layout";
 import Tooltip from "@/components/ui/Tooltip";
@@ -18,6 +19,9 @@ export default function Index() {
         <HeroSection />
         <OfferingSection />
         <WhyUsSection />
+        <FooterSection />
+        
+
       </Layout>
     </div>
   );

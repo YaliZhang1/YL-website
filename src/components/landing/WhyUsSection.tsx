@@ -169,27 +169,25 @@ const WhyChooseUsCard = ({ advantage, index }) => {
         `}
         />
 
-        {/* 图标区域 */}
-        <div className="relative z-10 mb-6">
-          <div
-            className={`
-            inline-flex p-4 rounded-xl
+        {/* 内容区域 */}
+        <div className="relative z-10">
+          <div className="flex flex-row mb-4 items-center space-x-3 ">
+            <div
+              className={`
+            inline-flex p-3 rounded-xl
             bg-gradient-to-br from-blue-50 to-indigo-50
             group-hover:from-blue-100 group-hover:to-indigo-100
             transition-all duration-300
             ${isHovered ? "scale-110" : ""}
           `}
-          >
-            <Icon className="w-7 h-7 text-blue-600" />
+            >
+              <Icon className="w-7 h-7 text-blue-600" />
+            </div>
+            <h3 className="card-title  group-hover:text-blue-700 transition-colors duration-300">
+              {advantage}
+            </h3>
           </div>
-        </div>
-
-        {/* 内容区域 */}
-        <div className="relative z-10">
-          <h3 className="text-xl font-semibold text-gray-800 mb-4 group-hover:text-blue-700 transition-colors duration-300">
-            {advantage}
-          </h3>
-          <p className="text-gray-600 leading-relaxed text-sm group-hover:text-gray-700 transition-colors duration-300">
+          <p className="card-subtitle font-normal">
             {whyChooseUsContent[advantage]}
           </p>
         </div>
@@ -217,7 +215,7 @@ export const WhyUsSection = () => {
       <div className="absolute top-0 left-1/4 w-64 h-64 bg-blue-100/30 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-100/20 rounded-full blur-3xl" />
 
-      <div className="container mx-auto px-8 md:px-16 lg:px-24  relative z-10">
+      <div className="container mx-auto   relative z-10">
         {/* 标题区域 */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 text-blue-600 text-sm font-medium mb-6">
@@ -240,7 +238,7 @@ export const WhyUsSection = () => {
         {/* 卡片网格 */}
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
           {advantages.map((advantage, index) => (
-            <div key={advantage} className="h-full">
+            <div key={advantage} className="h-full card-title">
               <WhyChooseUsCard advantage={advantage} index={index} />
             </div>
           ))}

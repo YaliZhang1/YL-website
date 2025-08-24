@@ -128,10 +128,10 @@ export default function CardFlip({
           <div className=" flex- min-h-[140px]  p-9  text-center">
             <div className="flex items-center justify-center gap-3">
               <div className="space-y-1.5">
-                <h3 className="text-2xl leading-snug font-semibold tracking-tight text-zinc-900 transition-all duration-500 ease-out group-hover:translate-y-[-4px] dark:text-white">
+                <h3 className="card-title">
                   {title}
                 </h3>
-                <p className="line-clamp-2 text-base tracking-tight text-zinc-600 transition-all delay-[50ms] duration-500 ease-out group-hover:translate-y-[-4px] dark:text-zinc-300">
+                <p className="card-subtitle">
                   {subtitle}
                 </p>
               </div>
