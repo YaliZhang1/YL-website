@@ -110,6 +110,27 @@ export default function Contact() {
     { day: "Saturday", hours: "10:00 AM - 4:00 PM" },
     { day: "Sunday", hours: "Closed" },
   ];
+
+  const AnimatedButton: React.FC<{
+    children: React.ReactNode;
+    variant?: "primary" | "secondary";
+    onClick?: () => void;
+    className?: string;
+  }> = ({ children, variant = "primary", onClick, className = "" }) => {
+    const baseClasses =
+      "px-8 py-4 rounded-lg font-light text-lg transition-all duration-300 flex items-center group";
+  
+    const primaryClasses = `${baseClasses} text-white hover:shadow-lg transform hover:scale-[1.02] bg-gradient-to-br from-nordic-primary to-nordic-secondary`;
+    const secondaryClasses = `${baseClasses} border-2 border-nordic-primary text-nordic-primary bg-transparent hover:shadow-lg transform hover:scale-[1.02] hover:bg-nordic-primary hover:text-white transition-colors`;
+  
+    const classes = variant === "primary" ? primaryClasses : secondaryClasses;
+  
+    return (
+      <button className={`${classes} ${className}`} onClick={onClick}>
+        {children}
+      </button>
+    );
+  };
   return (
     <div className="min-h-screen pt-24  bg-nordic-bg text-nordic-text relative overflow-hidden">
       <Layout>
@@ -118,7 +139,7 @@ export default function Contact() {
         <div className="absolute top-1/3 right-0 w-64 h-64 bg-indigo-100/30 rounded-full blur-3xl translate-x-32" />
         <div className="absolute bottom-0 left-1/3 w-80 h-80 bg-purple-100/20 rounded-full blur-3xl -translate-y-40" />
 
-        <div className="relative z-10">
+        <div className="relative z-10  pb-16">
           {/* 头部区域 */}
           <div className="container mx-auto px-8 md:px-16 lg:px-24 max-w-7xl pt-20 pb-16">
             <div className="text-center mb-16">
@@ -338,13 +359,13 @@ export default function Contact() {
                   </div>
 
                   {/* 提交按钮 */}
-                  <button
+                  <AnimatedButton
                     onClick={handleSubmit}
-                    className="group w-full md:w-auto px-8 py-4 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-xl font-medium hover:shadow-xl hover:shadow-blue-500/25 transition-all duration-300 hover:-translate-y-1 flex items-center justify-center"
+                    
                   >
                     <span>Send Message</span>
                     <Send className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                  </button>
+                  </AnimatedButton>
                 </div>
               </div>
 

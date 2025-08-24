@@ -57,7 +57,7 @@ export const FooterSection = () => {
   ];
 
   return (
-    <footer className="pt-16 bg-nordic-bg text-nordic-text bg-gradient-to-b from-gray-50/50 to-white relative  overflow-hidden">
+    <footer className=" bg-nordic-bg text-nordic-text bg-gradient-to-b from-gray-50/50 to-white relative  overflow-hidden">
       {/* 背景装饰 */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-blue-100/20 rounded-full blur-3xl -translate-x-48 -translate-y-48" />
       <div className="absolute bottom-0 right-0 w-64 h-64 bg-indigo-100/30 rounded-full blur-3xl translate-x-32 translate-y-32" />
@@ -67,7 +67,7 @@ export const FooterSection = () => {
         {/* 底部装饰渐变 */}
 
         <div className="h-[1px] bg-nordic-bg bg-gradient-to-r from-blue-800/50 via-indigo-800/50 to-blue-800/50" />
-        <div className="container mx-auto px-8 md:px-16 lg:px-24 max-w-7xl pt-20 pb-12">
+        <div className="container mx-auto px-8 md:px-16 lg:px-24  pt-20 pb-12">
           <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-12">
             {/* 公司信息 */}
             <div className="lg:col-span-1">

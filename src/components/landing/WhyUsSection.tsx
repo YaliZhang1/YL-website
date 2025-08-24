@@ -113,7 +113,7 @@ export const WhyUsSection = () => {
   ];
 
   return (
-    <section className="py-16  bg-nordic-bg text-nordic-text ">
+    <section className="pt-16 pb-32 bg-nordic-bg text-nordic-text ">
       {/* 背景装饰 */}
       <div className="absolute top-0 left-1/4 w-64 h-64 bg-blue-100/30 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-100/20 rounded-full blur-3xl" />
