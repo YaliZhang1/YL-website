@@ -57,7 +57,7 @@ export const FooterSection = () => {
   ];
 
   return (
-    <footer className=" bg-nordic-bg text-nordic-text bg-gradient-to-b from-gray-50/50 to-white relative  overflow-hidden">
+    <footer className="bg-nordic-bg text-nordic-text bg-gradient-to-b from-gray-50/50 to-white relative  overflow-hidden">
       {/* 背景装饰 */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-blue-100/20 rounded-full blur-3xl -translate-x-48 -translate-y-48" />
       <div className="absolute bottom-0 right-0 w-64 h-64 bg-indigo-100/30 rounded-full blur-3xl translate-x-32 translate-y-32" />
