@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-// 定义 DropDownMenu 类型
 interface DropDownMenu {
   title: string;
   description: string;
@@ -17,6 +16,8 @@ const Navbar: React.FC = () => {
   const [isDropDownMenuOpen, setIsDropDownMenuOpen] = useState<boolean>(false);
   const [isMobileDropDownMenuOpen, setIsMobileDropDownMenuOpen] =
     useState<boolean>(false);
+
+  const location = useLocation();
 
   const dropDownMenu: DropDownMenu[] = [
     {
@@ -31,6 +32,13 @@ const Navbar: React.FC = () => {
       href: "/smart-elderly-care",
     },
   ];
+
+  const isActiveRoute = (path: string) => {
+    return location.pathname === path;
+  };
+  const isDropdownActive = () => {
+    return dropDownMenu.some((item) => location.pathname === item.href);
+  };
 
   return (
     <>
@@ -67,14 +75,22 @@ const Navbar: React.FC = () => {
               <div className="hidden md:flex items-center gap-6">
                 <Link
                   to="/"
-                  className="navbar-item"
+                  className={cn(
+                    "navbar-item",
+                    isActiveRoute("/") &&
+                      "text-nordic-primary bg-nordic-primary/10"
+                  )}
                 >
                   Home
                 </Link>
                 <div className="relative">
                   <button
                     onClick={() => setIsDropDownMenuOpen(!isDropDownMenuOpen)}
-                    className="flex items-center gap-1 navbar-item"
+                    className={cn(
+                      "flex items-center gap-1 navbar-item",
+                      isDropdownActive() &&
+                        "text-nordic-primary bg-nordic-primary/10"
+                    )}
                   >
                     Software Products
                     <ChevronDown
@@ -95,10 +111,21 @@ const Navbar: React.FC = () => {
                           <Link
                             key={index}
                             to={feature.href}
-                            className="block rounded-md hover:bg-nordic-primary/10 transition-colors"
+                            className={cn(
+                              "block rounded-md hover:bg-nordic-primary/10 transition-colors",
+                              isActiveRoute(feature.href) &&
+                                "bg-nordic-primary/20 border border-nordic-primary/30"
+                            )}
                             style={{ padding: "12px" }}
                           >
-                            <p className="font-semibold text-nordic-text mb-1 text-sm">
+                            <p
+                              className={cn(
+                                "font-semibold text-nordic-text mb-1 text-sm",
+                                isActiveRoute(feature.href)
+                                  ? "text-nordic-primary"
+                                  : "text-nordic-text"
+                              )}
+                            >
                               {feature.title}
                             </p>
                             <p className="text-sm text-nordic-muted">
@@ -112,13 +139,21 @@ const Navbar: React.FC = () => {
                 </div>
                 <Link
                   to="/ourServices"
-                  className="navbar-item"
+                  className={cn(
+                    "navbar-item",
+                    isActiveRoute("/ourServices") &&
+                      "text-nordic-primary bg-nordic-primary/10"
+                  )}
                 >
                   Our Services
                 </Link>
                 <Link
                   to="/about"
-                  className="navbar-item"
+                  className={cn(
+                    "navbar-item",
+                    isActiveRoute("/about") &&
+                      "text-nordic-primary bg-nordic-primary/10"
+                  )}
                 >
                   About Us
                 </Link>
@@ -136,11 +171,22 @@ const Navbar: React.FC = () => {
                   <ThemeToggle />
                   <Link
                     to="/signin"
-                    className="text-lg px-4 py-2 font-medium text-nordic-muted border border-nordic-primary/30 rounded-md hover:bg-nordic-primary/10 hover:text-nordic-text transition-colors"
+                    className={cn(
+                      "text-lg px-4 py-2 font-medium border border-nordic-primary/30 rounded-md hover:bg-nordic-primary/10 hover:text-nordic-text transition-colors",
+                      isActiveRoute("/signin")
+                        ? "text-nordic-primary bg-nordic-primary/10"
+                        : "text-nordic-muted"
+                    )}
                   >
                     Login
                   </Link>
-                  <Link to="/contact" className="btn-blue-big">
+                  <Link
+                    to="/contact"
+                    className={cn(
+                      "btn-blue-big",
+                      isActiveRoute("/contact") && "text-card opacity-65"
+                    )}
+                  >
                     Contact
                   </Link>
                 </div>
@@ -177,7 +223,12 @@ const Navbar: React.FC = () => {
                   </Link> */}
                   <Link
                     to="/"
-                    className="block font-medium text-nordic-text hover:text-nordic-primary transition-colors"
+                    className={cn(
+                      "block font-medium hover:text-nordic-primary transition-colors",
+                      isActiveRoute("/")
+                        ? "text-nordic-primary"
+                        : "text-nordic-text"
+                    )}
                   >
                     Home
                   </Link>
@@ -200,7 +251,12 @@ const Navbar: React.FC = () => {
                     onClick={() =>
                       setIsMobileDropDownMenuOpen(!isMobileDropDownMenuOpen)
                     }
-                    className="flex items-center justify-between w-full font-medium text-nordic-text hover:text-nordic-primary transition-colors"
+                    className={cn(
+                      "flex items-center justify-between w-full font-medium hover:text-nordic-primary transition-colors",
+                      isDropdownActive()
+                        ? "text-nordic-primary"
+                        : "text-nordic-text"
+                    )}
                     style={{ textAlign: "left", fontSize: "16px" }}
                   >
                     Software Products
@@ -221,10 +277,21 @@ const Navbar: React.FC = () => {
                         <Link
                           key={index}
                           to={feature.href}
-                          className="block rounded-md hover:bg-nordic-primary/10 transition-colors"
+                          className={cn(
+                            "block rounded-md hover:bg-nordic-primary/10 transition-colors",
+                            isActiveRoute(feature.href) &&
+                              "bg-nordic-primary/20"
+                          )}
                           style={{ padding: "12px" }}
                         >
-                          <p className="font-semibold text-nordic-text mb-1">
+                          <p
+                            className={cn(
+                              "font-semibold mb-1",
+                              isActiveRoute(feature.href)
+                                ? "text-nordic-primary"
+                                : "text-nordic-text"
+                            )}
+                          >
                             {feature.title}
                           </p>
                           <p className="text-sm text-nordic-muted">
@@ -239,14 +306,24 @@ const Navbar: React.FC = () => {
                 <div className="space-y-4">
                   <Link
                     to="/ourServices"
-                    className="block font-medium text-nordic-text hover:text-nordic-primary transition-colors"
+                    className={cn(
+                      "block font-medium hover:text-nordic-primary transition-colors",
+                      isActiveRoute("/ourServices")
+                        ? "text-nordic-primary"
+                        : "text-nordic-text"
+                    )}
                     style={{ fontSize: "16px" }}
                   >
                     Our Services
                   </Link>
                   <Link
                     to="/about"
-                    className="block font-medium text-nordic-text hover:text-nordic-primary transition-colors"
+                    className={cn(
+                      "block font-medium hover:text-nordic-primary transition-colors",
+                      isActiveRoute("/about")
+                        ? "text-nordic-primary"
+                        : "text-nordic-text"
+                    )}
                     style={{ fontSize: "16px" }}
                   >
                     About Us
@@ -257,11 +334,22 @@ const Navbar: React.FC = () => {
                   <ThemeToggle />
                   <Link
                     to="/signin"
-                    className="text-lg flex justify-center w-24 font-medium text-nordic-muted border border-nordic-primary/30 rounded-md hover:bg-nordic-primary/10 hover:text-nordic-text transition-colors px-4 py-2"
+                    className={cn(
+                      "text-lg flex justify-center w-24 font-medium border border-nordic-primary/30 rounded-md hover:bg-nordic-primary/10 hover:text-nordic-text transition-colors px-4 py-2",
+                      isActiveRoute("/signin")
+                        ? "text-nordic-primary bg-nordic-primary/10"
+                        : "text-nordic-muted"
+                    )}
                   >
                     Login
                   </Link>
-                  <Link to="/contact" className="btn-blue-small">
+                  <Link
+                    to="/contact"
+                    className={cn(
+                      "btn-blue-small",
+                      isActiveRoute("/contact") && "opacity-90"
+                    )}
+                  >
                     Contact
                   </Link>
                 </div>
