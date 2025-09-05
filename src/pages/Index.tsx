@@ -5,12 +5,15 @@ import { OfferingSection } from "@/components/landing/OfferingSection";
 
 import { WhyUsSection } from "@/components/landing/NordicValues";
 import { FooterSection } from "@/components/landing/FooterSection";
-import {CTA} from"@/components/CTA";
+import { CTA } from "@/components/CTA";
 import Layout from "@/layouts/Layout";
 
 export default function Index() {
   return (
-    <div className="min-h-screen ">
+    <div
+      className="relative min-h-screen "
+      style={{ background: "var(--nordic-bg)", color: "var(--nordic-text)" }}
+    >
       <Layout>
         <Navbar />
         <HeroSection />
