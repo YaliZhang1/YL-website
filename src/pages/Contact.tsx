@@ -93,7 +93,7 @@ export default function Contact() {
       description: "Speak directly with our team",
       contact: "+46 8 123 456 789",
       action: "Call Now",
-      color: "from-green-500 to-emerald-500",
+      color: "from-blue-500 to-indigo-500",
     },
     {
       icon: Coffee,
@@ -101,7 +101,7 @@ export default function Contact() {
       description: "Visit our Stockholm office",
       contact: "Kungsgatan 12, Stockholm",
       action: "Get Directions",
-      color: "from-purple-500 to-pink-500",
+      color: "from-blue-500 to-indigo-500",
     },
   ];
 
@@ -150,7 +150,7 @@ export default function Contact() {
                 </span>
                 Together
               </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl text-nordic-muted max-w-3xl mx-auto leading-relaxed">
                 Ready to transform your vision into reality? We'd love to hear
                 about your project and explore how we can help you achieve your
                 goals.
@@ -158,10 +158,10 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* 主要内容区域 */}
+          {/* main content*/}
           <div className="container mx-auto px-8 md:px-16 lg:px-24 max-w-7xl pb-20">
             <div className="grid lg:grid-cols-3 gap-16">
-              {/* 左侧 - 联系表单 */}
+              {/* left - contact sheet */}
               <div className="lg:col-span-2">
                 <div className="bg-white/80 backdrop-blur-sm rounded-3xl border border-gray-100/50 p-8 md:p-12 shadow-xl shadow-gray-900/5">
                   <h2 className="text-2xl font-bold text-gray-900 mb-2">
@@ -378,7 +378,7 @@ export default function Contact() {
                     return (
                       <div
                         key={index}
-                        className="group bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-100/50 p-6 shadow-lg shadow-gray-900/5 hover:shadow-xl hover:shadow-gray-900/10 transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+                        className="group bg-white/80 dark:bg-white/40 backdrop-blur-sm rounded-2xl border border-gray-100/50 p-6 shadow-lg shadow-gray-900/5 hover:shadow-xl hover:shadow-gray-900/10 transition-all duration-300 hover:-translate-y-1 cursor-pointer"
                       >
                         <div className="flex items-start space-x-4">
                           <div
@@ -387,16 +387,16 @@ export default function Contact() {
                             <Icon className="w-6 h-6" />
                           </div>
                           <div className="flex-grow">
-                            <h3 className="font-semibold text-gray-900 mb-1">
+                            <h3 className="font-semibold text-text mb-1">
                               {method.title}
                             </h3>
-                            <p className="text-sm text-gray-600 mb-2">
+                            <p className="text-sm text-gray-900 mb-2">
                               {method.description}
                             </p>
-                            <p className="font-medium text-gray-800">
+                            <p className="font-medium text-textHover">
                               {method.contact}
                             </p>
-                            <div className="flex items-center mt-2 text-sm text-blue-600 group-hover:text-blue-700">
+                            <div className="flex items-center mt-2 text-sm text-secondary group-hover:text-blue-700">
                               <span>{method.action}</span>
                               <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
                             </div>
@@ -407,13 +407,13 @@ export default function Contact() {
                   })}
                 </div>
 
-                {/* 办公时间 */}
-                <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-100/50 p-6 shadow-lg shadow-gray-900/5">
+                {/* work time */}
+                <div className="bg-white/80 dark:bg-white/40 backdrop-blur-sm rounded-2xl border border-gray-100/50 p-6 shadow-lg shadow-gray-900/5">
                   <div className="flex items-center mb-4">
                     <div className="p-2 rounded-lg bg-gradient-to-br from-green-50 to-emerald-50 mr-3">
                       <Clock className="w-5 h-5 text-green-600" />
                     </div>
-                    <h3 className="font-semibold text-gray-900">
+                    <h3 className="font-semibold text-text">
                       Office Hours
                     </h3>
                   </div>
@@ -423,8 +423,8 @@ export default function Contact() {
                         key={index}
                         className="flex justify-between items-center py-2 border-b border-gray-100 last:border-b-0"
                       >
-                        <span className="text-gray-600">{schedule.day}</span>
-                        <span className="font-medium text-gray-900">
+                        <span className="text-gray-900">{schedule.day}</span>
+                        <span className="font-medium text-textHover">
                           {schedule.hours}
                         </span>
                       </div>
@@ -432,10 +432,10 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* 社交媒体 */}
-                <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-100/50 p-6 shadow-lg shadow-gray-900/5">
-                  <h3 className="font-semibold text-gray-900 mb-4 flex items-center">
-                    <Globe className="w-5 h-5 mr-2 text-blue-600" />
+               
+                <div className="bg-white/80 dark:bg-white/40 backdrop-blur-sm rounded-2xl border border-gray-100/50 p-6 shadow-lg shadow-gray-900/5">
+                  <h3 className="font-semibold text-text mb-4 flex items-center">
+                    <Globe className="w-5 h-5 mr-2 text-blue-600 dark:text-blue-300" />
                     Follow Us
                   </h3>
                   <div className="flex space-x-3">
@@ -446,18 +446,18 @@ export default function Contact() {
                       },
                       {
                         icon: Github,
-                        color: "hover:bg-gray-50 hover:text-gray-800",
+                        color: "hover:bg-blue-50 hover:text-blue-600",
                       },
                       {
                         icon: Twitter,
-                        color: "hover:bg-blue-50 hover:text-blue-400",
+                        color: "hover:bg-blue-50 hover:text-blue-600",
                       },
                     ].map((social, index) => {
                       const Icon = social.icon;
                       return (
                         <div
                           key={index}
-                          className={`p-3 bg-gray-50 rounded-xl cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-gray-200/50 hover:-translate-y-1 text-gray-500 ${social.color}`}
+                          className={`p-3 bg-gray-50  rounded-xl cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-gray-200/50 hover:-translate-y-1 text-gray-500 ${social.color}`}
                         >
                           <Icon className="w-5 h-5" />
                         </div>
@@ -466,17 +466,16 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* 快速响应承诺 */}
-                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl border border-blue-100/50 p-6">
+                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-50 rounded-2xl border border-blue-100/50 p-6">
                   <div className="flex items-start space-x-3">
                     <div className="p-2 bg-blue-100 rounded-lg">
                       <Heart className="w-5 h-5 text-blue-600" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-blue-900 mb-2">
+                      <h4 className="font-semibold text-text  mb-2">
                         Quick Response Guarantee
                       </h4>
-                      <p className="text-blue-700 text-sm leading-relaxed">
+                      <p className="text-secondary text-sm leading-relaxed">
                         We typically respond to all inquiries within 4 hours
                         during business hours. For urgent matters, don't
                         hesitate to call us directly.

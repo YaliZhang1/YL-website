@@ -1,6 +1,7 @@
 import Navbar from "@/components/navbar/Navbar";
 import Layout from "@/layouts/Layout";
 import { FooterSection } from "@/components/landing/FooterSection";
+import { CTA } from "@/components/CTA";
 
 import React, { useState, useEffect } from "react";
 import {
@@ -87,7 +88,7 @@ const services = [
   },
 ];
 
-// 动画服务卡片组件
+// Animation Service Card Component
 const ServiceCard: React.FC<{
   service: (typeof services)[0];
   index: number;
@@ -166,11 +167,7 @@ const ServiceCard: React.FC<{
           ))}
         </ul>
 
-        {/* CTA按钮 */}
-        <button className="btn-blue-big">
-          Learn More
-          <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-        </button>
+       
       </div>
 
       {/* 装饰性光效 */}
@@ -215,7 +212,7 @@ export default function OurServices() {
       <Layout>
         <Navbar />
         <main className="relative overflow-hidden pt-24">
-          {/* 背景装饰元素 */}
+          {/*Background decorative elements */}
           <FloatingDecoration
             delay={1000}
             position={{ top: "15%", left: "10%" }}
@@ -268,46 +265,7 @@ export default function OurServices() {
               ))}
             </div>
 
-            {/* 底部CTA区域 */}
-            <div className="text-center relative">
-              {/* 背景图片容器 */}
-              <div
-                className="relative overflow-hidden rounded-2xl"
-                style={{
-                  background: "var(--nordic-card-bg)",
-                  border: "2px solid rgba(109, 153, 219, 0.2)",
-                }}
-              >
-                {/* 背景图片 */}
-                <div className="absolute inset-0 opacity-20">
-                  <img
-                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=600&fit=crop&crop=center&auto=format&q=80"
-                    alt="Team collaboration"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-nordic-bg via-nordic-bg/50 to-transparent" />
-                </div>
-
-                {/* 内容 */}
-                <div className="relative z-10 p-12">
-                  <h2 className="text-3xl md:text-4xl font-light text-nordic-text mb-6">
-                    Ready to Start Your Project?
-                  </h2>
-                  <p className="text-xl text-nordic-muted mb-8 max-w-2xl mx-auto">
-                    Let's discuss how we can help bring your vision to life with
-                    our expertise and Nordic approach to technology.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button className="px-8 py-4 btn-blue-big">
-                      Start Your Project
-                    </button>
-                    <button className="px-8 py-4 rounded-lg border-2 border-nordic-primary text-nordic-primary hover:bg-nordic-primary hover:text-white transition-all duration-300 text-lg font-light backdrop-blur-sm bg-white/10">
-                      Schedule a Call
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            
           </div>
 
           {/* 内联样式 */}
@@ -323,6 +281,7 @@ export default function OurServices() {
             }
           `}</style>
         </main>
+        <CTA />
         <FooterSection />
       </Layout>
     </div>
