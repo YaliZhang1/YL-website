@@ -3,7 +3,7 @@ import Navbar from "@/components/navbar/Navbar";
 import { HeroSection } from "@/components/landing/HeroSection";
 import { OfferingSection } from "@/components/landing/OfferingSection";
 
-import { WhyUsSection } from "@/components/landing/WhyUsSection";
+import { WhyUsSection } from "@/components/landing/NordicValues";
 import { FooterSection } from "@/components/landing/FooterSection";
 import {CTA} from"@/components/CTA";
 import Layout from "@/layouts/Layout";

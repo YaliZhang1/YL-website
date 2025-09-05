@@ -1,5 +1,4 @@
-
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   Shield,
   Clock,
@@ -9,7 +8,6 @@ import {
   Target,
 } from "lucide-react";
 
-// 优势图标映射
 const whyChooseUsIcons = {
   "Proven Expertise": Award,
   "Nordic Quality": Shield,
@@ -19,7 +17,6 @@ const whyChooseUsIcons = {
   "Results Focused": Target,
 };
 
-// 优势详细内容
 const whyChooseUsContent = {
   "Proven Expertise":
     "15+ years delivering scalable solutions across Nordic markets with deep technical knowledge",
@@ -35,21 +32,22 @@ const whyChooseUsContent = {
     "Data-driven solutions that deliver measurable business impact and long-term value",
 };
 
-// 优势卡片组件
-const WhyChooseUsCard = ({ advantage, index }) => {
+const WhyChooseUsCard = ({ advantage, index,triggerAnimation}) => {
   const [isHovered, setIsHovered] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
+  const [shouldAnimate, setShouldAnimate] = useState(false);
   const Icon = whyChooseUsIcons[advantage] || Award;
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 200 + index * 150);
-    return () => clearTimeout(timer);
-  }, [index]);
+    if (triggerAnimation && !shouldAnimate) {
+      const timer = setTimeout(() => setShouldAnimate(true), 200 + index * 150);
+      return () => clearTimeout(timer);
+    }
+  }, [triggerAnimation, index, shouldAnimate]);
 
   return (
     <div
       className={`transition-all duration-700 transform ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        shouldAnimate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -57,52 +55,52 @@ const WhyChooseUsCard = ({ advantage, index }) => {
       <div
         className={`
         group relative p-8 rounded-2xl border border-gray-100/50 
-        bg-gradient-to-br from-white/80 to-gray-50/30 backdrop-blur-sm
+        bg-gradient-to-br from-white/80 to-gray-50/30 dark:from-black/80 dark:to-gray-200/10  backdrop-blur-sm
         hover:border-blue-200/60 hover:shadow-xl hover:shadow-blue-500/10
         transition-all duration-500 ease-out h-full
         ${isHovered ? "transform -translate-y-2" : ""}
       `}
       >
-        {/* 背景光效 */}
+        {/* Background light effect */}
         <div
           className={`
           absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100
-          bg-gradient-to-br from-blue-50/40 to-indigo-50/20
+          bg-gradient-to-br from-blue-100/40 to-indigo-50/20
           transition-opacity duration-500
         `}
         />
 
-        {/* 内容区域 */}
+        {/* Content Area */}
         <div className="relative z-10">
           <div className="flex flex-row mb-4 items-center space-x-3 ">
             <div
               className={`
             inline-flex p-3 rounded-xl
-            bg-gradient-to-br from-blue-50 to-indigo-50
-            group-hover:from-blue-100 group-hover:to-indigo-100
+            bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950
+            group-hover:from-blue-100 group-hover:to-indigo-100 
             transition-all duration-300
             ${isHovered ? "scale-110" : ""}
           `}
             >
-              <Icon className="w-7 h-7 text-blue-600" />
+              <Icon className="w-7 h-7 text-blue-600 " />
             </div>
             <h3 className="card-title  group-hover:text-blue-700 transition-colors duration-300">
               {advantage}
             </h3>
           </div>
-          <p className="card-subtitle font-normal">
+          <p className="card-subtitle font-normal leading-relaxed">
             {whyChooseUsContent[advantage]}
           </p>
         </div>
-
-        {/* 底部装饰线 */}
-        <div className="absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </div>
     </div>
   );
 };
 
 export const WhyUsSection = () => {
+  const [triggerAnimation, setTriggerAnimation] = useState(false);
+  const sectionRef = useRef(null);
+
   const advantages = [
     "Proven Expertise",
     "Nordic Quality",
@@ -111,43 +109,66 @@ export const WhyUsSection = () => {
     "Innovation First",
     "Results Focused",
   ];
+ useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setTriggerAnimation(true);
+            
+          }
+        });
+      },
+      {
+        threshold: 0.1, // Fires when 10% of the section enters the viewport
+        rootMargin: "-50px 0px", // Optional: Adjust the trigger boundaries
+      }
+    );
 
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
   return (
-    <section className="pt-16 pb-32 bg-nordic-bg text-nordic-text ">
-      {/* 背景装饰 */}
+    <section ref={sectionRef} className="pt-16 pb-32 bg-nordic-bg text-nordic-text ">
+      {/* Background decoration*/}
       <div className="absolute top-0 left-1/4 w-64 h-64 bg-blue-100/30 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-100/20 rounded-full blur-3xl" />
 
       <div className="container mx-auto   relative z-10">
-        {/* 标题区域 */}
+        {/* Title Area */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 text-blue-600 text-sm font-medium mb-6">
-            <Shield className="w-4 h-4 mr-2" />
-            Why Choose Us
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-nordic-text mb-6 leading-tight">
+          <h2 className={`text-4xl md:text-5xl font-bold text-text mb-6 leading-tight transition-all duration-1000 transform ${
+              triggerAnimation ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}>
             Built on
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 mx-3">
               Nordic Values
             </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+         <p className={`text-xl text-nordic-muted max-w-5xl mx-auto leading-relaxed transition-all duration-1000 delay-200 transform ${
+              triggerAnimation ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}>
             We combine Scandinavian design principles with cutting-edge
             technology to deliver solutions that are both beautiful and
             functional.
           </p>
         </div>
 
-        {/* 卡片网格 */}
+        {/* Card Grid */}
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
           {advantages.map((advantage, index) => (
             <div key={advantage} className="h-full card-title">
-              <WhyChooseUsCard advantage={advantage} index={index} />
+              <WhyChooseUsCard advantage={advantage} index={index} triggerAnimation={triggerAnimation}/>
             </div>
           ))}
         </div>
-
-      
       </div>
     </section>
   );
