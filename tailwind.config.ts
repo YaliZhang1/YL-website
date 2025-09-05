@@ -21,7 +21,7 @@ const config: Config = {
         card: "var(--color-card)",
         cardHover: "var(--color-card-hover)",
         bg: "var(--color-bg)",
-        bgSecondary: "var(--color-bg-secondary)",
+        textSecondary: "var(--color-text-secondary)",
         foreground: "hsl(var(--foreground))",
         nordic: {
           primary: "var(--nordic-primary)",

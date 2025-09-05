@@ -10,7 +10,7 @@ import Layout from "@/layouts/Layout";
 
 export default function Index() {
   return (
-    <div className="min-h-screen bg-brand-bg text-brand-text">
+    <div className="min-h-screen ">
       <Layout>
         <Navbar />
         <HeroSection />

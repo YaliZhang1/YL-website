@@ -3,8 +3,8 @@ import { ChevronRight, Coffee } from "lucide-react";
 export const CTA = () => {
   return (
     <>
-      <div className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-secondary to-primary dark:to-bg" />
+      <div className="py-20 relative overflow-hidden ">
+        <div className="absolute inset-0 bg-gradient-to-t from-secondary to-primary dark:from-blue-950 dark:to-black" />
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200')] bg-cover bg-center opacity-10" />
 
         <div className="container mx-auto px-8 md:px-16 lg:px-24 max-w-7xl relative z-10 text-center">

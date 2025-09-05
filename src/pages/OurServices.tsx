@@ -233,10 +233,7 @@ export default function OurServices() {
           <div className="container mx-auto px-8 md:px-16 lg:px-24 max-w-[130rem] relative z-10 py-20">
             {/* 页面标题部分 */}
             <div className="text-center mb-20">
-              {/* 标签 */}
-              <div className="inline-flex items-center px-4 py-2 rounded-full text-base font-normal border border-nordic-primary bg-nordic-primary/10 text-nordic-primary mb-6">
-                Our Services
-              </div>
+             
 
               {/* 主标题 */}
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-light leading-tight mb-8">

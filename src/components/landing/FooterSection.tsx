@@ -57,14 +57,8 @@ export const FooterSection = () => {
   ];
 
   return (
-    <footer className="bg-nordic-bg text-nordic-text bg-gradient-to-b from-gray-50/50 to-white relative  overflow-hidden">
-      {/* 背景装饰 */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-blue-100/20 rounded-full blur-3xl -translate-x-48 -translate-y-48" />
-      <div className="absolute bottom-0 right-0 w-64 h-64 bg-indigo-100/30 rounded-full blur-3xl translate-x-32 translate-y-32" />
-
+    <footer className="bg-[#0f0f0f]  bg-gradient-to-l from-gray-50/50 to-white dark:bg-gradient-to-r dark:from-blue-950 dark:to-black relative  overflow-hidden">
       <div className="relative z-10">
-        {/* 主要内容区域 */}
-        {/* 底部装饰渐变 */}
 
         <div className="h-[1px] bg-nordic-bg bg-gradient-to-r from-blue-800/50 via-indigo-800/50 to-blue-800/50" />
         <div className="container mx-auto px-8 md:px-16 lg:px-24  pt-20 pb-12">
@@ -78,22 +72,22 @@ export const FooterSection = () => {
                     Nordic Tech
                   </span>
                 </div>
-                <p className="text-gray-600 leading-relaxed mb-6">
+                <p className="text-nordic-muted leading-relaxed mb-6">
                   Delivering world-class technology solutions with Scandinavian
                   excellence. Building the future, one line of code at a time.
                 </p>
 
                 {/* 联系方式 */}
                 <div className="space-y-3">
-                  <div className="flex items-center text-gray-600 hover:text-blue-600 transition-colors duration-300 cursor-pointer">
+                  <div className="flex items-center  hover:text-blue-600 transition-colors duration-300 cursor-pointer">
                     <Mail className="w-4 h-4 mr-3 flex-shrink-0" />
                     <span className="text-sm">hello@nordictech.com</span>
                   </div>
-                  <div className="flex items-center text-gray-600 hover:text-blue-600 transition-colors duration-300 cursor-pointer">
+                  <div className="flex items-center  hover:text-blue-600 transition-colors duration-300 cursor-pointer">
                     <Phone className="w-4 h-4 mr-3 flex-shrink-0" />
                     <span className="text-sm">+46 8 123 456 789</span>
                   </div>
-                  <div className="flex items-center text-gray-600 hover:text-blue-600 transition-colors duration-300 cursor-pointer">
+                  <div className="flex items-center  hover:text-blue-600 transition-colors duration-300 cursor-pointer">
                     <MapPin className="w-4 h-4 mr-3 flex-shrink-0" />
                     <span className="text-sm">Stockholm, Sweden</span>
                   </div>
@@ -101,9 +95,9 @@ export const FooterSection = () => {
               </div>
             </div>
 
-            {/* 服务 */}
+          
             <div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-6 flex items-center">
+              <h3 className="text-lg font-semibold  mb-6 flex items-center">
                 <div className="w-2 h-6 bg-gradient-to-b from-blue-500 to-indigo-500 rounded-full mr-3" />
                 Services
               </h3>
@@ -112,7 +106,7 @@ export const FooterSection = () => {
                   const Icon = service.icon;
                   return (
                     <Link key={index} to={service.link} className="group block">
-                      <div className="flex items-center text-gray-600 group-hover:text-blue-600 transition-all duration-300">
+                      <div className="flex items-center text-nordic-text group-hover:text-blue-600 transition-all duration-300">
                         <Icon className="w-4 h-4 mr-3 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
                         <span className="text-sm group-hover:translate-x-1 transition-transform duration-300">
                           {service.name}
@@ -124,16 +118,16 @@ export const FooterSection = () => {
               </div>
             </div>
 
-            {/* 快速链接 */}
+      
             <div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-6 flex items-center">
+              <h3 className="text-lg font-semibold  mb-6 flex items-center">
                 <div className="w-2 h-6 bg-gradient-to-b from-blue-500 to-indigo-500 rounded-full mr-3" />
                 Quick Links
               </h3>
               <div className="space-y-3">
                 {quickLinks.map((link, index) => (
                   <Link key={index} to={link.link} className="group block">
-                    <span className="text-sm text-gray-600 group-hover:text-blue-600 group-hover:translate-x-1 inline-block transition-all duration-300">
+                    <span className="text-sm text-nordic-text group-hover:text-blue-600 group-hover:translate-x-1 inline-block transition-all duration-300">
                       {link.name}
                     </span>
                   </Link>
@@ -141,14 +135,14 @@ export const FooterSection = () => {
               </div>
 
               <div className="mt-8">
-                <h4 className="text-sm font-medium text-gray-700 mb-4">
+                <h4 className="text-sm font-medium text-nordic-primary mb-4">
                   Technologies
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {technologies.map((tech, index) => (
                     <span
                       key={index}
-                      className="px-3 py-1 text-xs bg-gray-100 text-gray-600 rounded-full hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 cursor-pointer"
+                      className="px-3 py-1 text-xs bg-nordic-light text-textSecondary rounded-full hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 cursor-pointer"
                     >
                       {tech}
                     </span>
@@ -157,18 +151,18 @@ export const FooterSection = () => {
               </div>
             </div>
 
-            {/* 订阅区域 */}
+ 
             <div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-6 flex items-center">
+              <h3 className="text-lg font-semibold  mb-6 flex items-center">
                 <div className="w-2 h-6 bg-gradient-to-b from-blue-500 to-indigo-500 rounded-full mr-3" />
                 Stay Updated
               </h3>
-              <p className="text-sm text-gray-600 mb-6 leading-relaxed">
+              <p className="text-sm text-nordic-text mb-6 leading-relaxed">
                 Subscribe to our newsletter for the latest tech insights and
                 Nordic innovation stories.
               </p>
 
-              {/* 订阅输入 */}
+           
               <div className="mb-8">
                 <div className="relative">
                   <input
@@ -193,9 +187,9 @@ export const FooterSection = () => {
                 )}
               </div>
 
-              {/* 社交媒体 */}
+             
               <div>
-                <h4 className="text-sm font-medium text-gray-700 mb-4">
+                <h4 className="text-sm font-medium text-nordic-primary mb-4">
                   Follow Us
                 </h4>
                 <div className="flex space-x-3">
@@ -207,8 +201,8 @@ export const FooterSection = () => {
                     },
                     {
                       icon: Github,
-                      color: "hover:text-gray-800",
-                      bg: "hover:bg-gray-50",
+                      color: "hover:text-blue-600",
+                      bg: "hover:bg-blue-50",
                     },
                     {
                       icon: Twitter,
@@ -231,11 +225,11 @@ export const FooterSection = () => {
             </div>
           </div>
         </div>
-        {/* 分割线 */}
+       
         <div className="mx-8 md:mx-16 lg:mx-24 max-w-7xl ">
           <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
         </div>
-        {/* 底部版权区域 */}
+       
         <div className="container mx-auto px-8 md:px-16 lg:px-24 max-w-7xl py-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="text-sm text-gray-500 flex items-center">
@@ -258,7 +252,7 @@ export const FooterSection = () => {
                 Terms of Service
               </Link>
 
-              {/* 返回顶部按钮 */}
+             
               <button
                 onClick={scrollToTop}
                 className="p-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-full hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 hover:-translate-y-1 group"

@@ -8,16 +8,16 @@
   --color-text-hover: #718096;
   --color-secondary: #64748b;
   --color-bg: #ffffff;
-  --color-bg-secondary: #f5f5f5;
+  --color-text-secondary: #2a2929;
   --color-card: #f4f4f5;
   --color-card-hover: #ffffff;
 
   /* Nordic Colors - 浅色模式 */
-  --nordic-primary: #6d99db;
+  --nordic-primary: #0a57cb;
   --nordic-secondary: #1427eb;
   --nordic-dark: #020e86;
   --nordic-darker: #151328;
-  --nordic-light: #e1e2e0;
+  --nordic-light: #cdcbcb;
   --nordic-bg: #fafafa;
   --nordic-text: #1a1a1a;
   --nordic-card-bg: #ffffff;
@@ -30,7 +30,7 @@
   --color-text-hover: #cbd5e1;
   --color-secondary: #94a3b8;
   --color-bg: #000;
-  --color-bg-secondary: #17171c;
+  --color-text-secondary: #9c9c9f;
   --color-card: #18181b;
   --color-card-hover: #22222a;
 
@@ -39,9 +39,9 @@
   --nordic-secondary: #1427eb;
   --nordic-dark: #020e86;
   --nordic-darker: #151328;
-  --nordic-light: #e1e2e0;
+  --nordic-light: #2a2a29;
   --nordic-bg: #0f0f0f;
-  --nordic-text: #ffffff;
+  --nordic-text: #888888;
   --nordic-card-bg: #1a1a1a;
   --nordic-muted: #888888;
 }

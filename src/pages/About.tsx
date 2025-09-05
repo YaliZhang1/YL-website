@@ -89,8 +89,7 @@ const About = () => {
       title: "Nordic Expansion",
       description: "Expanded operations across Denmark, Norway, and Finland",
       icon: MapPin,
-      image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop&crop=center&auto=format&q=80",
+      image: "/img/flags.jpg",
     },
     {
       year: "2020",
@@ -191,7 +190,7 @@ const About = () => {
     >
       <Layout>
         <Navbar />
-        <main className="relative overflow-hidden pt-24">
+        <main className="relative overflow-hidden text-text pt-24">
           {/* Hero Section with Background */}
           <div className="relative">
             {/* Background Image */}
@@ -336,9 +335,7 @@ const About = () => {
               />
             </div>
 
-            <div
-              className="container mx-auto max-w-full px-28 relative z-10"
-            >
+            <div className="container mx-auto max-w-full px-28 relative z-10">
               <div className="text-center mb-16">
                 <h2 className="text-4xl md:text-5xl font-bold  mb-6">
                   15 Years of Innovation
@@ -379,7 +376,7 @@ const About = () => {
                           }`}
                         >
                           <div
-                            className={`group bg-white/95 backdrop-blur-sm rounded-3xl border border-gray-100/50 overflow-hidden shadow-xl shadow-gray-900/10 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-2 ${
+                            className={`group bg-white/95 backdrop-blur-sm rounded-3xl border border-gray-100/50 dark:border-gray-700  overflow-hidden shadow-xl shadow-gray-900/10 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-2 ${
                               isEven ? "text-right" : "text-left"
                             }`}
                           >
@@ -394,8 +391,10 @@ const About = () => {
 
                               {/* Year Badge */}
                               <div
-                               className={`absolute top-[4rem] ${
-                                  isEven ? 'right-0' : 'md:left-0 right-0 md:right-auto'
+                                className={`absolute top-[4rem] ${
+                                  isEven
+                                    ? "right-0"
+                                    : "md:left-0 right-0 md:right-auto"
                                 } bg-nordic-cardBg/90 backdrop-blur-sm px-2 py-2 rounded-xl`}
                               >
                                 <span className="text-xl sm:text-2xl bg-white/60 dark:bg-black/60 px-4 py-1 rounded-lg font-bold text-blue-600 dark:text-blue-400">
@@ -406,7 +405,9 @@ const About = () => {
                               {/* Icon */}
                               <div
                                 className={`absolute top-3 ${
-                                  isEven ? "right-4" : 'md:left-4 right-4 md:right-auto'
+                                  isEven
+                                    ? "right-4"
+                                    : "md:left-4 right-4 md:right-auto"
                                 } p-2  rounded-xl bg-white/35 dark:bg-black/60 text-blue-900 dark:text-blue-400 shadow-lg`}
                               >
                                 <Icon className="w-5 h-5" />
@@ -418,7 +419,7 @@ const About = () => {
                               <h3 className="text-2xl font-bold  mb-3 group-hover:text-blue-700 transition-colors duration-300">
                                 {milestone.title}
                               </h3>
-                              <p className="text-nordic-text leading-relaxed  transition-colors duration-300">
+                              <p className="text-textHover leading-relaxed  transition-colors duration-300">
                                 {milestone.description}
                               </p>
                             </div>
@@ -439,8 +440,8 @@ const About = () => {
               <img
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&h=800&fit=crop&crop=center&auto=format&q=80"
                 alt="Team background"
-                className="w-full h-full object-cover opacity-5"
-              />
+                className="w-full h-full object-cover opacity-10 dark:opacity-[0.2]"
+              />{" "}
             </div>
 
             <div className="container mx-auto px-8 md:px-16 lg:px-24  relative z-10">
@@ -448,28 +449,28 @@ const About = () => {
                 <h2 className="text-4xl md:text-5xl font-bold  mb-6">
                   Meet the Minds Behind the Magic
                 </h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                <p className="text-lg sm:text-xl text-nordic-muted max-w-3xl mx-auto">
                   A diverse group of passionate professionals united by a shared
                   vision of creating exceptional digital experiences.
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {team.map((member, index) => (
                   <div
                     key={index}
-                    className="group bg-white/90 backdrop-blur-sm rounded-3xl border border-gray-100/50 p-6 shadow-lg shadow-gray-900/5 hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-2 text-center"
+                    className="group bg-white/30 dark:bg-black/30          cursor-pointer  backdrop-blur-sm rounded-3xl border border-gray-600/10 dark:border-gray-600 p-6 shadow-lg shadow-gray-900/5 dark:shadow-black/20 hover:shadow-xl hover:shadow-blue-500/20 dark:hover:shadow-blue-400/20 transition-all duration-500 hover:-translate-y-2 text-center"
                   >
                     <div className="relative mb-6">
                       <img
                         src={member.image}
                         alt={member.name}
-                        className="w-24 h-24 rounded-2xl mx-auto object-cover group-hover:scale-110 transition-transform duration-300"
+                        className="w-24 h-24 rounded-2xl mx-auto object-cover  group-hover:scale-110 transition-transform duration-300"
                       />
-                      <div className="absolute inset-0 w-24 h-24 rounded-2xl mx-auto bg-gradient-to-tr from-blue-500/20 to-indigo-500/10 group-hover:opacity-0 transition-opacity duration-300" />
+                      <div className="absolute inset-0 w-24 h-24 rounded-2xl mx-auto bg-gradient-to-tr from-blue-500/20 to-indigo-500/10 dark:bg-black/60       group-hover:opacity-0 transition-opacity duration-300" />
                     </div>
 
-                    <h3 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-blue-700 transition-colors duration-300">
+                    <h3 className="text-xl font-bold  mb-1 group-hover:text-blue-700 transition-colors duration-300">
                       {member.name}
                     </h3>
 
@@ -477,14 +478,14 @@ const About = () => {
                       {member.role}
                     </div>
 
-                    <p className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                    <p className="text-nordic-muted text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                       {member.bio}
                     </p>
 
                     {/* Social links placeholder */}
                     <div className="flex justify-center space-x-2 mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="p-2 bg-blue-50 rounded-lg cursor-pointer hover:bg-blue-100 transition-colors duration-200">
-                        <Star className="w-4 h-4 text-blue-600" />
+                      <div className="p-2 bg-blue-50 dark:bg-blue-900/30 rounded-lg cursor-pointer hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors duration-200">
+                        <Star className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                       </div>
                     </div>
                   </div>
