@@ -1,6 +1,6 @@
 import Navbar from "@/components/navbar/Navbar";
 import Layout from "@/layouts/Layout";
-import { FooterSection } from "@/components/landing/FooterSection";
+import { FooterSection } from "@/components/FooterSection";
 import { CTA } from "@/components/CTA";
 
 import React, { useState, useEffect } from "react";
@@ -166,8 +166,6 @@ const ServiceCard: React.FC<{
             </li>
           ))}
         </ul>
-
-       
       </div>
 
       {/* 装饰性光效 */}
@@ -230,8 +228,6 @@ export default function OurServices() {
           <div className="container mx-auto px-8 md:px-16 lg:px-24 max-w-[130rem] relative z-10 py-20">
             {/* 页面标题部分 */}
             <div className="text-center mb-20">
-             
-
               {/* 主标题 */}
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-light leading-tight mb-8">
                 <span className="text-nordic-primary">Precision-Driven</span>
@@ -264,8 +260,6 @@ export default function OurServices() {
                 <ServiceCard key={service.id} service={service} index={index} />
               ))}
             </div>
-
-            
           </div>
 
           {/* 内联样式 */}

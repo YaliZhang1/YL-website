@@ -11,14 +11,9 @@ import {
   Globe,
   Cloud,
   Star,
-  Coffee,
-  Container,
 } from "lucide-react";
 import { FadeInWhenVisible } from "@/components/FadeInWhenVisible";
-import type { Variants } from "framer-motion";
 import { motion } from "framer-motion";
-import type { ReactNode } from "react";
-import { useInView } from "react-intersection-observer";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 50 },
@@ -26,13 +21,13 @@ const fadeUp = {
 };
 
 const fadeLeft = {
-  hidden: { opacity: 0, x: -50 },
-  visible: { opacity: 1, x: 0 },
+  hidden: { opacity: 0, x: -40, y: 30 },
+  visible: { opacity: 1, x: 0, y: 0 },
 };
 
 const fadeRight = {
-  hidden: { opacity: 0, x: 50 },
-  visible: { opacity: 1, x: 0 },
+  hidden: { opacity: 0, x: 40, y: 30 },
+  visible: { opacity: 1, x: 0, y: 0 },
 };
 
 const zoomIn = {
@@ -40,6 +35,21 @@ const zoomIn = {
   visible: { opacity: 1, scale: 1 },
 };
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.5,
+    },
+  },
+};
+
+const transition = {
+  type: "spring" as const,
+  stiffness: 60,
+  damping: 20,
+};
 export const AboutContent = () => {
   const [activeValue, setActiveValue] = useState(0);
   const [visibleStats, setVisibleStats] = useState(false);
@@ -354,115 +364,120 @@ export const AboutContent = () => {
         </FadeInWhenVisible>
 
         {/* Enhanced Timeline Section */}
-        <FadeInWhenVisible variants={zoomIn}>
-          <div className="py-20 relative overflow-hidden">
-            {/* Background */}
-            <div className="absolute inset-0 z-0">
-              <img
-                src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=800&fit=crop&crop=center&auto=format&q=80"
-                alt="Timeline background"
-                className="w-full h-full object-cover opacity-5 dark:opacity-[0.2]"
-              />
+
+        <div className="py-20 relative overflow-hidden">
+          {/* Background */}
+          <div className="absolute inset-0 z-0">
+            <img
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=800&fit=crop&crop=center&auto=format&q=80"
+              alt="Timeline background"
+              className="w-full h-full object-cover opacity-5 dark:opacity-[0.2]"
+            />
+          </div>
+
+          <div className="container mx-auto max-w-full px-28 relative z-10">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl text-text md:text-5xl font-bold  mb-6">
+                15 Years of Innovation
+              </h2>
+              <p className="text-xl text-nordic-muted  mx-auto">
+                From a small Stockholm startup to a Nordic technology leader,
+                here's how we've grown and evolved over the years.
+              </p>
             </div>
 
-            <div className="container mx-auto max-w-full px-28 relative z-10">
-              <div className="text-center mb-16">
-                <h2 className="text-4xl text-text md:text-5xl font-bold  mb-6">
-                  15 Years of Innovation
-                </h2>
-                <p className="text-xl text-nordic-muted  mx-auto">
-                  From a small Stockholm startup to a Nordic technology leader,
-                  here's how we've grown and evolved over the years.
-                </p>
-              </div>
-
-              <div className="relative">
-                {/* Enhanced Timeline line with gradient */}
-                <div className="absolute left-4 md:left-1/2 transform -translate-x-0.5 w-1 h-full bg-gradient-to-b from-blue-400 via-indigo-400 to-nordic-secondary opacity-90 dark:opacity-50 rounded-full shadow-lg" />
-
-                <div className="space-y-16">
+            <div className="relative">
+              {/* Enhanced Timeline line with gradient */}
+              <div className="absolute left-4 md:left-1/2 transform -translate-x-0.5 w-1 h-full bg-gradient-to-b from-blue-400 via-indigo-400 to-nordic-secondary opacity-90 dark:opacity-50 rounded-full shadow-lg" />
+              <FadeInWhenVisible variants={containerVariants}>
+                <motion.div className="space-y-16">
                   {milestones.map((milestone, index) => {
                     const Icon = milestone.icon;
                     const isEven = index % 2 === 0;
 
                     return (
-                      <div
+                      <FadeInWhenVisible
                         key={index}
-                        className={`relative flex items-center ${
-                          isEven ? "justify-start" : "justify-end"
-                        }`}
+                        variants={isEven ? fadeLeft : fadeRight}
                       >
-                        {/* Enhanced Timeline dot */}
-                        <div className="absolute left-1 md:left-1/2 md:transform md:-translate-x-1/2  w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-500 opacity-90 dark:opacity-50 rounded-full border-4 border-white shadow-xl z-10">
-                          <div className="absolute inset-1 bg-white rounded-full opacity-30" />
-                        </div>
-
-                        {/* Content with Image */}
-                        <div
-                          className={`w-full pl-16 md:pl-0 ${
-                            isEven
-                              ? "md:w-5/12 md:pr-6"
-                              : "md:w-5/12 md:pl-6 md:ml-auto"
+                        <motion.div
+                          transition={transition}
+                          className={`relative flex items-center ${
+                            isEven ? "justify-start" : "justify-end"
                           }`}
                         >
+                          {/* Enhanced Timeline dot */}
+                          <div className="absolute left-1 md:left-1/2 md:transform md:-translate-x-1/2  w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-500 opacity-90 dark:opacity-50 rounded-full border-4 border-white shadow-xl z-10">
+                            <div className="absolute inset-1 bg-white rounded-full opacity-30" />
+                          </div>
+                          {/* Content with Image */}
                           <div
-                            className={`group bg-white/95 backdrop-blur-sm rounded-3xl border border-gray-100/50 dark:border-gray-700  overflow-hidden shadow-xl shadow-gray-900/10 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-2 ${
-                              isEven ? "text-right" : "text-left"
+                            className={`w-full pl-16 md:pl-0 ${
+                              isEven
+                                ? "md:w-5/12 md:pr-6"
+                                : "md:w-5/12 md:pl-6 md:ml-auto"
                             }`}
                           >
-                            {/* Image Section */}
-                            <div className="relative  h-48 sm:h-56 md:h-48 overflow-hidden">
-                              <img
-                                src={milestone.image}
-                                alt={milestone.title}
-                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                              />
-                              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent dark:from-black/70" />
+                            <div
+                              className={`group bg-white/95 backdrop-blur-sm rounded-3xl border border-gray-100/50 dark:border-gray-700  overflow-hidden shadow-xl shadow-gray-900/10 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-2 ${
+                                isEven ? "text-right" : "text-left"
+                              }`}
+                            >
+                              {/* Image Section */}
+                              <div className="relative  h-48 sm:h-56 md:h-48 overflow-hidden">
+                                <img
+                                  src={milestone.image}
+                                  alt={milestone.title}
+                                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent dark:from-black/70" />
 
-                              {/* Year Badge */}
-                              <div
-                                className={`absolute top-[4rem] ${
-                                  isEven
-                                    ? "right-0"
-                                    : "md:left-0 right-0 md:right-auto"
-                                } bg-nordic-cardBg/90 backdrop-blur-sm px-2 py-2 rounded-xl`}
-                              >
-                                <span className="text-xl sm:text-2xl bg-white/60 dark:bg-black/60 px-4 py-1 rounded-lg font-bold text-blue-600 dark:text-blue-400">
-                                  {milestone.year}
-                                </span>
+                                {/* Year Badge */}
+                                <div
+                                  className={`absolute top-[4rem] ${
+                                    isEven
+                                      ? "right-0"
+                                      : "md:left-0 right-0 md:right-auto"
+                                  } bg-nordic-cardBg/90 backdrop-blur-sm px-2 py-2 rounded-xl`}
+                                >
+                                  <span className="text-xl sm:text-2xl bg-white/60 dark:bg-black/60 px-4 py-1 rounded-lg font-bold text-blue-600 dark:text-blue-400">
+                                    {milestone.year}
+                                  </span>
+                                </div>
+
+                                {/* Icon */}
+                                <div
+                                  className={`absolute top-3 ${
+                                    isEven
+                                      ? "right-4"
+                                      : "md:left-4 right-4 md:right-auto"
+                                  } p-2  rounded-xl bg-white/35 dark:bg-black/60 text-blue-900 dark:text-blue-400 shadow-lg`}
+                                >
+                                  <Icon className="w-5 h-5" />
+                                </div>
                               </div>
 
-                              {/* Icon */}
-                              <div
-                                className={`absolute top-3 ${
-                                  isEven
-                                    ? "right-4"
-                                    : "md:left-4 right-4 md:right-auto"
-                                } p-2  rounded-xl bg-white/35 dark:bg-black/60 text-blue-900 dark:text-blue-400 shadow-lg`}
-                              >
-                                <Icon className="w-5 h-5" />
+                              {/* Content Section */}
+                              <div className="p-6 dark:bg-black/50">
+                                <h3 className="text-2xl font-bold text-textHover mb-3 group-hover:text-blue-700 transition-colors duration-300">
+                                  {milestone.title}
+                                </h3>
+                                <p className="text-textHover leading-relaxed  transition-colors duration-300">
+                                  {milestone.description}
+                                </p>
                               </div>
                             </div>
-
-                            {/* Content Section */}
-                            <div className="p-6 dark:bg-black/50">
-                              <h3 className="text-2xl font-bold text-textHover mb-3 group-hover:text-blue-700 transition-colors duration-300">
-                                {milestone.title}
-                              </h3>
-                              <p className="text-textHover leading-relaxed  transition-colors duration-300">
-                                {milestone.description}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                          </div>{" "}
+                        </motion.div>
+                      </FadeInWhenVisible>
                     );
                   })}
-                </div>
-              </div>
+                </motion.div>
+              </FadeInWhenVisible>
             </div>
           </div>
-        </FadeInWhenVisible>
+        </div>
+
         {/* Team Section with Background */}
         <FadeInWhenVisible variants={fadeUp}>
           <div className="py-20 relative overflow-hidden">

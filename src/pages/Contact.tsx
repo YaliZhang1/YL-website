@@ -1,5 +1,5 @@
 import Navbar from "@/components/navbar/Navbar";
-import { FooterSection } from "@/components/landing/FooterSection";
+import { FooterSection } from "@/components/FooterSection";
 import Layout from "@/layouts/Layout";
 import { useState } from "react";
 import {
@@ -129,12 +129,12 @@ export default function Contact() {
   }> = ({ children, variant = "primary", onClick, className = "" }) => {
     const baseClasses =
       "px-8 py-4 rounded-lg font-light text-lg transition-all duration-300 flex items-center group";
-  
+
     const primaryClasses = `${baseClasses} text-white hover:shadow-lg transform hover:scale-[1.02] bg-gradient-to-br from-nordic-primary to-nordic-secondary`;
     const secondaryClasses = `${baseClasses} border-2 border-nordic-primary text-nordic-primary bg-transparent hover:shadow-lg transform hover:scale-[1.02] hover:bg-nordic-primary hover:text-white transition-colors`;
-  
+
     const classes = variant === "primary" ? primaryClasses : secondaryClasses;
-  
+
     return (
       <button className={`${classes} ${className}`} onClick={onClick}>
         {children}
@@ -142,7 +142,10 @@ export default function Contact() {
     );
   };
   return (
-    <div className="min-h-screen pt-24  bg-nordic-bg text-nordic-text relative overflow-hidden" style={{ background: "var(--nordic-bg)", color: "var(--nordic-text)" }}>
+    <div
+      className="min-h-screen pt-24  bg-nordic-bg text-nordic-text relative overflow-hidden"
+      style={{ background: "var(--nordic-bg)", color: "var(--nordic-text)" }}
+    >
       <Layout>
         <Navbar />
         <div className="absolute top-0 left-0 w-96 h-96 bg-blue-100/20 rounded-full blur-3xl -translate-x-48 -translate-y-48" />
@@ -369,10 +372,7 @@ export default function Contact() {
                   </div>
 
                   {/* 提交按钮 */}
-                  <AnimatedButton
-                    onClick={handleSubmit}
-                    
-                  >
+                  <AnimatedButton onClick={handleSubmit}>
                     <span>Send Message</span>
                     <Send className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                   </AnimatedButton>
@@ -423,9 +423,7 @@ export default function Contact() {
                     <div className="p-2 rounded-lg bg-gradient-to-br from-green-50 to-emerald-50 mr-3">
                       <Clock className="w-5 h-5 text-green-600" />
                     </div>
-                    <h3 className="font-semibold text-text">
-                      Office Hours
-                    </h3>
+                    <h3 className="font-semibold text-text">Office Hours</h3>
                   </div>
                   <div className="space-y-3">
                     {officeHours.map((schedule, index) => (
@@ -442,7 +440,6 @@ export default function Contact() {
                   </div>
                 </div>
 
-               
                 <div className="bg-white/80 dark:bg-white/40 backdrop-blur-sm rounded-2xl border border-gray-100/50 p-6 shadow-lg shadow-gray-900/5">
                   <h3 className="font-semibold text-text mb-4 flex items-center">
                     <Globe className="w-5 h-5 mr-2 text-blue-600 dark:text-blue-300" />
