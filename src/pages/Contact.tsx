@@ -21,6 +21,16 @@ import {
   Twitter,
   Coffee,
 } from "lucide-react";
+import { FadeInWhenVisible } from "@/components/FadeInWhenVisible";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0 },
+};
+const zoomIn = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: { opacity: 1, scale: 1 },
+};
 
 export default function Contact() {
   const [formData, setFormData] = useState({

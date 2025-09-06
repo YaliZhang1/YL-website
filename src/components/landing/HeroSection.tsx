@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { ArrowRight, Check, Code, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
-// 浮动的技术符号组件
+// Floating technical symbol components
 const FloatingSymbol: React.FC<{
   symbol: string;
   delay: number;
@@ -32,81 +33,32 @@ const FloatingSymbol: React.FC<{
   );
 };
 
-// 简单的模态框组件
-const Modal: React.FC<{
-  show: boolean;
-  onClose: () => void;
-  children: React.ReactNode;
-}> = ({ show, onClose, children }) => {
-  if (!show) return null;
+// const Link: React.FC<{
+//   children: React.ReactNode;
+//   variant?: "primary" | "secondary";
+//   onClick?: () => void;
+//   className?: string;
+// }> = ({ children, variant = "primary", onClick, className = "" }) => {
+//   const baseClasses =
+//     "px-8 py-4 rounded-lg font-light text-lg transition-all duration-300 flex items-center group";
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center">
-      <div
-        className="absolute inset-0 bg-black/50 backdrop-blur-sm"
-        onClick={onClose}
-      />
-      <div className="relative bg-white rounded-lg shadow-2xl max-w-md w-full mx-4 p-6">
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
-        >
-          <X className="w-5 h-5" />
-        </button>
-        {children}
-      </div>
-    </div>
-  );
-};
+//   const primaryClasses = `${baseClasses} text-white hover:shadow-lg transform hover:scale-[1.02] bg-gradient-to-br from-nordic-primary to-nordic-secondary`;
+//   const secondaryClasses = `${baseClasses} border-2 border-nordic-primary text-nordic-primary bg-transparent hover:shadow-lg transform hover:scale-[1.02] hover:bg-nordic-primary hover:text-white transition-colors`;
 
-// 动画按钮（使用 Tailwind 类）
-const AnimatedButton: React.FC<{
-  children: React.ReactNode;
-  variant?: "primary" | "secondary";
-  onClick?: () => void;
-  className?: string;
-}> = ({ children, variant = "primary", onClick, className = "" }) => {
-  const baseClasses =
-    "px-8 py-4 rounded-lg font-light text-lg transition-all duration-300 flex items-center group";
+//   const classes = variant === "primary" ? primaryClasses : secondaryClasses;
 
-  const primaryClasses = `${baseClasses} text-white hover:shadow-lg transform hover:scale-[1.02] bg-gradient-to-br from-nordic-primary to-nordic-secondary`;
-  const secondaryClasses = `${baseClasses} border-2 border-nordic-primary text-nordic-primary bg-transparent hover:shadow-lg transform hover:scale-[1.02] hover:bg-nordic-primary hover:text-white transition-colors`;
-
-  const classes = variant === "primary" ? primaryClasses : secondaryClasses;
-
-  return (
-    <button className={`${classes} ${className}`} onClick={onClick}>
-      {children}
-    </button>
-  );
-};
+//   return (
+//     <button className={`${classes} ${className}`} onClick={onClick}>
+//       {children}
+//     </button>
+//   );
+// };
 
 export const HeroSection: React.FC = () => {
-  const [showModal, setShowModal] = useState(false);
-  const [modalType, setModalType] = useState<"meeting" | "form">("form");
-  const [formData, setFormData] = useState({ email: "", message: "" });
-
-  const openModal = (type: "meeting" | "form") => {
-    setModalType(type);
-    setShowModal(true);
-  };
-
-  const handleSubmit = () => {
-    console.log("Form submitted:", formData);
-    setShowModal(false);
-    setFormData({ email: "", message: "" });
-  };
-
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData((s) => ({ ...s, [e.target.name]: e.target.value }));
-  };
-
   return (
     <>
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-nordic-bg text-nordic-text pt-16 md:pt-16 lg:pt-0">
-        {/* 背景装饰 - 抽象的几何形状 */}
+        {/* Background decoration - abstract geometric shapes */}
         <div className="absolute inset-0 opacity-5 pointer-events-none">
           <div
             className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-gradient-to-br from-nordic-primary to-nordic-secondary"
@@ -122,11 +74,10 @@ export const HeroSection: React.FC = () => {
             }}
           />
         </div>
-
         <div className="container mx-auto px-8 md:px-16 lg:px-24 max-w-[130rem] relative z-10">
           <div className="space-y-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-1 items-center py-20">
-              {/* 左侧内容 */}
+              {/* Left content */}
               <div className="z-50">
                 <div
                   className="flex flex-wrap gap-3 mb-6"
@@ -176,13 +127,13 @@ export const HeroSection: React.FC = () => {
                   className="flex flex-col sm:flex-row gap-4 mb-8"
                   style={{ animation: "fadeInUp 1s ease-out 0.3s forwards" }}
                 >
-                  <AnimatedButton onClick={() => openModal("form")}>
+                  <Link to="/contact" className="px-8 py-4 rounded-lg font-light text-lg transition-all duration-300 flex items-center group text-white hover:shadow-lg transform hover:scale-[1.02] bg-gradient-to-br from-nordic-primary to-nordic-secondary">
                     Request Early Access
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </AnimatedButton>
-                  <AnimatedButton variant="secondary">
+                  </Link>
+                  <Link to="/intelligent-robot-system" className="px-8 py-4 rounded-lg font-light text-lg transition-all duration-300 flex items-center group border-2 border-nordic-primary text-nordic-primary bg-transparent hover:shadow-lg transform hover:scale-[1.02] hover:bg-nordic-primary hover:text-white transition-colors">
                     View Our Work
-                  </AnimatedButton>
+                  </Link>
                 </div>
 
                 <div
@@ -360,7 +311,7 @@ export const HeroSection: React.FC = () => {
                   ))}
                 </div>
 
-                {/* 数据指标 - 简化显示在底部 */}
+                {/* Data indicators - simplified display at the bottom */}
                 <div
                   className="absolute bottom-0 left-0 right-0"
                   style={{
@@ -437,47 +388,7 @@ export const HeroSection: React.FC = () => {
         `}</style>
       </section>
 
-      <Modal show={showModal} onClose={() => setShowModal(false)}>
-        <div className="space-y-4">
-          <h3 className="text-xl font-semibold text-gray-900">
-            {modalType === "form" ? "Request Early Access" : "Schedule Meeting"}
-          </h3>
-
-          <div className="space-y-4">
-            <input
-              type="email"
-              name="email"
-              placeholder="Your email"
-              value={formData.email}
-              onChange={handleInputChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            />
-            <textarea
-              name="message"
-              placeholder="Tell us about your project..."
-              rows={4}
-              value={formData.message}
-              onChange={handleInputChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
-            />
-          </div>
-
-          <div className="flex gap-3 pt-4">
-            <button
-              onClick={handleSubmit}
-              className="flex-1 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors"
-            >
-              Submit
-            </button>
-            <button
-              onClick={() => setShowModal(false)}
-              className="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
-            >
-              Cancel
-            </button>
-          </div>
-        </div>
-      </Modal>
+     
     </>
   );
 };

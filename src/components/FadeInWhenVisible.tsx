@@ -1,4 +1,4 @@
-// components/FadeInWhenVisible.js
+
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 import type { Variants } from "framer-motion";
