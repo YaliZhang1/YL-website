@@ -161,17 +161,17 @@ export const AboutContent = () => {
 
   const team = [
     {
-      name: "Erik Andersson",
+      name: "Mattias Hjortzberg",
       role: "Founder & CEO",
       bio: "15+ years building scalable solutions. Passionate about Nordic design and sustainable technology.",
       image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+        "/img/Mattias.png",
     },
     {
-      name: "Anna Lindqvist",
+      name: "Erik Larsson",
       role: "CTO",
       bio: "Full-stack architect with expertise in cloud infrastructure and modern development practices.",
-      image: "/img/CTO.jpg ",
+      image: "/img/Erik.png",
     },
     {
       name: "Magnus Olsson",
@@ -181,11 +181,11 @@ export const AboutContent = () => {
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
     },
     {
-      name: "Sofia Bergström",
+      name: "Yali",
       role: "Lead Developer",
       bio: "Senior engineer specializing in React, Node.js, and cloud-native architectures.",
       image:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
+        "/img/yali.png",
     },
   ];
 
@@ -219,7 +219,7 @@ export const AboutContent = () => {
     <>
       {" "}
       <main
-        className="relative  min-h-screen overflow-hidden text-text pt-24"
+        className="relative  min-h-screen overflow-hidden text-text "
         style={{
           background: "var(--nordic-bg)",
           color: "var(--nordic-text)",
@@ -241,7 +241,7 @@ export const AboutContent = () => {
 
             <div className="relative z-10 container mx-auto px-8 md:px-16 lg:px-24 max-w-7xl pt-20 pb-32">
               <div className="grid lg:grid-cols-2 gap-16 items-center">
-                <div>
+                <div className="pt-24">
                   <h1 className="text-5xl  md:text-6xl font-bold  mb-8 leading-tight">
                     Crafting Digital
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 block">
@@ -257,7 +257,7 @@ export const AboutContent = () => {
                   </p>
                 </div>
 
-                <div className="relative">
+                <div className="relative pt-24">
                   <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-blue-500/20">
                     <img
                       src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop"
