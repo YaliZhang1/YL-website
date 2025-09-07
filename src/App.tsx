@@ -5,7 +5,8 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import OurServices from "./pages/OurServices";
 import Contact from "./pages/Contact";
-import IntelligentRobotSystem from "./pages/IntelligentRobotSystem";
+
+import ExcelToWeb from "./pages/ExcelToWeb";
 import SmartElderlyCare from "./pages/SmartElderlyCare";
 import SignIn from "./pages/Login";
 import NotFound from "./pages/NotFound";
@@ -28,8 +29,14 @@ export default function App() {
               <Route path="/about" element={<About />} />
               <Route path="/ourServices" element={<OurServices />} />
               <Route path="/contact" element={<Contact />} />
-              <Route path="/intelligent-robot-system" element={<IntelligentRobotSystem />} />
-              <Route path="/smart-elderly-care" element={<SmartElderlyCare />} />
+              <Route
+                path="/excel-to-web"
+                element={<ExcelToWeb />}
+              />
+              <Route
+                path="/smart-elderly-care"
+                element={<SmartElderlyCare />}
+              />
               <Route path="/signin" element={<SignIn />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

@@ -12,7 +12,6 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // 主要颜色映射到Nordic系统
         primary: "var(--nordic-primary)",
         secondary: "var(--nordic-secondary)",
         border: "hsl(var(--border))",
@@ -21,6 +20,7 @@ const config: Config = {
         card: "var(--color-card)",
         cardHover: "var(--color-card-hover)",
         bg: "var(--color-bg)",
+        sectionBg:"var(--color-section-bg)",
         textSecondary: "var(--color-text-secondary)",
         foreground: "hsl(var(--foreground))",
         nordic: {

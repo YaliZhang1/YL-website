@@ -219,11 +219,8 @@ export const AboutContent = () => {
     <>
       {" "}
       <main
-        className="relative  min-h-screen overflow-hidden text-text "
-        style={{
-          background: "var(--nordic-bg)",
-          color: "var(--nordic-text)",
-        }}
+        className="relative  min-h-screen overflow-hidden text-text nordic-bg nordic-text"
+       
       >
         {/* Hero Section with Background */}
         <FadeInWhenVisible variants={fadeUp}>

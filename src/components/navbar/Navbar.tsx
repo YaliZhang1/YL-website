@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 interface DropDownMenu {
@@ -16,10 +16,15 @@ const Navbar: React.FC = () => {
   const [isDropDownMenuOpen, setIsDropDownMenuOpen] = useState<boolean>(false);
   const [isMobileDropDownMenuOpen, setIsMobileDropDownMenuOpen] =
     useState<boolean>(false);
-
   const location = useLocation();
 
   const dropDownMenu: DropDownMenu[] = [
+    {
+      title: "Transform Excel to Web Applications System",
+      description:
+        "Turn your Excel files and Google Sheets into powerful web applications.",
+      href: "/excel-to-web",
+    },
     {
       title: "Intelligent Robot System",
       description:

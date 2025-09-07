@@ -4,9 +4,7 @@ import { AboutContent } from "@/components/AboutContent";
 import Layout from "@/layouts/Layout";
 import { CTA } from "@/components/CTA";
 
-
-
-const About = () => {
+export default function About() {
   return (
     <div
       className="relative min-h-screen"
@@ -20,6 +18,6 @@ const About = () => {
       </Layout>
     </div>
   );
-};
+}
 
-export default About;
+
