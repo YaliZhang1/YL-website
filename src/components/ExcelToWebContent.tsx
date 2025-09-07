@@ -155,7 +155,7 @@ const ExcelToWebContent: React.FC = () => {
         {/* Hero Section */}
         <section className="relative pt-44 pb-16 px-4 ">
           <div className="max-w-6xl mx-auto text-center relative z-10">
-            <h1 className="text-5xl  md:text-6xl font-bold  mb-8 leading-tight">
+            <h1 className="text-5xl md:text-6xl font-bold  mb-8 leading-tight">
               Transform Excel to {}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 ">
                 Web Applications
