@@ -307,7 +307,8 @@ export const AboutContent = () => {
             <div className="container mx-auto px-8   md:px-16 lg:px-24  relative z-10">
               <div className="text-center mb-16">
                 <h2 className="text-4xl text-text md:text-5xl font-bold  mb-6">
-                  What Drives Us
+                  What 
+                 <span className="color-section-title">Drives</span>Us
                 </h2>
                 <p className="text-xl   text-nordic-muted mx-auto">
                   Our values aren't just words on a wall. They guide every
@@ -375,7 +376,7 @@ export const AboutContent = () => {
           <div className="container mx-auto max-w-full px-28 relative z-10">
             <div className="text-center mb-16">
               <h2 className="text-4xl text-text md:text-5xl font-bold  mb-6">
-                15 Years of Innovation
+                 <span className="color-section-title">15 Years</span> of Innovation
               </h2>
               <p className="text-xl text-nordic-muted  mx-auto">
                 From a small Stockholm startup to a Nordic technology leader,
@@ -490,7 +491,7 @@ export const AboutContent = () => {
             <div className="container mx-auto px-8 md:px-16 lg:px-24  relative z-10">
               <div className="text-center mb-16">
                 <h2 className="text-4xl text-text md:text-5xl font-bold  mb-6">
-                  Meet the Minds Behind the Magic
+                  <span className="color-section-title">Meet the Minds</span> Behind the Magic
                 </h2>
                 <p className="text-lg sm:text-xl text-nordic-muted max-w-3xl mx-auto">
                   A diverse group of passionate professionals united by a shared

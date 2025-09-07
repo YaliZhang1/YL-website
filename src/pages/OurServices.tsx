@@ -112,24 +112,24 @@ const ServiceCard: React.FC<{
         borderColor: "rgba(109, 153, 219, 0.2)",
       }}
     >
-      {/* 背景渐变效果 */}
+      {/*Background gradient effect */}
       <div
         className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
       />
 
-      {/* 图片区域 */}
+      {/* Image area */}
       <div className="relative h-48 overflow-hidden">
         <img
           src={service.image}
           alt={service.title}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
-        {/* 图片上的渐变遮罩 */}
+        {/* Gradient mask on image */}
         <div
           className={`absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent`}
         />
 
-        {/* 浮动图标 */}
+        {/* Floating Icon */}
         <div className="absolute top-6 left-6">
           <div
             className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${service.gradient} ${service.hoverGradient} transition-all duration-300 group-hover:scale-110 shadow-lg backdrop-blur-sm bg-opacity-90`}
@@ -138,13 +138,13 @@ const ServiceCard: React.FC<{
           </div>
         </div>
 
-        {/* 服务编号 */}
+        {/* Service Tag */}
         <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white font-medium text-lg">
           {String(service.id).padStart(2, "0")}
         </div>
       </div>
 
-      {/* 内容区域 */}
+      {/* Content Area*/}
       <div className="relative p-8">
         <h3 className="text-2xl font-light text-nordic-text mb-4 group-hover:text-nordic-primary transition-colors duration-300">
           {service.title}
@@ -154,7 +154,7 @@ const ServiceCard: React.FC<{
           {service.description}
         </p>
 
-        {/* 功能特性列表 */}
+        {/* Feature List*/}
         <ul className="space-y-3 mb-8">
           {service.features.map((feature, featureIndex) => (
             <li
@@ -168,13 +168,13 @@ const ServiceCard: React.FC<{
         </ul>
       </div>
 
-      {/* 装饰性光效 */}
+      {/* Decorative lighting effects */}
       <div className="absolute -top-2 -right-2 w-20 h-20 rounded-full bg-gradient-to-br from-nordic-primary/20 to-nordic-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
     </div>
   );
 };
 
-// 浮动装饰元素
+// Floating decorative elements
 const FloatingDecoration: React.FC<{
   delay: number;
   position: { top: string; left: string };
@@ -210,34 +210,20 @@ export default function OurServices() {
       <Layout>
         <Navbar />
         <main className="relative overflow-hidden pt-24">
-          {/*Background decorative elements */}
-          <FloatingDecoration
-            delay={1000}
-            position={{ top: "15%", left: "10%" }}
-          />
-          <FloatingDecoration
-            delay={1500}
-            position={{ top: "60%", right: "15%" }}
-          />
-          <FloatingDecoration
-            delay={2000}
-            position={{ top: "80%", left: "20%" }}
-          />
-
-          {/* 主要内容 */}
+          {/* main content */}
           <div className="container mx-auto px-8 md:px-16 lg:px-24 max-w-[130rem] relative z-10 py-20">
-            {/* 页面标题部分 */}
+            {/* Background decoration*/}
+      <div className="absolute top-0 left-1/4 w-64 h-64 bg-blue-100/30 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-100/20 rounded-full blur-3xl" />
+            
             <div className="text-center mb-20">
-              {/* 主标题 */}
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-light leading-tight mb-8">
-                <span className="text-nordic-primary">Precision-Driven</span>
-                <br />
-                <span className="font-medium text-nordic-secondary">
+              <h1 className="text-5xl  md:text-6xl font-bold  mb-8 leading-tight">
+                Precision-Driven
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 block">
                   Solutions
                 </span>
               </h1>
 
-              {/* 副标题 */}
               <p className="text-xl md:text-2xl font-light leading-relaxed max-w-4xl mx-auto text-nordic-muted">
                 Delivering world-class technology services with
                 <span className="font-medium text-nordic-text">
@@ -254,26 +240,12 @@ export default function OurServices() {
               </p>
             </div>
 
-            {/* 服务网格 */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
               {services.map((service, index) => (
                 <ServiceCard key={service.id} service={service} index={index} />
               ))}
             </div>
           </div>
-
-          {/* 内联样式 */}
-          <style jsx>{`
-            @keyframes float {
-              0%,
-              100% {
-                transform: translateY(0px);
-              }
-              50% {
-                transform: translateY(-20px);
-              }
-            }
-          `}</style>
         </main>
         <CTA />
         <FooterSection />

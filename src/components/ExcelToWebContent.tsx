@@ -153,20 +153,15 @@ const ExcelToWebContent: React.FC = () => {
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-100/20 rounded-full blur-3xl" />
       <div>
         {/* Hero Section */}
-        <section className="relative overflow-hidden pt-44 pb-20 px-4 ">
-          {/* Decorative background elements */}
-          <div className="hero-decoration hero-decoration-1"></div>
-          <div className="hero-decoration hero-decoration-2"></div>
-          <div className="hero-decoration hero-decoration-3"></div>
-
+        <section className="relative pt-44 pb-16 px-4 ">
           <div className="max-w-6xl mx-auto text-center relative z-10">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 animate-fadeInUp">
-              Transform Excel to
-              <span className="nordic-text-primary block mt-2">
+            <h1 className="text-5xl  md:text-6xl font-bold  mb-8 leading-tight">
+              Transform Excel to {}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 ">
                 Web Applications
               </span>
             </h1>
-            <p className="text-xl md:text-2xl nordic-text-muted mb-12 max-w-3xl mx-auto animate-fadeInUp animate-delay-1">
+            <p className="text-xl md:text-2xl nordic-text-muted mb-12 max-w-7xl mx-auto animate-fadeInUp animate-delay-1">
               Turn your Excel files and Google Sheets into powerful web
               applications - no coding required. Just upload, and your
               spreadsheet becomes a professional web app.
@@ -179,7 +174,8 @@ const ExcelToWebContent: React.FC = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="section-title nordic-text">
-                Our solutions – tailored for you
+                Our solutions –
+                <span className="color-section-title">tailored</span> for you
               </h2>
               <p className="text-xl nordic-text-muted max-w-5xl mx-auto">
                 At Molnify, we specialize in turning Excel files and
@@ -192,7 +188,7 @@ const ExcelToWebContent: React.FC = () => {
             <div className="grid md:grid-cols-3 gap-8">
               {/* Device Icons */}
 
-              <div className="text-center">
+              <div className="text-center nordic-card rounded-lg p-8  group hover:scale-105 transition-all duration-300">
                 <div className="flex justify-center gap-4 mb-6">
                   <Calculator className="w-8 h-8 nordic-text-primary" />
                   <PieChart className="w-8 h-8 nordic-text-secondary" />
@@ -208,7 +204,7 @@ const ExcelToWebContent: React.FC = () => {
                 </p>
               </div>
 
-              <div className="text-center">
+              <div className="text-center nordic-card rounded-lg p-8  group hover:scale-105 transition-all duration-300">
                 <div className="flex justify-center gap-4 mb-6">
                   <Monitor className="w-8 h-8 nordic-text-primary" />
                   <Tablet className="w-8 h-8 nordic-text-secondary" />
@@ -224,7 +220,7 @@ const ExcelToWebContent: React.FC = () => {
                   user-friendly and protected.
                 </p>
               </div>
-              <div className="text-center">
+              <div className="text-center nordic-card rounded-lg p-8  group hover:scale-105 transition-all duration-300">
                 <div className="flex justify-center gap-4 mb-6">
                   <MessageSquare className="w-8 h-8 nordic-text-primary" />
                   <Mail className="w-8 h-8 nordic-text-secondary" />
@@ -248,7 +244,8 @@ const ExcelToWebContent: React.FC = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="section-title nordic-text">
-                Getting started is easy
+                <span className="color-section-title">Getting started </span>
+                is easy
               </h2>
               <p className="text-xl nordic-text-muted">
                 Build your web application without any programming skills,
@@ -326,7 +323,8 @@ const ExcelToWebContent: React.FC = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="section-title nordic-text">
-                More than 200 functions
+                More than
+                <span className="color-section-title">200 functions</span>
               </h2>
               <p className="text-xl nordic-text-muted">
                 Molnify supports more than 200 Excel and Google Sheets

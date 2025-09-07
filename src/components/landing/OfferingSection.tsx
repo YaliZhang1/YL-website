@@ -80,7 +80,7 @@ export const OfferingSection: React.FC = () => {
   return (
     <section className=" bg-sectionBg text-nordic-text  py-16">
       <h2 className="section-title text-nordic-text mb-16 overflow-visible mx-auto text-center leading-snug max-w-[90%] sm:max-w-[80%] md:max-w-[37.5rem] lg:max-w-[60rem] tracking-tight">
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 mx-3">
+        <span className="color-section-title">
           Software
         </span>
         Custom Development
