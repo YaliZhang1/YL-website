@@ -23,6 +23,7 @@ const config: Config = {
         sectionBg:"var(--color-section-bg)",
         textSecondary: "var(--color-text-secondary)",
         foreground: "hsl(var(--foreground))",
+        whiteGrey:"var(--white-grey)",
         nordic: {
           primary: "var(--nordic-primary)",
           secondary: "var(--nordic-secondary)",
