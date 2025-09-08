@@ -67,10 +67,10 @@
   .page-title {
     @apply text-3xl md:text-4xl lg:text-6xl font-bold  mb-6 leading-tight;
   }
-   .page-description {
+  .page-description {
     @apply font-light text-sm md:text-2xl text-nordic-muted max-w-4xl mx-auto leading-relaxed;
   }
- .section-title {
+  .section-title {
     @apply text-2xl md:text-3xl lg:text-5xl font-bold tracking-tight mb-6;
   }
   .color-section-title {
@@ -114,7 +114,7 @@
   .btn-dark-big {
     @apply text-lg px-4 py-2 font-medium text-white bg-black dark:bg-white dark:text-black rounded-md hover:bg-gray-700 dark:hover:bg-gray-950 dark:hover:text-white transition-colors;
   }
-  
+
   .animate-fadeInUp {
     animation: fadeInUp 0.6s ease-out forwards;
   }
@@ -188,6 +188,22 @@
       135deg,
       var(--nordic-dark),
       var(--nordic-darker)
+    );
+  }
+  .nordic-gradient-4 {
+    background: linear-gradient(
+      135deg,
+      var(--nordic-darker),
+      var(--nordic-darker),
+      var(--nordic-darker),
+      var(--nordic-third),
+      var(--nordic-primary),
+      var(--nordic-secondary),
+      var(--nordic-primary),
+      var(--nordic-third),
+      var(--nordic-primary),
+      var(--color-bg),
+      var(--color-bg)
     );
   }
 

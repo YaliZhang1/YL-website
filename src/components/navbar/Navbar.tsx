@@ -25,7 +25,7 @@ export default function Navbar() {
         "Turn your Excel files and Google Sheets into powerful web applications.",
       href: "/excel-to-web",
     },
-  
+
     {
       title: "Smart elderly care system",
       description: "Health monitoring, safety, social engagement.",
@@ -53,16 +53,37 @@ export default function Navbar() {
             >
               {/* Logo */}
               <div className="flex items-center flex-shrink-0">
-                {/* <Link
+                <Link
                   to="/"
-                  className="flex items-center gap-2 hover:opacity-80 transition-colors"
+                  className=" flex items-center gap-2 hover:opacity-80 transition-colors"
                 >
-                  <img
-                    src="https://shadcnblocks.com/images/block/logos/shadcnblockscom-icon.svg"
-                    className="h-8 w-8"
-                    alt="Shadcn UI Navbar"
-                  />
-                </Link> */}
+                 
+                  <div
+                    className="p-3 nordic-gradient-4 text-white"
+                    style={{
+                      clipPath:
+                        'path("M 15 25 C 25 15 40 15 50 20 C 60 15 75 15 85 25 C 95 35 95 45 85 65 C 90 70 85 75 80 75 C 75 75 70 70 65 75 C 60 80 55 80 50 80 C 40 85 25 85 15 75 C 5 65 5 35 15 25 Z")',
+                    }}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-11 w-11 stroke-current"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M6 18h10a4 4 0 0 0 0-8 6 6 0 0 0-11.3-2.5A4.5 4.5 0 0 0 6 18z" />
+                      <circle cx="9" cy="20" r="1.5" />
+                      <circle cx="15" cy="20" r="1.5" />
+                      <circle cx="12" cy="22" r="1.5" />
+                      <line x1="9" y1="20" x2="15" y2="20" />
+                      <line x1="9" y1="20" x2="12" y2="22" />
+                      <line x1="15" y1="20" x2="12" y2="22" />
+                    </svg>
+                  </div>
+                </Link>
               </div>
             </motion.div>
 
@@ -184,7 +205,8 @@ export default function Navbar() {
                     to="/contact"
                     className={cn(
                       "btn-blue-big text-white",
-                      isActiveRoute("/contact") && " text-nordic-third opacity-65"
+                      isActiveRoute("/contact") &&
+                        " text-nordic-third opacity-65"
                     )}
                   >
                     Contact
@@ -371,9 +393,4 @@ export default function Navbar() {
       </nav>
     </>
   );
-};
-
-
-
-
-
+}
