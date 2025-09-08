@@ -155,7 +155,7 @@ export default function ExcelToWebContent() {
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-100/20 rounded-full blur-3xl" />
         <div>
           {/* Hero Section */}
-          <section className="relative  nordic-gradient-3 pt-44 pb-16 px-8">
+          <section className="relative   nordic-gradient-3 pt-44 pb-16 px-8">
             <FadeInWhenVisible variants={animations.fadeUp}>
               <div className="max-w-6xl mx-auto text-center relative z-10">
                 <h1 className="page-title text-white ">
@@ -178,7 +178,7 @@ export default function ExcelToWebContent() {
           </section>
 
           {/* Main Features Overview */}
-          <section className="py-16 px-8  bg-sectionBg">
+          <section className=" py-16 px-8  bg-sectionBg">
             <div className="max-w-6xl mx-auto">
               <FadeInWhenVisible variants={animations.fadeUp}>
                 <div className="text-center mb-16">

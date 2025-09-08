@@ -70,8 +70,11 @@
    .page-description {
     @apply font-light text-sm md:text-2xl text-nordic-muted max-w-4xl mx-auto leading-relaxed;
   }
-  .section-title{
-    
+ .section-title {
+    @apply text-2xl md:text-3xl lg:text-5xl font-bold tracking-tight mb-6;
+  }
+  .color-section-title {
+    @apply text-2xl md:text-3xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 mx-3;
   }
   .card-title {
     @apply text-2xl leading-snug font-semibold tracking-tight text-zinc-900 transition-all duration-500 ease-out group-hover:translate-y-[-4px] dark:text-white;
@@ -111,12 +114,7 @@
   .btn-dark-big {
     @apply text-lg px-4 py-2 font-medium text-white bg-black dark:bg-white dark:text-black rounded-md hover:bg-gray-700 dark:hover:bg-gray-950 dark:hover:text-white transition-colors;
   }
-  .section-title {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6;
-  }
-  .color-section-title {
-    @apply text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 mx-3;
-  }
+  
   .animate-fadeInUp {
     animation: fadeInUp 0.6s ease-out forwards;
   }

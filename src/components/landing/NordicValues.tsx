@@ -32,7 +32,7 @@ const whyChooseUsContent = {
     "Data-driven solutions that deliver measurable business impact and long-term value",
 };
 
-const WhyChooseUsCard = ({ advantage, index,triggerAnimation}) => {
+const WhyChooseUsCard = ({ advantage, index, triggerAnimation }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [shouldAnimate, setShouldAnimate] = useState(false);
   const Icon = whyChooseUsIcons[advantage] || Award;
@@ -46,7 +46,7 @@ const WhyChooseUsCard = ({ advantage, index,triggerAnimation}) => {
 
   return (
     <div
-      className={`transition-all duration-700 transform ${
+      className={`transition-all duration-700  transform ${
         shouldAnimate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
       onMouseEnter={() => setIsHovered(true)}
@@ -97,7 +97,7 @@ const WhyChooseUsCard = ({ advantage, index,triggerAnimation}) => {
   );
 };
 
-export function WhyUsSection () {
+export function WhyUsSection() {
   const [triggerAnimation, setTriggerAnimation] = useState(false);
   const sectionRef = useRef(null);
 
@@ -109,13 +109,12 @@ export function WhyUsSection () {
     "Innovation First",
     "Results Focused",
   ];
- useEffect(() => {
+  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setTriggerAnimation(true);
-            
           }
         });
       },
@@ -136,7 +135,10 @@ export function WhyUsSection () {
     };
   }, []);
   return (
-    <section ref={sectionRef} className="pt-16 pb-32 bg-nordic-bg text-nordic-text ">
+    <section
+      ref={sectionRef}
+      className="pt-16 pb-32 bg-nordic-bg text-nordic-text "
+    >
       {/* Background decoration*/}
       <div className="absolute top-0 left-1/4 w-64 h-64 bg-blue-100/30 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-100/20 rounded-full blur-3xl" />
@@ -144,17 +146,17 @@ export function WhyUsSection () {
       <div className="container mx-auto   relative z-10">
         {/* Title Area */}
         <div className="text-center mb-16">
-          <h2 className={`text-4xl md:text-5xl font-bold text-text mb-6 leading-tight transition-all duration-1000 transform ${
-              triggerAnimation ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}>
+          <h2 className="section-title text-text ">
             Built on
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 mx-3">
-              Nordic Values
-            </span>
+            <span className="color-section-title">Nordic Values</span>
           </h2>
-         <p className={`text-xl text-nordic-muted max-w-5xl mx-auto leading-relaxed transition-all duration-1000 delay-200 transform ${
-              triggerAnimation ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}>
+          <p
+            className={`text-base md:text-xl w-[90%]  lg:[100%] xl:max-w-5xl  text-nordic-muted  mx-auto leading-relaxed transition-all duration-1000 delay-200 transform ${
+              triggerAnimation
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-4"
+            }`}
+          >
             We combine Scandinavian design principles with cutting-edge
             technology to deliver solutions that are both beautiful and
             functional.
@@ -162,14 +164,18 @@ export function WhyUsSection () {
         </div>
 
         {/* Card Grid */}
-        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+        <div className=" mx-8 grid md:grid-cols-2 xl:grid-cols-3 gap-8">
           {advantages.map((advantage, index) => (
-            <div key={advantage} className="h-full card-title">
-              <WhyChooseUsCard advantage={advantage} index={index} triggerAnimation={triggerAnimation}/>
+            <div key={advantage} className="h-full card-title ">
+              <WhyChooseUsCard
+                advantage={advantage}
+                index={index}
+                triggerAnimation={triggerAnimation}
+              />
             </div>
           ))}
         </div>
       </div>
     </section>
   );
-};
+}

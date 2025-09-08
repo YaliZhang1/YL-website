@@ -96,7 +96,7 @@ export function OfferingSection() {
             <motion.div
               key={index}
               variants={cardItem}
-              className="w-full sm:w-[90%] lg:[100%] xl:max-w-[660px] min-h-[600px] mx-auto flex"
+              className="w-[90%]  lg:[100%] xl:max-w-[660px] min-h-[600px] mx-auto flex"
             >
               <CardFlip key={index} {...card} />
             </motion.div>
