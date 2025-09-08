@@ -47,7 +47,7 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <nav className="h-20 fixed top-0 left-0 w-full z-[9999] shadow-sm text-lg  py-4 border-b border-nordic-primary/20 bg-nordic-bg">
+      <nav className="h-30 fixed top-0 left-0 w-full z-[9999] shadow-sm text-lg  py-5 border-b border-nordic-primary/20 bg-nordic-bg">
         <div className="container w-full  mx-auto max-w-8xl px-8 sm:px-8 h-full">
           <div className="flex items-center justify-between w-full">
             <motion.div
