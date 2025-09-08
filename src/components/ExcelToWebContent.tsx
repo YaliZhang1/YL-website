@@ -148,225 +148,233 @@ export default function ExcelToWebContent() {
     };
   }, []);
   return (
-    <div ref={sectionRef} className=" nordic-bg nordic-text w-7xl">
-      {/* Background decoration*/}
-      <div className="absolute top-0 left-1/4 w-64 h-64 bg-blue-100/30 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-100/20 rounded-full blur-3xl" />
-      <div>
-        {/* Hero Section */}
-        <section className="relative  nordic-gradient-3 pt-44 pb-16 px-4 ">
-          <FadeInWhenVisible variants={animations.fadeUp}>
-            <div className="max-w-6xl mx-auto text-center relative z-10">
-              <h1 className="page-title text-white ">
-                Transform {" "}
-                <span className="text-transparent bg-clip-text nordic-gradient-0 ">Excel{" "}</span>
-                to {" "}
-                <span className="text-transparent bg-clip-text nordic-gradient-0 ">
-                  Web Applications
-                </span>
-              </h1>
-              <p className="page-description text-whiteGrey mb-6  ">
-                Turn your Excel files and Google Sheets into powerful web
-                applications - no coding required. Just upload, and your
-                spreadsheet becomes a professional web app.
-              </p>
+  
+      <div ref={sectionRef} className=" nordic-bg nordic-text ">
+        {/* Background decoration*/}
+        <div className="absolute top-0 left-1/4 w-64 h-64 bg-blue-100/30 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-100/20 rounded-full blur-3xl" />
+        <div>
+          {/* Hero Section */}
+          <section className="relative  nordic-gradient-3 pt-44 pb-16 px-8">
+            <FadeInWhenVisible variants={animations.fadeUp}>
+              <div className="max-w-6xl mx-auto text-center relative z-10">
+                <h1 className="page-title text-white ">
+                  Transform{" "}
+                  <span className="text-transparent bg-clip-text nordic-gradient-0 ">
+                    Excel{" "}
+                  </span>
+                  to{" "}
+                  <span className="text-transparent bg-clip-text nordic-gradient-0 ">
+                    Web Applications
+                  </span>
+                </h1>
+                <p className="page-description text-whiteGrey mb-6  ">
+                  Turn your Excel files and Google Sheets into powerful web
+                  applications - no coding required. Just upload, and your
+                  spreadsheet becomes a professional web app.
+                </p>
+              </div>
+            </FadeInWhenVisible>
+          </section>
+
+          {/* Main Features Overview */}
+          <section className="py-16 px-8  bg-sectionBg">
+            <div className="max-w-6xl mx-auto">
+              <FadeInWhenVisible variants={animations.fadeUp}>
+                <div className="text-center mb-16">
+                  <h2 className="section-title text-text">
+                    Our solutions –
+                    <span className="color-section-title">tailored</span> for
+                    you
+                  </h2>
+                  <p className="text-xl nordic-text-muted max-w-5xl mx-auto">
+                    At Molnify, we specialize in turning Excel files and
+                    spreadsheets into Web applications. We know every business
+                    has unique needs, and our focus is on creating tailored
+                    solutions that help you achieve your goals and improve
+                    processes.
+                  </p>
+                </div>
+              </FadeInWhenVisible>
+              <FadeInWhenVisible variants={animations.fadeLeft}>
+                <div className="grid md:grid-cols-3 gap-8">
+                  {/* Device Icons */}
+
+                  <div className="text-center nordic-card rounded-lg p-8  group hover:scale-105 transition-all duration-300">
+                    <div className="flex justify-center gap-4 mb-6">
+                      <Calculator className="w-8 h-8 nordic-text-primary" />
+                      <PieChart className="w-8 h-8 nordic-text-secondary" />
+                      <BarChart3 className="w-8 h-8 nordic-text-muted" />
+                    </div>
+                    <h3 className="text-2xl font-semibold mb-4 nordic-text">
+                      Convert outdated and clunky Excel files
+                    </h3>
+                    <p className="nordic-text-muted">
+                      Create robust and interactive web applications without any
+                      programming knowledge. Solve complex problems and simplify
+                      administrative processes in record time.
+                    </p>
+                  </div>
+
+                  <div className="text-center nordic-card rounded-lg p-8  group hover:scale-105 transition-all duration-300">
+                    <div className="flex justify-center gap-4 mb-6">
+                      <Monitor className="w-8 h-8 nordic-text-primary" />
+                      <Tablet className="w-8 h-8 nordic-text-secondary" />
+                      <Smartphone className="w-8 h-8 nordic-text-muted" />
+                    </div>
+                    <h3 className="text-2xl font-semibold mb-4 nordic-text">
+                      Into elegant and efficient web app solutions
+                    </h3>
+                    <p className="nordic-text-muted">
+                      With Molnify, an Excel file becomes a secure and
+                      professional web application. We deliver customized
+                      solutions tailored to your company's needs, making your
+                      Excel models more user-friendly and protected.
+                    </p>
+                  </div>
+                  <div className="text-center nordic-card rounded-lg p-8  group hover:scale-105 transition-all duration-300">
+                    <div className="flex justify-center gap-4 mb-6">
+                      <MessageSquare className="w-8 h-8 nordic-text-primary" />
+                      <Mail className="w-8 h-8 nordic-text-secondary" />
+                      <Users className="w-8 h-8 nordic-text-muted" />
+                    </div>
+                    <h3 className="text-2xl font-semibold mb-4 nordic-text">
+                      Share and collaborate.
+                    </h3>
+                    <p className="nordic-text-muted">
+                      Send it to your best friends and your grandma. It'll work
+                      on their computers and phones. Send it to your best
+                      friends and your grandma. It'll work on their computers
+                      and phones.
+                    </p>
+                  </div>
+                </div>
+              </FadeInWhenVisible>
             </div>
-          </FadeInWhenVisible>
-        </section>
+          </section>
 
-        {/* Main Features Overview */}
-        <section className="py-16 px-4 bg-sectionBg">
-          <div className="max-w-6xl mx-auto">
-            <FadeInWhenVisible variants={animations.fadeUp}>
-              <div className="text-center mb-16">
-                <h2 className="section-title text-text">
-                  Our solutions –
-                  <span className="color-section-title">tailored</span> for you
-                </h2>
-                <p className="text-xl nordic-text-muted max-w-5xl mx-auto">
-                  At Molnify, we specialize in turning Excel files and
-                  spreadsheets into Web applications. We know every business has
-                  unique needs, and our focus is on creating tailored solutions
-                  that help you achieve your goals and improve processes.
-                </p>
-              </div>
-            </FadeInWhenVisible>
-            <FadeInWhenVisible variants={animations.fadeLeft}>
-              <div className="grid md:grid-cols-3 gap-8">
-                {/* Device Icons */}
-
-                <div className="text-center nordic-card rounded-lg p-8  group hover:scale-105 transition-all duration-300">
-                  <div className="flex justify-center gap-4 mb-6">
-                    <Calculator className="w-8 h-8 nordic-text-primary" />
-                    <PieChart className="w-8 h-8 nordic-text-secondary" />
-                    <BarChart3 className="w-8 h-8 nordic-text-muted" />
-                  </div>
-                  <h3 className="text-2xl font-semibold mb-4 nordic-text">
-                    Convert outdated and clunky Excel files
-                  </h3>
-                  <p className="nordic-text-muted">
-                    Create robust and interactive web applications without any
-                    programming knowledge. Solve complex problems and simplify
-                    administrative processes in record time.
+          {/* Feature Cards Section */}
+          <section className="py-16 px-8 bg-gray-50 dark:bg-gray-900/20">
+            <div className="max-w-6xl mx-auto">
+              <FadeInWhenVisible variants={animations.fadeUp}>
+                <div className="text-center mb-16">
+                  <h2 className="section-title text-text">
+                    <span className="color-section-title">
+                      Getting started{" "}
+                    </span>
+                    is easy
+                  </h2>
+                  <p className="text-xl nordic-text-muted">
+                    Build your web application without any programming skills,
+                    directly in Excel or Google Sheets.
                   </p>
                 </div>
-
-                <div className="text-center nordic-card rounded-lg p-8  group hover:scale-105 transition-all duration-300">
-                  <div className="flex justify-center gap-4 mb-6">
-                    <Monitor className="w-8 h-8 nordic-text-primary" />
-                    <Tablet className="w-8 h-8 nordic-text-secondary" />
-                    <Smartphone className="w-8 h-8 nordic-text-muted" />
+              </FadeInWhenVisible>
+              <FadeInWhenVisible variants={animations.fadeRight}>
+                <div className="grid md:grid-cols-3 gap-8 min-h-full">
+                  <div className="nordic-card rounded-lg p-8 text-center group hover:scale-105 transition-all duration-300">
+                    <div className="w-16 h-16 nordic-gradient-1 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <span className="text-3xl font-bold text-white">1</span>
+                    </div>
+                    <h3 className="text-2xl font-semibold mb-4 nordic-text">
+                      Inputs
+                    </h3>
+                    <p className="nordic-text-muted mb-6">
+                      Inputs are the parts of your app that you want the user to
+                      be able to interact with. It can be text fields, sliders,
+                      menus, buttons and much more.
+                    </p>
+                    <div className="w-full h-32 bg-gray-200 dark:bg-gray-700 rounded-md overflow-hidden">
+                      <img
+                        src="img/molnify-inputs-1024x699.png"
+                        alt=""
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   </div>
-                  <h3 className="text-2xl font-semibold mb-4 nordic-text">
-                    Into elegant and efficient web app solutions
-                  </h3>
-                  <p className="nordic-text-muted">
-                    With Molnify, an Excel file becomes a secure and
-                    professional web application. We deliver customized
-                    solutions tailored to your company's needs, making your
-                    Excel models more user-friendly and protected.
+
+                  <div className="nordic-card rounded-lg p-8 text-center group hover:scale-105 transition-all duration-300">
+                    <div className="w-16 h-16 nordic-gradient-2 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <span className="text-3xl font-bold text-white">2</span>
+                    </div>
+                    <h3 className="text-2xl font-semibold mb-4 nordic-text">
+                      Output boxes
+                    </h3>
+                    <p className="nordic-text-muted mb-6">
+                      Output boxes are great for showing results and can include
+                      logic and functions. You can build apps just like in Excel
+                      or Google Sheets.
+                    </p>
+                    <div className="w-full h-32 bg-gray-200 dark:bg-gray-700 rounded-md">
+                      <img
+                        src="img/monlify-output-boxar-1024x699.png"
+                        alt=""
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="nordic-card rounded-lg p-8 text-center group hover:scale-105 transition-all duration-300">
+                    <div className="w-16 h-16 nordic-gradient-3 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <span className="text-3xl font-bold text-white">3</span>
+                    </div>
+                    <h3 className="text-2xl font-semibold mb-4 nordic-text">
+                      Charts
+                    </h3>
+                    <p className="nordic-text-muted mb-6">
+                      Add a charts and tables to present your data.
+                    </p>
+                    <div className="w-full h-32 mt-12 bg-gray-200 dark:bg-gray-700 rounded-md">
+                      <img
+                        src="img/molnify-diagram-1024x699.png"
+                        alt=""
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </FadeInWhenVisible>
+            </div>
+          </section>
+
+          {/* Advanced Features */}
+          <section className="py-16 px-8 bg-sectionBg">
+            <div className="max-w-6xl mx-auto">
+              <FadeInWhenVisible variants={animations.fadeUp}>
+                <div className="text-center mb-16">
+                  <h2 className="section-title text-text">
+                    More than
+                    <span className="color-section-title">200 functions</span>
+                  </h2>
+                  <p className="text-xl nordic-text-muted">
+                    Molnify supports more than 200 Excel and Google Sheets
+                    functions. These include SUM, COUNTIF, IF/ELSE, SUMPRODUCT,
+                    VLOOKUP, and many, many more.
                   </p>
                 </div>
-                <div className="text-center nordic-card rounded-lg p-8  group hover:scale-105 transition-all duration-300">
-                  <div className="flex justify-center gap-4 mb-6">
-                    <MessageSquare className="w-8 h-8 nordic-text-primary" />
-                    <Mail className="w-8 h-8 nordic-text-secondary" />
-                    <Users className="w-8 h-8 nordic-text-muted" />
-                  </div>
-                  <h3 className="text-2xl font-semibold mb-4 nordic-text">
-                    Share and collaborate.
-                  </h3>
-                  <p className="nordic-text-muted">
-                    Send it to your best friends and your grandma. It'll work on
-                    their computers and phones. Send it to your best friends and
-                    your grandma. It'll work on their computers and phones.
-                  </p>
-                </div>
-              </div>
-            </FadeInWhenVisible>
-          </div>
-        </section>
+              </FadeInWhenVisible>
 
-        {/* Feature Cards Section */}
-        <section className="py-16 px-4 bg-gray-50 dark:bg-gray-900/20">
-          <div className="max-w-6xl mx-auto">
-            <FadeInWhenVisible variants={animations.fadeUp}>
-              <div className="text-center mb-16">
-                <h2 className="section-title text-text">
-                  <span className="color-section-title">Getting started </span>
-                  is easy
-                </h2>
-                <p className="text-xl nordic-text-muted">
-                  Build your web application without any programming skills,
-                  directly in Excel or Google Sheets.
-                </p>
-              </div>
-            </FadeInWhenVisible>
-            <FadeInWhenVisible variants={animations.fadeRight}>
-              <div className="grid md:grid-cols-3 gap-8 min-h-full">
-                <div className="nordic-card rounded-lg p-8 text-center group hover:scale-105 transition-all duration-300">
-                  <div className="w-16 h-16 nordic-gradient-1 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <span className="text-3xl font-bold text-white">1</span>
-                  </div>
-                  <h3 className="text-2xl font-semibold mb-4 nordic-text">
-                    Inputs
-                  </h3>
-                  <p className="nordic-text-muted mb-6">
-                    Inputs are the parts of your app that you want the user to
-                    be able to interact with. It can be text fields, sliders,
-                    menus, buttons and much more.
-                  </p>
-                  <div className="w-full h-32 bg-gray-200 dark:bg-gray-700 rounded-md overflow-hidden">
-                    <img
-                      src="img/molnify-inputs-1024x699.png"
-                      alt=""
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+              {/* Card Grid */}
+              <FadeInWhenVisible variants={animations.fadeUpSpring}>
+                <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-1 items-stretch max-w-7xl">
+                  {functionNames.map((functionName, index) => (
+                    <div
+                      key={functionName}
+                      className="flex flex-col rounded-lg p-3 text-center  h-full"
+                    >
+                      <FunctionCard
+                        functionName={functionName}
+                        index={index}
+                        triggerAnimation={triggerAnimation}
+                      />
+                    </div>
+                  ))}
                 </div>
-
-                <div className="nordic-card rounded-lg p-8 text-center group hover:scale-105 transition-all duration-300">
-                  <div className="w-16 h-16 nordic-gradient-2 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <span className="text-3xl font-bold text-white">2</span>
-                  </div>
-                  <h3 className="text-2xl font-semibold mb-4 nordic-text">
-                    Output boxes
-                  </h3>
-                  <p className="nordic-text-muted mb-6">
-                    Output boxes are great for showing results and can include
-                    logic and functions. You can build apps just like in Excel
-                    or Google Sheets.
-                  </p>
-                  <div className="w-full h-32 bg-gray-200 dark:bg-gray-700 rounded-md">
-                    <img
-                      src="img/monlify-output-boxar-1024x699.png"
-                      alt=""
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-
-                <div className="nordic-card rounded-lg p-8 text-center group hover:scale-105 transition-all duration-300">
-                  <div className="w-16 h-16 nordic-gradient-3 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <span className="text-3xl font-bold text-white">3</span>
-                  </div>
-                  <h3 className="text-2xl font-semibold mb-4 nordic-text">
-                    Charts
-                  </h3>
-                  <p className="nordic-text-muted mb-6">
-                    Add a charts and tables to present your data.
-                  </p>
-                  <div className="w-full h-32 mt-12 bg-gray-200 dark:bg-gray-700 rounded-md">
-                    <img
-                      src="img/molnify-diagram-1024x699.png"
-                      alt=""
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-              </div>
-            </FadeInWhenVisible>
-          </div>
-        </section>
-
-        {/* Advanced Features */}
-        <section className="py-16 px-4 bg-sectionBg">
-          <div className="max-w-6xl mx-auto">
-            <FadeInWhenVisible variants={animations.fadeUp}>
-              <div className="text-center mb-16">
-                <h2 className="section-title text-text">
-                  More than
-                  <span className="color-section-title">200 functions</span>
-                </h2>
-                <p className="text-xl nordic-text-muted">
-                  Molnify supports more than 200 Excel and Google Sheets
-                  functions. These include SUM, COUNTIF, IF/ELSE, SUMPRODUCT,
-                  VLOOKUP, and many, many more.
-                </p>
-              </div>
-            </FadeInWhenVisible>
-
-            {/* Card Grid */}
-             <FadeInWhenVisible variants={animations.fadeUpSpring}>
-            <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-1 items-stretch max-w-7xl">
-              {functionNames.map((functionName, index) => (
-                <div
-                  key={functionName}
-                  className="flex flex-col rounded-lg p-3 text-center  h-full"
-                >
-                  <FunctionCard
-                    functionName={functionName}
-                    index={index}
-                    triggerAnimation={triggerAnimation}
-                  />
-                </div>
-              ))}
-            </div></FadeInWhenVisible>
-          </div>
-        </section>
+              </FadeInWhenVisible>
+            </div>
+          </section>
+        </div>
       </div>
-    </div>
+   
   );
-};
-
-
+}

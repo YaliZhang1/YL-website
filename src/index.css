@@ -70,6 +70,9 @@
    .page-description {
     @apply font-light text-sm md:text-2xl text-nordic-muted max-w-4xl mx-auto leading-relaxed;
   }
+  .section-title{
+    
+  }
   .card-title {
     @apply text-2xl leading-snug font-semibold tracking-tight text-zinc-900 transition-all duration-500 ease-out group-hover:translate-y-[-4px] dark:text-white;
   }
