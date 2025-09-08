@@ -25,12 +25,7 @@ const Navbar: React.FC = () => {
         "Turn your Excel files and Google Sheets into powerful web applications.",
       href: "/excel-to-web",
     },
-    {
-      title: "Intelligent Robot System",
-      description:
-        "Self-service ordering, personalized recommendations, fast payment.",
-      href: "/intelligent-robot-system",
-    },
+  
     {
       title: "Smart elderly care system",
       description: "Health monitoring, safety, social engagement.",
@@ -47,7 +42,7 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <nav className="h-30 fixed top-0 left-0 w-full z-[9999] shadow-sm text-lg  py-5 border-b border-nordic-primary/20 bg-nordic-bg">
+      <nav className="h-30 fixed top-0 left-0 w-full z-[9999] shadow-sm   py-5 border-b border-nordic-primary/20 bg-nordic-bg">
         <div className="container w-full  mx-auto max-w-8xl px-8 sm:px-8 h-full">
           <div className="flex items-center justify-between w-full">
             <motion.div
@@ -81,7 +76,7 @@ const Navbar: React.FC = () => {
                 <Link
                   to="/"
                   className={cn(
-                    "navbar-item",
+                    "navbar-item ",
                     isActiveRoute("/") &&
                       "text-nordic-primary bg-nordic-primary/10"
                   )}

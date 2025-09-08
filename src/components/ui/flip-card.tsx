@@ -1,5 +1,5 @@
 "use client";
-
+import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { ArrowRight, Code2, Copy, Rocket, Zap } from "lucide-react";
 import { useState } from "react";
@@ -128,12 +128,8 @@ export default function CardFlip({
           <div className=" flex- min-h-[140px]  p-9  text-center">
             <div className="flex items-center justify-center gap-3">
               <div className="space-y-1.5">
-                <h3 className="card-title">
-                  {title}
-                </h3>
-                <p className="card-subtitle">
-                  {subtitle}
-                </p>
+                <h3 className="card-title">{title}</h3>
+                <p className="card-subtitle">{subtitle}</p>
               </div>
               <div />
             </div>
@@ -206,7 +202,7 @@ export default function CardFlip({
             <div
               className={cn(
                 "group/start relative",
-                "flex items-center justify-between",
+                "flex items-center justify-between gap-2",
                 "rounded-lg p-2.5",
                 "transition-all duration-300",
                 "bg-gradient-to-r from-slate-100 via-slate-100 to-slate-100",
@@ -217,19 +213,15 @@ export default function CardFlip({
                 "hover:border-primary/20 border border-transparent"
               )}
             >
-              <span className="group-hover/start:text-primary text-sm font-semibold text-zinc-900 transition-colors duration-300 dark:text-white">
+              <Link
+                to="/contact"
+                className="group-hover/start:text-primary text-sm font-semibold text-zinc-900 transition-colors duration-300 dark:text-white"
+              >
                 Start Building
-              </span>
-              <div className="group/icon relative">
-                <div
-                  className={cn(
-                    "absolute inset-[-6px] rounded-lg transition-all duration-300",
-                    "from-primary/20 via-primary/10 bg-gradient-to-br to-transparent",
-                    "scale-90 opacity-0 group-hover/start:scale-100 group-hover/start:opacity-100"
-                  )}
-                />
+              </Link>
+              <Link to="/contact" className="group/icon relative">
                 <ArrowRight className="text-primary relative z-10 h-4 w-4 transition-all duration-300 group-hover/start:translate-x-1 group-hover/start:scale-110" />
-              </div>
+              </Link>
             </div>
           </div>
         </div>

@@ -71,7 +71,7 @@ export const HeroSection: React.FC = () => {
                   ].map((t, i) => (
                     <span
                       key={`tag-${i}`}
-                      className="px-4 py-2 rounded-full text-base font-normal border border-nordic-primary bg-nordic-primary/30 text-nordic-secondary"
+                      className="px-4 py-2 rounded-full text-base font-normal border border-nordic-primary bg-nordic-primary/30 text-nordic-muted"
                     >
                       {t}
                     </span>
