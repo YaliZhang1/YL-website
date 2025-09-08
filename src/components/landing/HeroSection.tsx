@@ -34,8 +34,7 @@ const FloatingSymbol: React.FC<{
 };
 
 
-
-export const HeroSection: React.FC = () => {
+export  function HeroSection () {
   return (
     <>
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-nordic-bg text-nordic-text pt-16 md:pt-16 lg:pt-0">
@@ -57,7 +56,7 @@ export const HeroSection: React.FC = () => {
         </div>
         <div className="container mx-auto px-8 md:px-16 lg:px-24 max-w-[130rem] relative z-10">
           <div className="space-y-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-1 items-center py-20">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center py-20">
               {/* Left content */}
               <div className="z-50">
                 <div
@@ -79,7 +78,7 @@ export const HeroSection: React.FC = () => {
                 </div>
 
                 <h1
-                  className="text-5xl md:text-7xl font-light leading-tight mb-12"
+                  className="page-title font-light  mb-12"
                   style={{ animation: "fadeInUp 1s ease-out 0.3s forwards" }}
                 >
                   <span className="text-nordic-primary">Precision in</span>
@@ -90,7 +89,7 @@ export const HeroSection: React.FC = () => {
                 </h1>
 
                 <p
-                  className="text-xl md:text-2xl font-light leading-relaxed mb-12 max-w-2xl text-nordic-muted"
+                  className="page-description mb-12 max-w-5xl text-nordic-muted"
                   style={{
                     animation: "fadeInUp 1s ease-out 0.3s forwards",
                   }}

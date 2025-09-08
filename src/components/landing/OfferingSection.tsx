@@ -1,6 +1,6 @@
 import CardFlip from "@/components/ui/flip-card";
 import { motion} from "framer-motion";
-export const OfferingSection: React.FC = () => {
+export function OfferingSection() {
   const cards = [
     {
       title: "Fast Development",

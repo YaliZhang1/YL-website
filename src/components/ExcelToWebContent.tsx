@@ -109,7 +109,7 @@ const FunctionCard = ({ functionName, index, triggerAnimation }) => {
   );
 };
 
-const ExcelToWebContent: React.FC = () => {
+export default function ExcelToWebContent() {
   const [triggerAnimation, setTriggerAnimation] = useState(false);
   const sectionRef = useRef(null);
   const functionNames = [
@@ -157,7 +157,7 @@ const ExcelToWebContent: React.FC = () => {
         <section className="relative  nordic-gradient-3 pt-44 pb-16 px-4 ">
           <FadeInWhenVisible variants={animations.fadeUp}>
             <div className="max-w-6xl mx-auto text-center relative z-10">
-              <h1 className="text-5xl md:text-6xl text-white font-bold  mb-8 leading-tight">
+              <h1 className="page-title text-white ">
                 Transform {" "}
                 <span className="text-transparent bg-clip-text nordic-gradient-0 ">Excel{" "}</span>
                 to {" "}
@@ -165,7 +165,7 @@ const ExcelToWebContent: React.FC = () => {
                   Web Applications
                 </span>
               </h1>
-              <p className="text-xl md:text-2xl text-whiteGrey mb-12 max-w-7xl mx-auto animate-fadeInUp animate-delay-1">
+              <p className="page-description text-whiteGrey mb-6  ">
                 Turn your Excel files and Google Sheets into powerful web
                 applications - no coding required. Just upload, and your
                 spreadsheet becomes a professional web app.
@@ -369,4 +369,4 @@ const ExcelToWebContent: React.FC = () => {
   );
 };
 
-export default ExcelToWebContent;
+

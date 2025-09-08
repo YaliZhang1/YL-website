@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   Mail,
@@ -31,7 +31,7 @@ const fadeRight = {
   visible: { opacity: 1, x: 0 },
 };
 
-export const FooterSection = () => {
+export function FooterSection() {
   const [email, setEmail] = useState("");
   const [isSubscribed, setIsSubscribed] = useState(false);
 
@@ -282,4 +282,4 @@ export const FooterSection = () => {
       </div>
     </footer>
   );
-};
+}

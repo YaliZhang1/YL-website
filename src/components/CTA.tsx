@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { FadeInWhenVisible,animations } from "@/components/FadeInWhenVisible";
 
 
-export const CTA = () => {
+export function CTA (){
   return (
     <>
       <section className="py-20 relative overflow-hidden ">

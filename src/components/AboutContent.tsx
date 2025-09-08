@@ -50,7 +50,7 @@ const transition = {
   stiffness: 60,
   damping: 20,
 };
-export const AboutContent = () => {
+export function AboutContent () {
   const [activeValue, setActiveValue] = useState(0);
   const [visibleStats, setVisibleStats] = useState(false);
 
@@ -238,15 +238,15 @@ export const AboutContent = () => {
 
             <div className="relative z-10 container mx-auto px-8 md:px-16 lg:px-24 max-w-7xl pt-20 pb-32">
               <div className="grid lg:grid-cols-2 gap-16 items-center">
-                <div className="pt-24">
-                  <h1 className="text-5xl  md:text-6xl font-bold  mb-8 leading-tight">
+                <div className="pt-24 ">
+                  <h1 className=" page-title   mb-8 ">
                     Crafting Digital
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 block">
                       Excellence
                     </span>
                   </h1>
 
-                  <p className="text-xl  mb-8 leading-relaxed">
+                  <p className="page-description">
                     We're a Stockholm-based technology company that combines
                     Scandinavian design principles with cutting-edge development
                     practices to create solutions that are both beautiful and
@@ -254,8 +254,8 @@ export const AboutContent = () => {
                   </p>
                 </div>
 
-                <div className="relative pt-24">
-                  <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-blue-500/20">
+                <div className="relative pt-24 hidden md:block ">
+                  <div className="relative rounded-3xl  overflow-hidden shadow-2xl shadow-blue-500/20">
                     <img
                       src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop"
                       alt="Team collaboration"

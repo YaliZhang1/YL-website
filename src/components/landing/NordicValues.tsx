@@ -97,7 +97,7 @@ const WhyChooseUsCard = ({ advantage, index,triggerAnimation}) => {
   );
 };
 
-export const WhyUsSection = () => {
+export function WhyUsSection () {
   const [triggerAnimation, setTriggerAnimation] = useState(false);
   const sectionRef = useRef(null);
 

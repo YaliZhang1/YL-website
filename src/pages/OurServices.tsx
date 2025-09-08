@@ -4,14 +4,7 @@ import { FooterSection } from "@/components/FooterSection";
 import { CTA } from "@/components/CTA";
 
 import React, { useState, useEffect } from "react";
-import {
-  Code,
-  Users,
-  UserCheck,
-  Settings,
-
-  Check,
-} from "lucide-react";
+import { Code, Users, UserCheck, Settings, Check } from "lucide-react";
 
 const services = [
   {
@@ -29,7 +22,7 @@ const services = [
       "API development",
       "Legacy modernization",
     ],
-    gradient: "from-nordic-primary to-nordic-secondary",
+    gradient: "from-nordic-dark to-nordic-darker  to-nordic-dark",
     hoverGradient: "hover:from-nordic-secondary hover:to-nordic-dark",
   },
   {
@@ -47,8 +40,8 @@ const services = [
       "Infrastructure scaling",
       "Security compliance",
     ],
-    gradient: "from-nordic-secondary to-nordic-dark",
-    hoverGradient: "hover:from-nordic-dark hover:to-nordic-darker",
+    gradient: "from-nordic-dark to-nordic-darker  to-nordic-dark",
+    hoverGradient: "hover:from-nordic-secondary hover:to-nordic-dark",
   },
   {
     id: 3,
@@ -65,8 +58,8 @@ const services = [
       "Executive coaching",
       "Retention strategies",
     ],
-    gradient: "from-nordic-dark to-nordic-darker",
-    hoverGradient: "hover:from-nordic-darker hover:to-slate-900",
+    gradient: "from-nordic-dark to-nordic-darker  to-nordic-dark",
+    hoverGradient: "hover:from-nordic-secondary hover:to-nordic-dark",
   },
   {
     id: 4,
@@ -83,8 +76,8 @@ const services = [
       "Security architecture",
       "Technology consulting",
     ],
-    gradient: "from-nordic-primary/80 to-nordic-secondary/80",
-    hoverGradient: "hover:from-nordic-primary hover:to-nordic-secondary",
+    gradient: "from-nordic-dark to-nordic-darker  to-nordic-dark",
+    hoverGradient: "hover:from-nordic-secondary hover:to-nordic-dark",
   },
 ];
 
@@ -213,18 +206,18 @@ export default function OurServices() {
           {/* main content */}
           <div className="container mx-auto px-8 md:px-16 lg:px-24 max-w-[130rem] relative z-10 py-20">
             {/* Background decoration*/}
-      <div className="absolute top-0 left-1/4 w-64 h-64 bg-blue-100/30 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-100/20 rounded-full blur-3xl" />
-            
+            <div className="absolute top-0 left-1/4 w-64 h-64 bg-blue-100/30 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-100/20 rounded-full blur-3xl" />
+
             <div className="text-center mb-20">
-              <h1 className="text-5xl text-text md:text-6xl font-bold  mb-8 leading-tight">
+              <h1 className="page-title text-text ">
                 Precision-Driven
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 block">
-                  Solutions
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 ">
+                  {""} Solutions
                 </span>
               </h1>
 
-              <p className="text-xl md:text-2xl font-light leading-relaxed max-w-4xl mx-auto text-nordic-muted">
+              <p className="page-description  text-nordic-muted">
                 Delivering world-class technology services with
                 <span className="font-medium text-nordic-text">
                   {" "}

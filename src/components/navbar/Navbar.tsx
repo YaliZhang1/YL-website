@@ -11,7 +11,7 @@ interface DropDownMenu {
   href: string;
 }
 
-const Navbar: React.FC = () => {
+export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isDropDownMenuOpen, setIsDropDownMenuOpen] = useState<boolean>(false);
   const [isMobileDropDownMenuOpen, setIsMobileDropDownMenuOpen] =
@@ -373,4 +373,7 @@ const Navbar: React.FC = () => {
   );
 };
 
-export default Navbar;
+
+
+
+

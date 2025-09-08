@@ -4,7 +4,7 @@
 
 :root {
   /* 原有颜色变量 */
-  --white-grey:#cdcbcb;;
+  --white-grey: #cdcbcb;
   --color-text: #030712;
   --color-text-hover: #718096;
   --color-secondary: #64748b;
@@ -17,8 +17,8 @@
   /* Nordic Colors - 浅色模式 */
   --nordic-primary: #0a57cb;
   --nordic-secondary: #1427eb;
-  --nordic-third:#9893f6;
-  --nordic-dark: #255CCB;
+  --nordic-third: #9893f6;
+  --nordic-dark: #255ccb;
   --nordic-darker: #151328;
   --nordic-light: #cdcbcb;
   --nordic-bg: #fafafa;
@@ -29,7 +29,7 @@
 
 .dark {
   /* 原有深色模式变量 */
-  --white-grey:#94a3b8;
+  --white-grey: #94a3b8;
   --color-text: #f1f5f9;
   --color-text-hover: #cbd5e1;
   --color-secondary: #94a3b8;
@@ -64,6 +64,12 @@
 }
 
 @layer components {
+  .page-title {
+    @apply text-3xl md:text-4xl lg:text-6xl font-bold  mb-6 leading-tight;
+  }
+   .page-description {
+    @apply font-light text-sm md:text-2xl text-nordic-muted max-w-4xl mx-auto leading-relaxed;
+  }
   .card-title {
     @apply text-2xl leading-snug font-semibold tracking-tight text-zinc-900 transition-all duration-500 ease-out group-hover:translate-y-[-4px] dark:text-white;
   }
@@ -157,13 +163,8 @@
   }
 
   /* Nordic渐变背景 */
-   .nordic-gradient-0 {
-    background: linear-gradient(
-      135deg,
-      var(--nordic-third),
-      var(--white-grey)
-      
-    );
+  .nordic-gradient-0 {
+    background: linear-gradient(135deg, var(--nordic-third), var(--white-grey));
   }
   .nordic-gradient-1 {
     background: linear-gradient(
