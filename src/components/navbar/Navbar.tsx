@@ -188,8 +188,8 @@ const Navbar: React.FC = () => {
                   <Link
                     to="/contact"
                     className={cn(
-                      "btn-blue-big",
-                      isActiveRoute("/contact") && "text-card opacity-65"
+                      "btn-blue-big text-white",
+                      isActiveRoute("/contact") && " text-nordic-third opacity-65"
                     )}
                   >
                     Contact

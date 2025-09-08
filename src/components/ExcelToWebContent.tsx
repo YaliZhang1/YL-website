@@ -158,7 +158,9 @@ const ExcelToWebContent: React.FC = () => {
           <FadeInWhenVisible variants={animations.fadeUp}>
             <div className="max-w-6xl mx-auto text-center relative z-10">
               <h1 className="text-5xl md:text-6xl text-white font-bold  mb-8 leading-tight">
-                Transform Excel to {}
+                Transform {" "}
+                <span className="text-transparent bg-clip-text nordic-gradient-0 ">Excel{" "}</span>
+                to {" "}
                 <span className="text-transparent bg-clip-text nordic-gradient-0 ">
                   Web Applications
                 </span>
@@ -177,7 +179,7 @@ const ExcelToWebContent: React.FC = () => {
           <div className="max-w-6xl mx-auto">
             <FadeInWhenVisible variants={animations.fadeUp}>
               <div className="text-center mb-16">
-                <h2 className="section-title nordic-text">
+                <h2 className="section-title text-text">
                   Our solutions –
                   <span className="color-section-title">tailored</span> for you
                 </h2>
@@ -250,7 +252,7 @@ const ExcelToWebContent: React.FC = () => {
           <div className="max-w-6xl mx-auto">
             <FadeInWhenVisible variants={animations.fadeUp}>
               <div className="text-center mb-16">
-                <h2 className="section-title nordic-text">
+                <h2 className="section-title text-text">
                   <span className="color-section-title">Getting started </span>
                   is easy
                 </h2>
@@ -332,7 +334,7 @@ const ExcelToWebContent: React.FC = () => {
           <div className="max-w-6xl mx-auto">
             <FadeInWhenVisible variants={animations.fadeUp}>
               <div className="text-center mb-16">
-                <h2 className="section-title nordic-text">
+                <h2 className="section-title text-text">
                   More than
                   <span className="color-section-title">200 functions</span>
                 </h2>
