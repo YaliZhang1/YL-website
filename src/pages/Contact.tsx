@@ -6,13 +6,10 @@ import { useState } from "react";
 import {
   Mail,
   Phone,
-  MapPin,
   Send,
   Clock,
-  MessageSquare,
   User,
   Building,
-  Calendar,
   CheckCircle,
   ArrowRight,
   Globe,
@@ -22,7 +19,7 @@ import {
   Twitter,
   Coffee,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+
 import { FadeInWhenVisible, animations } from "@/components/FadeInWhenVisible";
 
 export default function Contact() {
@@ -148,11 +145,11 @@ export default function Contact() {
                 {/* left - contact sheet */}
 
                 <div className="lg:col-span-2">
-                  <div className="bg-white/80 backdrop-blur-sm rounded-3xl border border-gray-100/50 p-8 md:p-12 shadow-xl shadow-gray-900/5">
-                    <h2 className="text-3xl font-bold text-gray-900 mb-2">
+                  <div className="bg-sectionBg backdrop-blur-sm rounded-3xl border border-gray-100/50 p-8 md:p-12 shadow-xl shadow-gray-900/5">
+                    <h2 className="text-3xl text-text font-bold text-gray-900 mb-2">
                       Tell Us About Your Project
                     </h2>
-                    <p className="text-xl text-gray-600 mb-8">
+                    <p className="text-xl text-nordic-muted mb-8">
                       Fill out the form below and we'll get back to you within
                       24 hours.
                     </p>
@@ -172,9 +169,9 @@ export default function Contact() {
                     )}
 
                     <div className="grid md:grid-cols-2 gap-6 mb-6">
-                      {/* 姓名 */}
+                     
                       <div className="relative">
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label className="block text-sm font-medium text-text mb-2">
                           Full Name *
                         </label>
                         <div className="relative">
@@ -197,9 +194,9 @@ export default function Contact() {
                         </div>
                       </div>
 
-                      {/* 邮箱 */}
+                     
                       <div className="relative">
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label className="block text-sm font-medium text-text mb-2">
                           Email Address *
                         </label>
                         <div className="relative">
@@ -224,9 +221,9 @@ export default function Contact() {
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-6 mb-6">
-                      {/* 公司 */}
+                    
                       <div className="relative">
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label className="block text-sm font-medium text-text mb-2">
                           Company
                         </label>
                         <div className="relative">
@@ -249,9 +246,9 @@ export default function Contact() {
                         </div>
                       </div>
 
-                      {/* 服务类型 */}
+                     
                       <div className="relative">
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label className="block text-sm font-medium text-text mb-2">
                           Service Needed
                         </label>
                         <select
@@ -278,9 +275,9 @@ export default function Contact() {
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-6 mb-6">
-                      {/* 预算 */}
+                     
                       <div className="relative">
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label className="block text-sm font-medium text-text mb-2">
                           Budget Range
                         </label>
                         <select
@@ -299,9 +296,9 @@ export default function Contact() {
                         </select>
                       </div>
 
-                      {/* 时间线 */}
+                     
                       <div className="relative">
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label className="block text-sm font-medium text-text mb-2">
                           Timeline
                         </label>
                         <select
@@ -321,9 +318,8 @@ export default function Contact() {
                       </div>
                     </div>
 
-                    {/* 消息 */}
                     <div className="mb-8">
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-text mb-2">
                         Project Details *
                       </label>
                       <textarea
@@ -350,9 +346,9 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* 右侧 - 联系信息 */}
+                {/* right side - contact info */}
                 <div className="space-y-8">
-                  {/* 联系方式 */}
+               
                   <div className="space-y-6">
                     {contactMethods.map((method, index) => {
                       const Icon = method.icon;
