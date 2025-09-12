@@ -8,8 +8,7 @@ import Contact from "./pages/Contact";
 
 import ExcelToWeb from "./pages/ExcelToWeb";
 
-import SignIn from "./pages/Login";
-import NotFound from "./pages/NotFound";
+
 import { ThemeProvider } from "./contexts/ThemeContext";
 import ThemedToaster from "./components/ThemedToaster";
 
@@ -34,8 +33,7 @@ export default function App() {
                 element={<ExcelToWeb />}
               />
           
-              <Route path="/signin" element={<SignIn />} />
-              <Route path="*" element={<NotFound />} />
+
             </Routes>
           </BrowserRouter>
         </TooltipProvider>

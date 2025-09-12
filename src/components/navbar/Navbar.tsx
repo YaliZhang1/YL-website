@@ -345,17 +345,7 @@ export default function Navbar() {
 
                 <div className="space-y-4 flex flex-col">
                   <ThemeToggle />
-                  <Link
-                    to="/signin"
-                    className={cn(
-                      "text-lg flex justify-center w-24 font-medium border border-nordic-primary/30 rounded-md hover:bg-nordic-primary/10 hover:text-nordic-text transition-colors px-4 py-2",
-                      isActiveRoute("/signin")
-                        ? "text-nordic-primary bg-nordic-primary/10"
-                        : "text-nordic-muted"
-                    )}
-                  >
-                    Login
-                  </Link>
+                
                   <Link
                     to="/contact"
                     className={cn(
