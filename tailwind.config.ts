@@ -14,6 +14,7 @@ const config: Config = {
       colors: {
         primary: "var(--nordic-primary)",
         secondary: "var(--nordic-secondary)",
+        textThird:"var(--color-text--third)",
         border: "hsl(var(--border))",
         text: "var( --color-text)",
         textHover: "var(--color-text-hover)",

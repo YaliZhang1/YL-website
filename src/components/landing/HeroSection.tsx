@@ -83,7 +83,7 @@ export  function HeroSection () {
                 >
                   <span className="text-nordic-primary">Precision in</span>
                   <br />
-                  <span className="font-medium text-nordic-secondary">
+                  <span className="font-medium text-textThird">
                     Technology
                   </span>
                 </h1>
