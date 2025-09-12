@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -26,11 +26,7 @@ export default function Navbar() {
       href: "/excel-to-web",
     },
 
-    {
-      title: "Smart elderly care system",
-      description: "Health monitoring, safety, social engagement.",
-      href: "/smart-elderly-care",
-    },
+  
   ];
 
   const isActiveRoute = (path: string) => {
@@ -190,17 +186,7 @@ export default function Navbar() {
               <div className="flex items-center gap-4 flex-shrink-0">
                 <div className="hidden md:flex items-center gap-4">
                   <ThemeToggle />
-                  <Link
-                    to="/signin"
-                    className={cn(
-                      "text-lg px-4 py-2 font-medium border border-nordic-primary/30 rounded-md hover:bg-nordic-primary/10 hover:text-nordic-text transition-colors",
-                      isActiveRoute("/signin")
-                        ? "text-nordic-primary bg-nordic-primary/10"
-                        : "text-nordic-muted"
-                    )}
-                  >
-                    Login
-                  </Link>
+              
                   <Link
                     to="/contact"
                     className={cn(

@@ -7,7 +7,7 @@ import OurServices from "./pages/OurServices";
 import Contact from "./pages/Contact";
 
 import ExcelToWeb from "./pages/ExcelToWeb";
-import SmartElderlyCare from "./pages/SmartElderlyCare";
+
 import SignIn from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -33,10 +33,7 @@ export default function App() {
                 path="/excel-to-web"
                 element={<ExcelToWeb />}
               />
-              <Route
-                path="/smart-elderly-care"
-                element={<SmartElderlyCare />}
-              />
+          
               <Route path="/signin" element={<SignIn />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

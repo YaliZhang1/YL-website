@@ -111,7 +111,7 @@ export  function HeroSection () {
                     Request Early Access
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
-                  <Link to="/intelligent-robot-system" className="px-8 py-4 rounded-lg font-light text-lg transition-all duration-300 flex items-center group border-2 border-nordic-primary text-nordic-primary bg-transparent hover:shadow-lg transform hover:scale-[1.02] hover:bg-nordic-primary hover:text-white transition-colors">
+                  <Link to="/excel-to-web" className="px-8 py-4 rounded-lg font-light text-lg transition-all duration-300 flex items-center group border-2 border-nordic-primary text-nordic-primary bg-transparent hover:shadow-lg transform hover:scale-[1.02] hover:bg-nordic-primary hover:text-white transition-colors">
                     View Our Work
                   </Link>
                 </div>
