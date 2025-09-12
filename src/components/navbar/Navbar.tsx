@@ -25,8 +25,13 @@ export default function Navbar() {
         "Turn your Excel files and Google Sheets into powerful web applications.",
       href: "/excel-to-web",
     },
+     {
+      title: "Portfolio",
+      description:
+        "A personalized portfolio showcasing your projects, skills, and experiences, tailored to your style and industry.",
+      href: "https://yalizhang1.github.io/Homepage/",
+    },
 
-  
   ];
 
   const isActiveRoute = (path: string) => {
