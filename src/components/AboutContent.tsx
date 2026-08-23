@@ -239,14 +239,14 @@ export function AboutContent () {
             <div className="relative z-10 container mx-auto px-8 md:px-16 lg:px-24 max-w-7xl pt-20 pb-32">
               <div className="grid lg:grid-cols-2 gap-16 items-center">
                 <div className="pt-24 ">
-                  <h1 className=" page-title   mb-8 ">
+                  <h1 className="page-title mb-8">
                     Crafting Digital
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 block">
                       Excellence
                     </span>
                   </h1>
 
-                  <p className="page-description">
+                  <p className="page-description text-blue-950 dark:text-blue-400">
                     We're a Stockholm-based technology company that combines
                     Scandinavian design principles with cutting-edge development
                     practices to create solutions that are both beautiful and

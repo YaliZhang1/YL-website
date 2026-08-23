@@ -3,7 +3,6 @@ import { ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { FadeInWhenVisible,animations } from "@/components/FadeInWhenVisible";
 
-
 export function CTA (){
   return (
     <>
